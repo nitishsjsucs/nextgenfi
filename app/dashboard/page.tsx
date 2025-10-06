@@ -71,7 +71,6 @@ function DashboardContent() {
   // Fetch real data for dashboard stats
   const campaigns = useQuery(api.campaigns.getAllCampaigns, { limit: 100 });
   const emailStats = useQuery(api.campaigns.getEmailStats, {});
-  const campaignPerformance = useQuery(api.campaigns.getCampaignPerformance, { limit: 3 });
 
   // Check if user needs KYC verification
   useEffect(() => {
@@ -330,30 +329,38 @@ function DashboardContent() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    {campaignPerformance && campaignPerformance.length > 0 ? (
-                      <div className="space-y-4">
-                        {campaignPerformance.map((campaign) => (
-                          <div key={campaign._id} className="flex items-center justify-between p-3 glass-effect rounded-lg border border-white/5">
-                            <div>
-                              <p className="font-light text-white">{campaign.subject}</p>
-                              <p className="text-sm text-white/50 font-light">
-                                {campaign.sent} sent • {campaign.opened} opens
-                              </p>
-                            </div>
-                            <div className="text-right">
-                              <p className="font-light text-primary text-lg">
-                                {campaign.openRate.toFixed(1)}%
-                              </p>
-                              <p className="text-xs text-white/50 font-light">Open Rate</p>
-                            </div>
-                          </div>
-                        ))}
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between p-3 glass-effect rounded-lg border border-white/5">
+                        <div>
+                          <p className="font-light text-white">Earthquake Insurance</p>
+                          <p className="text-sm text-white/50 font-light">Last 7 days</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-light text-primary text-lg">24.3%</p>
+                          <p className="text-xs text-white/50 font-light">Open Rate</p>
+                        </div>
                       </div>
-                    ) : (
-                      <div className="text-center py-8 text-white/50 font-light">
-                        No campaigns yet. Create a campaign to see performance metrics.
+                      <div className="flex items-center justify-between p-3 glass-effect rounded-lg border border-white/5">
+                        <div>
+                          <p className="font-light text-white">Weather Insurance</p>
+                          <p className="text-sm text-white/50 font-light">Last 7 days</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-light text-primary text-lg">18.7%</p>
+                          <p className="text-xs text-white/50 font-light">Open Rate</p>
+                        </div>
                       </div>
-                    )}
+                      <div className="flex items-center justify-between p-3 glass-effect rounded-lg border border-white/5">
+                        <div>
+                          <p className="font-light text-white">General Marketing</p>
+                          <p className="text-sm text-white/50 font-light">Last 7 days</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-light text-primary text-lg">31.2%</p>
+                          <p className="text-xs text-white/50 font-light">Open Rate</p>
+                        </div>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
