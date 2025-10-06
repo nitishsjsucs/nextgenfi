@@ -136,30 +136,30 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white font-[Inter] text-gray-900 antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-black font-[Inter] text-white antialiased overflow-x-hidden relative">
       {/* Header */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-        className="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-xl border-b border-gray-100"
+        className="fixed top-0 z-50 w-full glass-effect-strong border-b border-white/5"
       >
         <nav className="container mx-auto flex items-center justify-between px-6 py-4">
           <motion.div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-black to-gray-700 rounded-xl flex items-center justify-center text-white">
+            <div className="w-10 h-10 bg-gradient-to-r from-primary to-red-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
               <BuildingIcon />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-xl text-gray-900">BankingOS</span>
-              <span className="text-xs text-gray-500">Plug & Play Backend</span>
+              <span className="font-light text-xl text-white">BankingOS</span>
+              <span className="text-xs text-white/50 font-light">Plug & Play Backend</span>
             </div>
           </motion.div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-            <a href="#demo" className="text-gray-600 hover:text-gray-900 transition-colors">Demo</a>
-            <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+            <a href="#features" className="text-white/60 hover:text-white transition-colors font-light">Features</a>
+            <a href="#demo" className="text-white/60 hover:text-white transition-colors font-light">Demo</a>
+            <a href="#pricing" className="text-white/60 hover:text-white transition-colors font-light">Pricing</a>
             <Button onClick={() => router.push('/auth/login')} variant="outline" className="mr-2">Login</Button>
-            <Button onClick={() => router.push('/demo')} className="bg-black hover:bg-gray-800">
+            <Button onClick={() => router.push('/demo')}>
               Request Demo
             </Button>
           </div>
@@ -167,23 +167,23 @@ const App = () => {
       </motion.header>
 
       {/* Hero Section */}
-  <section className="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+  <section className="relative min-h-screen flex items-center justify-center pt-20 bg-black">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 left-10 w-20 h-20 bg-gray-200 rounded-full opacity-30"
+            className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full opacity-30 blur-xl"
           />
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-            className="absolute top-40 right-20 w-32 h-32 bg-gray-200 rounded-full opacity-30"
+            className="absolute top-40 right-20 w-32 h-32 bg-primary/10 rounded-full opacity-30 blur-xl"
           />
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 6 }}
-            className="absolute bottom-40 left-20 w-24 h-24 bg-green-100 rounded-full opacity-30"
+            className="absolute bottom-40 left-20 w-24 h-24 bg-primary/10 rounded-full opacity-30 blur-xl"
           />
         </div>
 
@@ -201,18 +201,18 @@ const App = () => {
           </motion.div>
           
           <motion.h1 
-            className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 leading-tight mb-8" 
+            className="text-5xl sm:text-6xl md:text-7xl font-light text-white leading-tight mb-8 tracking-tight" 
             variants={item}
           >
             Banking Innovation{' '}
-            <span className="text-black">Simplified</span>
+            <span className="text-gradient-red font-light">Simplified</span>
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed" 
+            className="text-xl md:text-2xl text-white/70 max-w-4xl mx-auto mb-12 leading-relaxed font-light" 
             variants={item}
           >
-            Deploy AI analytics, intelligent communications, and enterprise-grade compliance in <span className="font-semibold text-gray-900">weeks, not years</span>. The complete backend platform for modern banking.
+            Deploy AI analytics, intelligent communications, and enterprise-grade compliance in <span className="font-normal text-primary">weeks, not years</span>. The complete backend platform for modern banking.
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16" variants={item}>

@@ -34,22 +34,22 @@ export default function DashboardPage() {
   return (
     <>
       <AuthLoading>
-        <div className="min-h-screen flex items-center justify-center p-4 md:p-6">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading...</p>
+        <div className="min-h-screen flex items-center justify-center p-4 md:p-6 bg-black">
+          <div className="text-center glass-effect p-8 rounded-xl">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+            <p className="mt-4 text-white/60 font-light">Loading...</p>
           </div>
         </div>
       </AuthLoading>
       
       <Unauthenticated>
-        <div className="min-h-screen flex items-center justify-center p-4 md:p-6">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4">Access Denied</h1>
-            <p className="text-muted-foreground mb-4">Please sign in to access the dashboard.</p>
+        <div className="min-h-screen flex items-center justify-center p-4 md:p-6 bg-black">
+          <div className="text-center glass-effect p-8 rounded-xl max-w-md">
+            <h1 className="text-2xl font-light mb-4 text-white">Access Denied</h1>
+            <p className="text-white/60 mb-6 font-light">Please sign in to access the dashboard.</p>
             <a
               href="/auth/login"
-              className="text-primary hover:underline"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors font-light"
             >
               Sign In
             </a>
@@ -78,22 +78,52 @@ function DashboardContent() {
   // Show loading while checking KYC status
   if (user && !user.kycVerified) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4 md:p-6">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Redirecting to KYC verification...</p>
+      <div className="min-h-screen flex items-center justify-center p-4 md:p-6 bg-black">
+        <div className="text-center glass-effect p-8 rounded-xl">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+          <p className="mt-4 text-white/60 font-light">Redirecting to KYC verification...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen">
-      {/* Keep original content; removed added tokens panel and scenarios grid */}
+    <div className="min-h-screen bg-black relative">
+      {/* Header */}
+      <div className="glass-effect-strong border-b border-white/5 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-6">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-gradient-to-r from-primary to-red-600 rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
+                  <BarChart3 className="h-5 w-5 text-white" />
+                </div>
+                <h1 className="text-2xl font-light text-white tracking-tight">NextGenFI Dashboard</h1>
+              </div>
+              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 backdrop-blur-sm">
+                <Activity className="h-3 w-3 mr-1" />
+                Live
+              </Badge>
+            </div>
+            <AuthButton />
+          </div>
+        </div>
+      </div>
 
-      {/* Main Content (existing tabs) */}
+      {/* Main Content */}
       <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">
+          {/* Welcome Section */}
+          <div className="mb-8">
+            <h2 className="text-3xl font-light text-white mb-2 tracking-tight">
+              Welcome back, {user?.name || "User"}! 👋
+            </h2>
+            <p className="text-white/60 font-light">
+              Your comprehensive banking platform dashboard with AI-powered insights and campaign management.
+            </p>
+          </div>
+
+          {/* Quick Stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -174,19 +204,19 @@ function DashboardContent() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">AI Analytics</span>
+                        <span className="text-sm font-light text-white">AI Analytics</span>
                         <Badge variant="secondary">Active</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">RAG Assistant</span>
+                        <span className="text-sm font-light text-white">RAG Assistant</span>
                         <Badge variant="secondary">Active</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">Email Campaigns</span>
+                        <span className="text-sm font-light text-white">Email Campaigns</span>
                         <Badge variant="secondary">Active</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">Compliance Suite</span>
+                        <span className="text-sm font-light text-white">Compliance Suite</span>
                         <Badge variant="secondary">Active</Badge>
                       </div>
                     </div>
@@ -206,20 +236,20 @@ function DashboardContent() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span className="text-sm">Earthquake campaign completed - 150 emails sent</span>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse-glow"></div>
+                        <span className="text-sm text-white/80 font-light">Earthquake campaign completed - 150 emails sent</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <span className="text-sm">Weather insurance targets identified - 89 prospects</span>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse-glow"></div>
+                        <span className="text-sm text-white/80 font-light">Weather insurance targets identified - 89 prospects</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span className="text-sm">RAG system updated with new demographic data</span>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse-glow"></div>
+                        <span className="text-sm text-white/80 font-light">RAG system updated with new demographic data</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <span className="text-sm">Email engagement rate improved by 12%</span>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse-glow"></div>
+                        <span className="text-sm text-white/80 font-light">Email engagement rate improved by 12%</span>
                       </div>
                     </div>
                   </CardContent>
@@ -286,34 +316,34 @@ function DashboardContent() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center justify-between p-3 glass-effect rounded-lg border border-white/5">
                         <div>
-                          <p className="font-medium">Earthquake Insurance</p>
-                          <p className="text-sm text-gray-600">Last 7 days</p>
+                          <p className="font-light text-white">Earthquake Insurance</p>
+                          <p className="text-sm text-white/50 font-light">Last 7 days</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-green-600">24.3%</p>
-                          <p className="text-xs text-gray-500">Open Rate</p>
+                          <p className="font-light text-primary text-lg">24.3%</p>
+                          <p className="text-xs text-white/50 font-light">Open Rate</p>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center justify-between p-3 glass-effect rounded-lg border border-white/5">
                         <div>
-                          <p className="font-medium">Weather Insurance</p>
-                          <p className="text-sm text-gray-600">Last 7 days</p>
+                          <p className="font-light text-white">Weather Insurance</p>
+                          <p className="text-sm text-white/50 font-light">Last 7 days</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-blue-600">18.7%</p>
-                          <p className="text-xs text-gray-500">Open Rate</p>
+                          <p className="font-light text-primary text-lg">18.7%</p>
+                          <p className="text-xs text-white/50 font-light">Open Rate</p>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center justify-between p-3 glass-effect rounded-lg border border-white/5">
                         <div>
-                          <p className="font-medium">General Marketing</p>
-                          <p className="text-sm text-gray-600">Last 7 days</p>
+                          <p className="font-light text-white">General Marketing</p>
+                          <p className="text-sm text-white/50 font-light">Last 7 days</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-purple-600">31.2%</p>
-                          <p className="text-xs text-gray-500">Open Rate</p>
+                          <p className="font-light text-primary text-lg">31.2%</p>
+                          <p className="text-xs text-white/50 font-light">Open Rate</p>
                         </div>
                       </div>
                     </div>
