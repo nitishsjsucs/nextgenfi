@@ -190,48 +190,48 @@ export default function EmailEngagementChart({
       {/* Summary Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-3 min-h-[3.5rem] flex items-start">
             <CardTitle className="text-sm font-medium">Total Processed</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{(totalProcessed || 0).toLocaleString()}</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="text-2xl font-bold font-instrument-serif">{(totalProcessed || 0).toLocaleString()}</div>
+            <p className="text-xs text-white/50 font-light">
               {deliveryRate.toFixed(1)}% delivered
             </p>
           </CardContent>
         </Card>
         
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-3 min-h-[3.5rem] flex items-start">
             <CardTitle className="text-sm font-medium">Open Rate</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{openRate.toFixed(1)}%</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="text-2xl font-bold font-instrument-serif">{openRate.toFixed(1)}%</div>
+            <p className="text-xs text-white/50 font-light">
               {(totalOpens || 0).toLocaleString()} opens
             </p>
           </CardContent>
         </Card>
         
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-3 min-h-[3.5rem] flex items-start">
             <CardTitle className="text-sm font-medium">Click Rate</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{clickRate.toFixed(1)}%</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="text-2xl font-bold font-instrument-serif">{clickRate.toFixed(1)}%</div>
+            <p className="text-xs text-white/50 font-light">
               {(totalClicks || 0).toLocaleString()} clicks
             </p>
           </CardContent>
         </Card>
         
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-3 min-h-[3.5rem] flex items-start">
             <CardTitle className="text-sm font-medium">Bounce Rate</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{bounceRate.toFixed(1)}%</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="text-2xl font-bold font-instrument-serif">{bounceRate.toFixed(1)}%</div>
+            <p className="text-xs text-white/50 font-light">
               {(totalBounces || 0).toLocaleString()} bounces
             </p>
           </CardContent>
