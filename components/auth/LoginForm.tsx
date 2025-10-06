@@ -43,7 +43,7 @@ export function LoginForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Sign In</CardTitle>
+        <CardTitle className="text-2xl font-instrument-serif">Sign In</CardTitle>
         <CardDescription>
           Enter your credentials to access your account
         </CardDescription>
@@ -51,13 +51,13 @@ export function LoginForm() {
       <CardContent>
         {error && (
           <Alert variant="destructive" className="mb-4">
-            <AlertDescription>{error}</AlertDescription>
+            <AlertDescription className="font-light">{error}</AlertDescription>
           </Alert>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium">
+            <label htmlFor="email" className="text-sm font-light text-white/80">
               Email
             </label>
             <Input
@@ -71,7 +71,7 @@ export function LoginForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium">
+            <label htmlFor="password" className="text-sm font-light text-white/80">
               Password
             </label>
             <Input
@@ -100,11 +100,11 @@ export function LoginForm() {
           </Button>
         </form>
 
-        <div className="mt-4 text-center text-sm">
+        <div className="mt-4 text-center text-sm text-white/60 font-light">
           Don't have an account?{" "}
           <a
             href="/auth/signup"
-            className="text-primary hover:underline"
+            className="text-primary hover:underline font-normal"
           >
             Sign up
           </a>

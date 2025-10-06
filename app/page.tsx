@@ -1002,22 +1002,22 @@ const App = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-black to-gray-700 rounded-xl flex items-center justify-center text-white">
+                <div className="w-10 h-10 bg-gradient-to-r from-primary to-red-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
                   <BuildingIcon />
                 </div>
                 <div>
-                  <span className="font-bold text-xl">BankingOS</span>
-                  <div className="text-xs text-gray-400">Plug & Play Backend</div>
+                  <span className="font-light text-xl font-instrument-serif">BankingOS</span>
+                  <div className="text-xs text-white/40 font-light">Plug & Play Backend</div>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm">
+              <p className="text-white/50 text-sm font-light">
                 Transforming banking technology with AI-powered platforms designed for rapid deployment and enterprise scalability.
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Platform</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <h4 className="font-light mb-4 font-instrument-serif">Platform</h4>
+              <ul className="space-y-2 text-sm text-white/50 font-light">
                 <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
@@ -1026,8 +1026,8 @@ const App = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <h4 className="font-light mb-4 font-instrument-serif">Company</h4>
+              <ul className="space-y-2 text-sm text-white/50 font-light">
                 <li><a href="#" className="hover:text-white transition-colors">About</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
@@ -1036,8 +1036,8 @@ const App = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <h4 className="font-light mb-4 font-instrument-serif">Legal</h4>
+              <ul className="space-y-2 text-sm text-white/50 font-light">
                 <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Compliance</a></li>
@@ -1046,13 +1046,13 @@ const App = () => {
             </div>
           </div>
           
-          <Separator className="bg-gray-800 mb-8" />
+          <Separator className="bg-white/10 mb-8" />
           
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/40 font-light">
             <p>&copy; {new Date().getFullYear()} BankingOS. All rights reserved.</p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              <Badge variant="outline" className="border-gray-600 text-gray-300">SOC 2 Certified</Badge>
-              <Badge variant="outline" className="border-gray-600 text-gray-300">FFIEC Compliant</Badge>
+              <Badge variant="outline" className="border-white/20 text-white/60">SOC 2 Certified</Badge>
+              <Badge variant="outline" className="border-white/20 text-white/60">FFIEC Compliant</Badge>
             </div>
           </div>
         </motion.div>

@@ -26,7 +26,7 @@ export default function KycPage() {
       <Unauthenticated>
         <div className="min-h-screen flex items-center justify-center p-4 md:p-6">
           <div className="text-center glass-effect p-8 rounded-xl max-w-md">
-            <h1 className="text-2xl font-light mb-4 text-white">Access Denied</h1>
+            <h1 className="text-2xl font-light mb-4 text-white font-instrument-serif">Access Denied</h1>
             <p className="text-white/60 mb-6 font-light">Please sign in to access KYC verification.</p>
             <Button onClick={() => window.location.href = '/auth/login'}>
               Sign In
@@ -148,7 +148,7 @@ function KycContent() {
   // Prevent UI flash while loading or when redirecting
   if (loading || shouldRedirect) {
     return (
-      <div className="container mx-auto flex items-center justify-center min-h-screen bg-black">
+      <div className="container mx-auto flex items-center justify-center min-h-screen">
         <div className="text-center glass-effect p-8 rounded-xl">
           <Loader2 className="mx-auto h-8 w-8 animate-spin mb-4 text-primary" />
           <p className="text-white/60 font-light">
@@ -224,11 +224,11 @@ function KycContent() {
 
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 md:p-6 bg-black">
+    <div className="min-h-screen flex items-center justify-center p-4 md:p-6">
       <div className="w-full max-w-lg">
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl font-bold">Verify Your Identity</CardTitle>
+            <CardTitle className="text-2xl font-instrument-serif">Verify Your Identity</CardTitle>
             <CardDescription>
               Please upload a government-issued ID to complete our KYC (Know Your Customer) process.
             </CardDescription>

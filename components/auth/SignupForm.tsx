@@ -61,7 +61,7 @@ export function SignupForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Create Account</CardTitle>
+        <CardTitle className="text-2xl font-instrument-serif">Create Account</CardTitle>
         <CardDescription>
           Enter your information to create your account
         </CardDescription>
@@ -69,13 +69,13 @@ export function SignupForm() {
       <CardContent>
         {error && (
           <Alert variant="destructive" className="mb-4">
-            <AlertDescription>{error}</AlertDescription>
+            <AlertDescription className="font-light">{error}</AlertDescription>
           </Alert>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-medium">
+            <label htmlFor="name" className="text-sm font-light text-white/80">
               Full Name
             </label>
             <Input
@@ -89,7 +89,7 @@ export function SignupForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium">
+            <label htmlFor="email" className="text-sm font-light text-white/80">
               Email
             </label>
             <Input
@@ -103,7 +103,7 @@ export function SignupForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium">
+            <label htmlFor="password" className="text-sm font-light text-white/80">
               Password
             </label>
             <Input
@@ -118,7 +118,7 @@ export function SignupForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="phoneNumber" className="text-sm font-medium">
+            <label htmlFor="phoneNumber" className="text-sm font-light text-white/80">
               Phone Number
             </label>
             <Input
@@ -131,7 +131,7 @@ export function SignupForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="dateOfBirth" className="text-sm font-medium">
+            <label htmlFor="dateOfBirth" className="text-sm font-light text-white/80">
               Date of Birth
             </label>
             <Input
@@ -143,7 +143,7 @@ export function SignupForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="ssn" className="text-sm font-medium">
+            <label htmlFor="ssn" className="text-sm font-light text-white/80">
               SSN
             </label>
             <Input
@@ -171,11 +171,11 @@ export function SignupForm() {
           </Button>
         </form>
 
-        <div className="mt-4 text-center text-sm">
+        <div className="mt-4 text-center text-sm text-white/60 font-light">
           Already have an account?{" "}
           <a
             href="/auth/login"
-            className="text-primary hover:underline"
+            className="text-primary hover:underline font-normal"
           >
             Sign in
           </a>

@@ -78,7 +78,7 @@ function DashboardContent() {
   // Show loading while checking KYC status
   if (user && !user.kycVerified) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4 md:p-6 bg-black">
+      <div className="min-h-screen flex items-center justify-center p-4 md:p-6">
         <div className="text-center glass-effect p-8 rounded-xl">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
           <p className="mt-4 text-white/60 font-light">Redirecting to KYC verification...</p>
@@ -88,7 +88,7 @@ function DashboardContent() {
   }
 
   return (
-    <div className="min-h-screen bg-black relative">
+    <div className="min-h-screen relative">
       {/* Header */}
       <div className="glass-effect-strong border-b border-white/5 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,7 +98,7 @@ function DashboardContent() {
                 <div className="w-8 h-8 bg-gradient-to-r from-primary to-red-600 rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
                   <BarChart3 className="h-5 w-5 text-white" />
                 </div>
-                <h1 className="text-2xl font-light text-white tracking-tight">NextGenFI Dashboard</h1>
+                <h1 className="text-2xl font-light text-white tracking-tight font-instrument-serif">NextGenFI Dashboard</h1>
               </div>
               <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 backdrop-blur-sm">
                 <Activity className="h-3 w-3 mr-1" />
@@ -115,7 +115,7 @@ function DashboardContent() {
         <div className="px-4 py-6 sm:px-0">
           {/* Welcome Section */}
           <div className="mb-8">
-            <h2 className="text-3xl font-light text-white mb-2 tracking-tight">
+            <h2 className="text-3xl font-light text-white mb-2 tracking-tight font-instrument-serif">
               Welcome back, {user?.name || "User"}! 👋
             </h2>
             <p className="text-white/60 font-light">
@@ -127,36 +127,36 @@ function DashboardContent() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Active Campaigns</CardTitle>
-                <Target className="h-4 w-4 text-muted-foreground" />
+                <CardTitle className="text-sm">Active Campaigns</CardTitle>
+                <Target className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">12</div>
-                <p className="text-xs text-muted-foreground">
+                <div className="text-2xl font-bold font-instrument-serif">12</div>
+                <p className="text-xs text-white/50 font-light">
                   +2 from last week
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Emails Sent</CardTitle>
-                <Send className="h-4 w-4 text-muted-foreground" />
+                <CardTitle className="text-sm">Emails Sent</CardTitle>
+                <Send className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">2,847</div>
-                <p className="text-xs text-muted-foreground">
+                <div className="text-2xl font-bold font-instrument-serif">2,847</div>
+                <p className="text-xs text-white/50 font-light">
                   +15% from last month
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Open Rate</CardTitle>
-                <Mail className="h-4 w-4 text-muted-foreground" />
+                <CardTitle className="text-sm">Open Rate</CardTitle>
+                <Mail className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">24.3%</div>
-                <p className="text-xs text-muted-foreground">
+                <div className="text-2xl font-bold font-instrument-serif">24.3%</div>
+                <p className="text-xs text-white/50 font-light">
                   +3.2% from last month
                 </p>
               </CardContent>
