@@ -174,3 +174,46 @@ export const getEmailStats = query({
     return stats;
   },
 });
+
+// Get campaign performance with calculated metrics
+export const getCampaignPerformance = query({
+  args: { limit: v.optional(v.number()) },
+  handler: async (ctx, args) => {
+    const limit = args.limit || 10;
+    const campaigns = await ctx.db
+      .query("campaigns")
+      .order("desc")
+      .take(limit);
+    
+    // Get email events for each campaign and calculate metrics
+    const campaignsWithMetrics = await Promise.all(
+      campaigns.map(async (campaign) => {
+        const events = await ctx.db
+          .query("emailEvents")
+          .withIndex("by_campaign", (q) => q.eq("campaignId", campaign._id))
+          .collect();
+        
+        const sent = events.filter(e => e.eventType === 'sent' || e.eventType === 'processed').length;
+        const opened = events.filter(e => e.eventType === 'opened' || e.eventType === 'open').length;
+        const clicked = events.filter(e => e.eventType === 'clicked' || e.eventType === 'click').length;
+        
+        const openRate = sent > 0 ? (opened / sent) * 100 : 0;
+        const clickRate = sent > 0 ? (clicked / sent) * 100 : 0;
+        
+        return {
+          _id: campaign._id,
+          subject: campaign.subject,
+          riskLevel: campaign.riskLevel,
+          createdAt: campaign.createdAt,
+          sent,
+          opened,
+          clicked,
+          openRate,
+          clickRate,
+        };
+      })
+    );
+    
+    return campaignsWithMetrics;
+  },
+});
