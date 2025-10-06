@@ -29,7 +29,7 @@
 
 /* Navigation Components */
 @import './navigation/sidebar.css';
-@import './navigation/sidebar-navigation.css';
+@import './sidebar/sidebar-navigation.css';
 @import './navigation/topbar.css';
 @import './navigation/breadcrumb-components.css';
 @import './navigation/pagination-components.css';
@@ -51,11 +51,11 @@
 @import './feedback/progress-components.css';
 
 /* Interactive Components */
-@import './interactive/avatar/avatar-system.css';
-@import './interactive/status/status-badge.css';
-@import './interactive/search/search-components.css';
-@import './interactive/checkbox/checkbox-system.css';
-@import './interactive/accordion/accordion-components.css';
+@import './avatar/avatar-system.css';
+@import './status/status-badge.css';
+@import './search/search-components.css';
+@import './checkbox/checkbox-system.css';
+@import './accordion/accordion-components.css';
 
 /* Figma Components */
 @import './figma-components.css';
