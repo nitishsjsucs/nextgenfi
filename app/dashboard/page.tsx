@@ -89,22 +89,25 @@ function DashboardContent() {
   }
 
   return (
-    <div className="min-h-screen bg-flash-white" style={{ fontFamily: 'var(--font-family-primary)' }}>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white antialiased relative" style={{ fontFamily: 'var(--font-family-primary)' }}>
+      {/* Grainy Background Overlay */}
+      <div className="fixed inset-0 grainy-bg gradient-overlay-dark"></div>
+      
       {/* Header */}
-      <div className="bg-white shadow">
+      <div className="glassmorphism-nav border-b border-white/10 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-orange rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center shadow-lg">
                   <BarChart3 className="h-5 w-5 text-white" />
                 </div>
-                <h1 className="heading-small text-primary">NextGenFI Dashboard</h1>
+                <h1 className="heading-small text-white">NextGenFI Dashboard</h1>
               </div>
-              <Badge variant="outline" className="bg-light-grey text-orange border-light">
-                <Activity className="h-3 w-3 mr-1" />
-                Live
-              </Badge>
+              <div className="glassmorphism-card px-3 py-1 rounded-lg flex items-center space-x-1">
+                <Activity className="h-3 w-3 text-orange-400" />
+                <span className="text-white/90">Live</span>
+              </div>
             </div>
             <AuthButton />
           </div>
@@ -112,70 +115,82 @@ function DashboardContent() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 relative z-10">
         <div className="px-4 py-6 sm:px-0">
           {/* Welcome Section */}
           <div className="mb-8">
-            <h2 className="heading-medium text-primary mb-2">
+            <h2 className="heading-medium text-white mb-2">
               Welcome back, {user?.name || "User"}! 👋
             </h2>
-            <p className="text-body text-muted mb-4">
+            <p className="text-body text-white/80 mb-4">
               Your comprehensive banking platform dashboard with AI-powered insights and campaign management.
             </p>
             
             {/* System Alerts */}
             <div className="space-y-3">
-              <Alert
-                type="success"
-                title="System Status"
-                message="All systems operational. Last backup completed 2 hours ago."
-              />
-              <Alert
-                type="info"
-                title="New Feature"
-                message="Enhanced analytics dashboard is now available. Check out the new metrics!"
-              />
+              <div className="notification-glass p-4 rounded-lg">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-green-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium text-white">System Status</h4>
+                    <p className="text-xs text-white/70">All systems operational. Last backup completed 2 hours ago.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="notification-glass p-4 rounded-lg">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <Activity className="w-4 h-4 text-blue-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium text-white">New Feature</h4>
+                    <p className="text-xs text-white/70">Enhanced analytics dashboard is now available. Check out the new metrics!</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Quick Stats */}
-          <div className="metrics-grid three-columns mb-8">
-            <div className="metric-card">
-              <div className="metric-header">
-                <h3 className="metric-title">Active Campaigns</h3>
-                <Target className="metric-icon" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="metric-card-glass p-6 rounded-xl">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-sm font-medium text-white/80">Active Campaigns</h3>
+                <Target className="w-5 h-5 text-orange-400" />
               </div>
-              <div className="metric-value">12</div>
-              <div className="metric-change positive">
-                <TrendingUp className="metric-change-icon" />
-                <span className="metric-change-value">+2</span>
-                <span className="metric-change-label">from last week</span>
-              </div>
-            </div>
-
-            <div className="metric-card">
-              <div className="metric-header">
-                <h3 className="metric-title">Emails Sent</h3>
-                <Send className="metric-icon" />
-              </div>
-              <div className="metric-value">2,847</div>
-              <div className="metric-change positive">
-                <TrendingUp className="metric-change-icon" />
-                <span className="metric-change-value">+15%</span>
-                <span className="metric-change-label">from last month</span>
+              <div className="text-2xl font-bold text-white mb-2">12</div>
+              <div className="flex items-center text-sm text-white/60">
+                <TrendingUp className="w-4 h-4 text-green-400 mr-1" />
+                <span className="text-green-400 font-medium">+2</span>
+                <span className="ml-2">from last week</span>
               </div>
             </div>
 
-            <div className="metric-card">
-              <div className="metric-header">
-                <h3 className="metric-title">Open Rate</h3>
-                <Mail className="metric-icon" />
+            <div className="metric-card-glass p-6 rounded-xl">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-sm font-medium text-white/80">Emails Sent</h3>
+                <Send className="w-5 h-5 text-orange-400" />
               </div>
-              <div className="metric-value">24.3%</div>
-              <div className="metric-change positive">
-                <TrendingUp className="metric-change-icon" />
-                <span className="metric-change-value">+3.2%</span>
-                <span className="metric-change-label">from last month</span>
+              <div className="text-2xl font-bold text-white mb-2">2,847</div>
+              <div className="flex items-center text-sm text-white/60">
+                <TrendingUp className="w-4 h-4 text-green-400 mr-1" />
+                <span className="text-green-400 font-medium">+15%</span>
+                <span className="ml-2">from last month</span>
+              </div>
+            </div>
+
+            <div className="metric-card-glass p-6 rounded-xl">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-sm font-medium text-white/80">Open Rate</h3>
+                <Mail className="w-5 h-5 text-orange-400" />
+              </div>
+              <div className="text-2xl font-bold text-white mb-2">24.3%</div>
+              <div className="flex items-center text-sm text-white/60">
+                <TrendingUp className="w-4 h-4 text-green-400 mr-1" />
+                <span className="text-green-400 font-medium">+3.2%</span>
+                <span className="ml-2">from last month</span>
               </div>
             </div>
           </div>

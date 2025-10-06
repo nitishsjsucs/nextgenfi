@@ -136,54 +136,56 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-primary antialiased overflow-x-hidden" style={{ fontFamily: 'var(--font-family-primary)' }}>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white antialiased overflow-x-hidden relative" style={{ fontFamily: 'var(--font-family-primary)' }}>
+      {/* Grainy Background Overlay */}
+      <div className="fixed inset-0 grainy-bg gradient-overlay-dark"></div>
       {/* Header */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-        className="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-xl border-b border-light"
+        className="glassmorphism-nav border-b border-white/10 relative z-10"
       >
         <nav className="container mx-auto flex items-center justify-between px-6 py-4">
           <motion.div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-orange rounded-xl flex items-center justify-center text-white">
+            <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg">
               <BuildingIcon />
             </div>
             <div className="flex flex-col">
-              <span className="heading-small text-primary">BankingOS</span>
-              <span className="text-xs text-muted">Plug & Play Backend</span>
+              <span className="heading-small text-white">BankingOS</span>
+              <span className="text-xs text-white/70">Plug & Play Backend</span>
             </div>
           </motion.div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-body text-muted hover:text-primary transition-colors">Features</a>
-            <a href="#demo" className="text-body text-muted hover:text-primary transition-colors">Demo</a>
-            <a href="#pricing" className="text-body text-muted hover:text-primary transition-colors">Pricing</a>
-            <Button onClick={() => router.push('/auth/login')} variant="outline" className="mr-2">Login</Button>
-            <Button onClick={() => router.push('/demo')} className="app-button app-button-primary app-button-medium">
+            <a href="#features" className="text-body text-white/70 hover:text-white transition-colors">Features</a>
+            <a href="#demo" className="text-body text-white/70 hover:text-white transition-colors">Demo</a>
+            <a href="#pricing" className="text-body text-white/70 hover:text-white transition-colors">Pricing</a>
+            <button onClick={() => router.push('/auth/login')} className="glassmorphism-button px-4 py-2 rounded-lg text-white/90 hover:text-white transition-all mr-2">Login</button>
+            <button onClick={() => router.push('/demo')} className="glassmorphism-button px-4 py-2 rounded-lg text-white hover:text-white transition-all bg-orange-500/20 border-orange-500/40 hover:bg-orange-500/30">
               Request Demo
-            </Button>
+            </button>
           </div>
         </nav>
       </motion.header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-br from-flash-white via-white to-light-grey">
+      <section className="relative min-h-screen flex items-center justify-center pt-20 relative z-10">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 left-10 w-20 h-20 bg-light-grey rounded-full opacity-30"
+            className="absolute top-20 left-10 w-20 h-20 bg-orange-500/20 rounded-full opacity-30 blur-xl"
           />
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-            className="absolute top-40 right-20 w-32 h-32 bg-light-grey rounded-full opacity-30"
+            className="absolute top-40 right-20 w-32 h-32 bg-blue-500/20 rounded-full opacity-30 blur-xl"
           />
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 6 }}
-            className="absolute bottom-40 left-20 w-24 h-24 bg-orange rounded-full opacity-20"
+            className="absolute bottom-40 left-20 w-24 h-24 bg-orange-500/20 rounded-full opacity-20 blur-xl"
           />
         </div>
 
@@ -194,38 +196,38 @@ const App = () => {
           variants={container}
         >
           <motion.div variants={item} className="mb-6">
-            <Badge variant="secondary" className="px-4 py-2 bg-light-grey text-primary border-0">
-              <ZapIcon className="w-4 h-4 mr-2" />
-              Plug & Play Banking Platform
-            </Badge>
+            <div className="glassmorphism-card px-4 py-2 rounded-full inline-flex items-center space-x-2">
+              <ZapIcon className="w-4 h-4 text-orange-400" />
+              <span className="text-white/90">Plug & Play Banking Platform</span>
+            </div>
           </motion.div>
           
           <motion.h1 
-            className="heading-large text-primary leading-tight mb-8" 
+            className="heading-large text-white leading-tight mb-8" 
             variants={item}
           >
             Banking Innovation{' '}
-            <span className="text-orange">Simplified</span>
+            <span className="text-orange-400">Simplified</span>
           </motion.h1>
           
           <motion.p 
-            className="text-body text-muted max-w-4xl mx-auto mb-12 leading-relaxed" 
+            className="text-body text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed" 
             variants={item}
           >
-            Deploy AI analytics, intelligent communications, and enterprise-grade compliance in <span className="text-body-bold text-primary">weeks, not years</span>. The complete backend platform for modern banking.
+            Deploy AI analytics, intelligent communications, and enterprise-grade compliance in <span className="text-body-bold text-white">weeks, not years</span>. The complete backend platform for modern banking.
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16" variants={item}>
             <button
               onClick={() => router.push('/auth/signup')}
-              className="btn btn--primary btn--large px-8 py-4 text-lg font-semibold shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="glassmorphism-button px-8 py-4 text-lg font-semibold shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-orange-500/20 border-orange-500/40 hover:bg-orange-500/30"
             >
               Get Started
               <TrendingUpIcon className="ml-2 w-5 h-5" />
             </button>
             <button
               onClick={() => router.push('/demo')}
-              className="btn btn--outline btn--large px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="glassmorphism-button px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
             >
               View Documentation
             </button>
@@ -233,20 +235,20 @@ const App = () => {
 
           {/* Stats Bar */}
           <motion.div 
-            className="metrics-grid four-columns max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
             variants={container}
           >
             {stats.map((stat, index) => (
-              <motion.div key={index} variants={item} className="metric-card">
-                <div className="metric-header">
-                  <h3 className="metric-title">{stat.label}</h3>
-                  <TrendingUpIcon className="metric-icon" />
+              <motion.div key={index} variants={item} className="metric-card-glass p-6 rounded-xl">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-sm font-medium text-white/80">{stat.label}</h3>
+                  <TrendingUpIcon className="w-5 h-5 text-orange-400" />
                 </div>
-                <div className="metric-value">{stat.value}</div>
-                <div className="metric-change positive">
-                  <TrendingUpIcon className="metric-change-icon" />
-                  <span className="metric-change-value">+12%</span>
-                  <span className="metric-change-label">{stat.description}</span>
+                <div className="text-2xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="flex items-center text-sm text-white/60">
+                  <TrendingUpIcon className="w-4 h-4 text-green-400 mr-1" />
+                  <span className="text-green-400 font-medium">+12%</span>
+                  <span className="ml-2">{stat.description}</span>
                 </div>
               </motion.div>
             ))}
@@ -255,7 +257,7 @@ const App = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-flash-white">
+      <section id="features" className="py-20 relative z-10">
         <motion.div
           className="container mx-auto px-6"
           initial="hidden"
@@ -264,194 +266,172 @@ const App = () => {
           variants={container}
         >
           <motion.div className="text-center mb-16" variants={item}>
-            <Badge variant="outline" className="mb-4 border-light text-muted">Core Features</Badge>
-            <h2 className="heading-large text-primary mb-6">
+            <div className="glassmorphism-card px-4 py-2 rounded-full inline-flex items-center mb-4">
+              <span className="text-white/90">Core Features</span>
+            </div>
+            <h2 className="heading-large text-white mb-6">
               Everything Banks Need
             </h2>
-            <p className="text-body text-muted max-w-3xl mx-auto">
+            <p className="text-body text-white/80 max-w-3xl mx-auto">
               A comprehensive suite of modern banking capabilities designed for rapid deployment and enterprise scalability.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <motion.div variants={slideInLeft}>
-              <Card className="h-full border border-light shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mb-4">
-                    <BrainIcon className="text-white" />
-                  </div>
-                  <CardTitle className="heading-small text-primary">AI Analytics & Insights</CardTitle>
-                  <CardDescription className="text-body text-muted">
-                    Advanced analytics dashboards powered by AI to unlock data-driven strategy and improve portfolio performance.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-small text-muted">
-                    <li className="flex items-center">
-                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
-                      Risk pattern detection
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
-                      Customer segmentation
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
-                      Predictive analytics
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="glassmorphism-card h-full p-6 rounded-xl hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                  <BrainIcon className="text-white" />
+                </div>
+                <h3 className="heading-small text-white mb-3">AI Analytics & Insights</h3>
+                <p className="text-body text-white/80 mb-4">
+                  Advanced analytics dashboards powered by AI to unlock data-driven strategy and improve portfolio performance.
+                </p>
+                <ul className="space-y-2 text-small text-white/70">
+                  <li className="flex items-center">
+                    <CheckIcon className="text-orange-400 mr-2 w-4 h-4" />
+                    Risk pattern detection
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-orange-400 mr-2 w-4 h-4" />
+                    Customer segmentation
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-orange-400 mr-2 w-4 h-4" />
+                    Predictive analytics
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             <motion.div variants={item}>
-              <Card className="h-full border border-light shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mb-4">
-                    <MessageSquareIcon className="text-white" />
-                  </div>
-                  <CardTitle className="heading-small text-primary">RAG AI Assistant</CardTitle>
-                  <CardDescription className="text-body text-muted">
-                    Intelligent assistant using your bank's proprietary knowledge for context-rich, personalized responses.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-small text-muted">
-                    <li className="flex items-center">
-                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
-                      24/7 customer support
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
-                      Staff assistance
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
-                      Policy-aware responses
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="glassmorphism-card h-full p-6 rounded-xl hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                  <MessageSquareIcon className="text-white" />
+                </div>
+                <h3 className="heading-small text-white mb-3">RAG AI Assistant</h3>
+                <p className="text-body text-white/80 mb-4">
+                  Intelligent assistant using your bank's proprietary knowledge for context-rich, personalized responses.
+                </p>
+                <ul className="space-y-2 text-small text-white/70">
+                  <li className="flex items-center">
+                    <CheckIcon className="text-orange-400 mr-2 w-4 h-4" />
+                    24/7 customer support
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-orange-400 mr-2 w-4 h-4" />
+                    Staff assistance
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-orange-400 mr-2 w-4 h-4" />
+                    Policy-aware responses
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             <motion.div variants={slideInRight}>
-              <Card className="h-full border border-light shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mb-4">
-                    <ZapIcon className="text-white" />
-                  </div>
-                  <CardTitle className="heading-small text-primary">SMS & Voice Agents</CardTitle>
-                  <CardDescription className="text-body text-muted">
-                    Automated communication system for customer outreach, alerts, and interactive voice response.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-small text-muted">
-                    <li className="flex items-center">
-                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
-                      Payment reminders
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
-                      Fraud alerts
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
-                      Interactive calls
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="glassmorphism-card h-full p-6 rounded-xl hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                  <ZapIcon className="text-white" />
+                </div>
+                <h3 className="heading-small text-white mb-3">SMS & Voice Agents</h3>
+                <p className="text-body text-white/80 mb-4">
+                  Automated communication system for customer outreach, alerts, and interactive voice response.
+                </p>
+                <ul className="space-y-2 text-small text-white/70">
+                  <li className="flex items-center">
+                    <CheckIcon className="text-orange-400 mr-2 w-4 h-4" />
+                    Payment reminders
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-orange-400 mr-2 w-4 h-4" />
+                    Fraud alerts
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-orange-400 mr-2 w-4 h-4" />
+                    Interactive calls
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             <motion.div variants={slideInLeft}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <ShieldCheckIcon className="text-gray-800" />
-                  </div>
-                  <CardTitle className="text-xl">Enterprise Compliance</CardTitle>
-                  <CardDescription>
-                    SOC 2 certified platform with comprehensive audit trails and regulatory compliance built-in.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
-                      SOC 2 certification
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
-                      Audit dashboard
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
-                      Data encryption
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="glassmorphism-card h-full p-6 rounded-xl hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                  <ShieldCheckIcon className="text-white" />
+                </div>
+                <h3 className="heading-small text-white mb-3">Enterprise Compliance</h3>
+                <p className="text-body text-white/80 mb-4">
+                  SOC 2 certified platform with comprehensive audit trails and regulatory compliance built-in.
+                </p>
+                <ul className="space-y-2 text-small text-white/70">
+                  <li className="flex items-center">
+                    <CheckIcon className="text-blue-400 mr-2 w-4 h-4" />
+                    SOC 2 certification
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-blue-400 mr-2 w-4 h-4" />
+                    Audit dashboard
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-blue-400 mr-2 w-4 h-4" />
+                    Data encryption
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             <motion.div variants={item}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <BuildingIcon className="text-gray-800" />
-                  </div>
-                  <CardTitle className="text-xl">Multi-Tenant Architecture</CardTitle>
-                  <CardDescription>
-                    Secure, scalable infrastructure with complete data isolation between bank tenants.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
-                      Data isolation
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
-                      Quick onboarding
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
-                      Enterprise security
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="glassmorphism-card h-full p-6 rounded-xl hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                  <BuildingIcon className="text-white" />
+                </div>
+                <h3 className="heading-small text-white mb-3">Multi-Tenant Architecture</h3>
+                <p className="text-body text-white/80 mb-4">
+                  Secure, scalable infrastructure with complete data isolation between bank tenants.
+                </p>
+                <ul className="space-y-2 text-small text-white/70">
+                  <li className="flex items-center">
+                    <CheckIcon className="text-green-400 mr-2 w-4 h-4" />
+                    Data isolation
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-green-400 mr-2 w-4 h-4" />
+                    Quick onboarding
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-green-400 mr-2 w-4 h-4" />
+                    Enterprise security
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             <motion.div variants={slideInRight}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <TrendingUpIcon className="text-gray-800" />
-                  </div>
-                  <CardTitle className="text-xl">Unified Dashboard</CardTitle>
-                  <CardDescription>
-                    Single source of truth with custom reporting, system health monitoring, and KPI visualization.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
-                      Real-time metrics
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
-                      Custom reports
-                    </li>
-                    <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
-                      ROI tracking
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="glassmorphism-card h-full p-6 rounded-xl hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                  <TrendingUpIcon className="text-white" />
+                </div>
+                <h3 className="heading-small text-white mb-3">Unified Dashboard</h3>
+                <p className="text-body text-white/80 mb-4">
+                  Single source of truth with custom reporting, system health monitoring, and KPI visualization.
+                </p>
+                <ul className="space-y-2 text-small text-white/70">
+                  <li className="flex items-center">
+                    <CheckIcon className="text-purple-400 mr-2 w-4 h-4" />
+                    Real-time metrics
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-purple-400 mr-2 w-4 h-4" />
+                    Custom reports
+                  </li>
+                  <li className="flex items-center">
+                    <CheckIcon className="text-purple-400 mr-2 w-4 h-4" />
+                    ROI tracking
+                  </li>
+                </ul>
+              </div>
             </motion.div>
           </div>
         </motion.div>
