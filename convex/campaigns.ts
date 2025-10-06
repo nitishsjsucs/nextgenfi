@@ -186,34 +186,33 @@ export const getCampaignPerformance = query({
       .take(limit);
     
     // Get email events for each campaign and calculate metrics
-    const campaignsWithMetrics = [];
-    
-    for (const campaign of campaigns) {
-      // Query events using the campaign's _id as a string
-      const events = await ctx.db
-        .query("emailEvents")
-        .filter((q) => q.eq(q.field("campaignId"), campaign._id))
-        .collect();
-      
-      const sent = events.filter(e => e.eventType === 'sent' || e.eventType === 'processed').length;
-      const opened = events.filter(e => e.eventType === 'opened' || e.eventType === 'open').length;
-      const clicked = events.filter(e => e.eventType === 'clicked' || e.eventType === 'click').length;
-      
-      const openRate = sent > 0 ? (opened / sent) * 100 : 0;
-      const clickRate = sent > 0 ? (clicked / sent) * 100 : 0;
-      
-      campaignsWithMetrics.push({
-        _id: campaign._id,
-        subject: campaign.subject,
-        riskLevel: campaign.riskLevel,
-        createdAt: campaign.createdAt,
-        sent,
-        opened,
-        clicked,
-        openRate,
-        clickRate,
-      });
-    }
+    const campaignsWithMetrics = await Promise.all(
+      campaigns.map(async (campaign) => {
+        const events = await ctx.db
+          .query("emailEvents")
+          .withIndex("by_campaign", (q) => q.eq("campaignId", campaign._id))
+          .collect();
+        
+        const sent = events.filter(e => e.eventType === 'sent' || e.eventType === 'processed').length;
+        const opened = events.filter(e => e.eventType === 'opened' || e.eventType === 'open').length;
+        const clicked = events.filter(e => e.eventType === 'clicked' || e.eventType === 'click').length;
+        
+        const openRate = sent > 0 ? (opened / sent) * 100 : 0;
+        const clickRate = sent > 0 ? (clicked / sent) * 100 : 0;
+        
+        return {
+          _id: campaign._id,
+          subject: campaign.subject,
+          riskLevel: campaign.riskLevel,
+          createdAt: campaign.createdAt,
+          sent,
+          opened,
+          clicked,
+          openRate,
+          clickRate,
+        };
+      })
+    );
     
     return campaignsWithMetrics;
   },
