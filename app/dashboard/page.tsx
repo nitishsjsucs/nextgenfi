@@ -67,6 +67,10 @@ export default function DashboardPage() {
 function DashboardContent() {
   const user = useQuery(api.auth.getCurrentUser);
   const router = useRouter();
+  
+  // Fetch real data for dashboard stats
+  const campaigns = useQuery(api.campaigns.getAllCampaigns, { limit: 100 });
+  const emailStats = useQuery(api.campaigns.getEmailStats, {});
 
   // Check if user needs KYC verification
   useEffect(() => {
@@ -131,9 +135,11 @@ function DashboardContent() {
                 <Target className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold font-instrument-serif">12</div>
+                <div className="text-2xl font-bold font-instrument-serif">
+                  {campaigns?.length ?? 0}
+                </div>
                 <p className="text-xs text-white/50 font-light">
-                  +2 from last week
+                  Total campaigns created
                 </p>
               </CardContent>
             </Card>
@@ -143,9 +149,11 @@ function DashboardContent() {
                 <Send className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold font-instrument-serif">2,847</div>
+                <div className="text-2xl font-bold font-instrument-serif">
+                  {emailStats?.sent?.toLocaleString() ?? 0}
+                </div>
                 <p className="text-xs text-white/50 font-light">
-                  +15% from last month
+                  {emailStats?.delivered?.toLocaleString() ?? 0} delivered
                 </p>
               </CardContent>
             </Card>
@@ -157,9 +165,13 @@ function DashboardContent() {
                 <Mail className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold font-instrument-serif">24.3%</div>
+                <div className="text-2xl font-bold font-instrument-serif">
+                  {emailStats && emailStats.sent && emailStats.sent > 0 
+                    ? ((emailStats.opened / emailStats.sent) * 100).toFixed(1)
+                    : '0.0'}%
+                </div>
                 <p className="text-xs text-white/50 font-light">
-                  +3.2% from last month
+                  {emailStats?.opened?.toLocaleString() ?? 0} opens
                 </p>
               </CardContent>
             </Card>
