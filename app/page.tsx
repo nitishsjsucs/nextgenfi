@@ -216,33 +216,38 @@ const App = () => {
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16" variants={item}>
-            <Button
-              size="lg"
+            <button
               onClick={() => router.push('/auth/signup')}
-              className="app-button app-button-primary app-button-large px-8 py-4 text-lg font-semibold shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="btn btn--primary btn--large px-8 py-4 text-lg font-semibold shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
               Get Started
               <TrendingUpIcon className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="app-button app-button-outline app-button-large px-8 py-4 border-2 border-light text-primary text-lg font-semibold hover:bg-light transition-all duration-300 hover:scale-105"
+            </button>
+            <button
+              onClick={() => router.push('/demo')}
+              className="btn btn--outline btn--large px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
             >
               View Documentation
-            </Button>
+            </button>
           </motion.div>
 
           {/* Stats Bar */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+            className="metrics-grid four-columns max-w-6xl mx-auto"
             variants={container}
           >
             {stats.map((stat, index) => (
-              <motion.div key={index} variants={item} className="text-center">
-                <div className="heading-medium text-orange mb-2">{stat.value}</div>
-                <div className="text-body-bold text-primary mb-1">{stat.label}</div>
-                <div className="text-small text-muted">{stat.description}</div>
+              <motion.div key={index} variants={item} className="metric-card">
+                <div className="metric-header">
+                  <h3 className="metric-title">{stat.label}</h3>
+                  <TrendingUpIcon className="metric-icon" />
+                </div>
+                <div className="metric-value">{stat.value}</div>
+                <div className="metric-change positive">
+                  <TrendingUpIcon className="metric-change-icon" />
+                  <span className="metric-change-value">+12%</span>
+                  <span className="metric-change-label">{stat.description}</span>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -272,10 +277,10 @@ const App = () => {
             <motion.div variants={slideInLeft}>
               <Card className="h-full border border-light shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-light-grey rounded-lg flex items-center justify-center mb-4">
-                    <BrainIcon className="text-primary" />
+                  <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mb-4">
+                    <BrainIcon className="text-white" />
                   </div>
-                  <CardTitle className="heading-small">AI Analytics & Insights</CardTitle>
+                  <CardTitle className="heading-small text-primary">AI Analytics & Insights</CardTitle>
                   <CardDescription className="text-body text-muted">
                     Advanced analytics dashboards powered by AI to unlock data-driven strategy and improve portfolio performance.
                   </CardDescription>
@@ -300,28 +305,28 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={item}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card className="h-full border border-light shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <MessageSquareIcon className="text-gray-800" />
+                  <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mb-4">
+                    <MessageSquareIcon className="text-white" />
                   </div>
-                  <CardTitle className="text-xl">RAG AI Assistant</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="heading-small text-primary">RAG AI Assistant</CardTitle>
+                  <CardDescription className="text-body text-muted">
                     Intelligent assistant using your bank's proprietary knowledge for context-rich, personalized responses.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-small text-muted">
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
                       24/7 customer support
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
                       Staff assistance
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
                       Policy-aware responses
                     </li>
                   </ul>
@@ -330,28 +335,28 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={slideInRight}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card className="h-full border border-light shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <ZapIcon className="text-gray-800" />
+                  <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mb-4">
+                    <ZapIcon className="text-white" />
                   </div>
-                  <CardTitle className="text-xl">SMS & Voice Agents</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="heading-small text-primary">SMS & Voice Agents</CardTitle>
+                  <CardDescription className="text-body text-muted">
                     Automated communication system for customer outreach, alerts, and interactive voice response.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-small text-muted">
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
                       Payment reminders
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
                       Fraud alerts
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
                       Interactive calls
                     </li>
                   </ul>

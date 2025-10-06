@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Notification, Alert } from "@/components/ui/notification";
 import { 
   BarChart3, 
   Globe, 
@@ -118,49 +119,65 @@ function DashboardContent() {
             <h2 className="heading-medium text-primary mb-2">
               Welcome back, {user?.name || "User"}! 👋
             </h2>
-            <p className="text-body text-muted">
+            <p className="text-body text-muted mb-4">
               Your comprehensive banking platform dashboard with AI-powered insights and campaign management.
             </p>
+            
+            {/* System Alerts */}
+            <div className="space-y-3">
+              <Alert
+                type="success"
+                title="System Status"
+                message="All systems operational. Last backup completed 2 hours ago."
+              />
+              <Alert
+                type="info"
+                title="New Feature"
+                message="Enhanced analytics dashboard is now available. Check out the new metrics!"
+              />
+            </div>
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Active Campaigns</CardTitle>
-                <Target className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">12</div>
-                <p className="text-xs text-muted-foreground">
-                  +2 from last week
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Emails Sent</CardTitle>
-                <Send className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">2,847</div>
-                <p className="text-xs text-muted-foreground">
-                  +15% from last month
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Open Rate</CardTitle>
-                <Mail className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">24.3%</div>
-                <p className="text-xs text-muted-foreground">
-                  +3.2% from last month
-                </p>
-              </CardContent>
-            </Card>
+          <div className="metrics-grid three-columns mb-8">
+            <div className="metric-card">
+              <div className="metric-header">
+                <h3 className="metric-title">Active Campaigns</h3>
+                <Target className="metric-icon" />
+              </div>
+              <div className="metric-value">12</div>
+              <div className="metric-change positive">
+                <TrendingUp className="metric-change-icon" />
+                <span className="metric-change-value">+2</span>
+                <span className="metric-change-label">from last week</span>
+              </div>
+            </div>
+
+            <div className="metric-card">
+              <div className="metric-header">
+                <h3 className="metric-title">Emails Sent</h3>
+                <Send className="metric-icon" />
+              </div>
+              <div className="metric-value">2,847</div>
+              <div className="metric-change positive">
+                <TrendingUp className="metric-change-icon" />
+                <span className="metric-change-value">+15%</span>
+                <span className="metric-change-label">from last month</span>
+              </div>
+            </div>
+
+            <div className="metric-card">
+              <div className="metric-header">
+                <h3 className="metric-title">Open Rate</h3>
+                <Mail className="metric-icon" />
+              </div>
+              <div className="metric-value">24.3%</div>
+              <div className="metric-change positive">
+                <TrendingUp className="metric-change-icon" />
+                <span className="metric-change-value">+3.2%</span>
+                <span className="metric-change-label">from last month</span>
+              </div>
+            </div>
           </div>
 
           {/* Main Dashboard Tabs */}
@@ -204,20 +221,20 @@ function DashboardContent() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">AI Analytics</span>
-                        <Badge variant="secondary">Active</Badge>
+                        <span className="text-body-bold text-primary">AI Analytics</span>
+                        <Badge variant="secondary" className="bg-orange text-white">Active</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">RAG Assistant</span>
-                        <Badge variant="secondary">Active</Badge>
+                        <span className="text-body-bold text-primary">RAG Assistant</span>
+                        <Badge variant="secondary" className="bg-orange text-white">Active</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">Email Campaigns</span>
-                        <Badge variant="secondary">Active</Badge>
+                        <span className="text-body-bold text-primary">Email Campaigns</span>
+                        <Badge variant="secondary" className="bg-orange text-white">Active</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">Compliance Suite</span>
-                        <Badge variant="secondary">Active</Badge>
+                        <span className="text-body-bold text-primary">Compliance Suite</span>
+                        <Badge variant="secondary" className="bg-orange text-white">Active</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -236,20 +253,20 @@ function DashboardContent() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span className="text-sm">Earthquake campaign completed - 150 emails sent</span>
+                        <div className="w-2 h-2 bg-orange rounded-full"></div>
+                        <span className="text-body text-primary">Earthquake campaign completed - 150 emails sent</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <span className="text-sm">Weather insurance targets identified - 89 prospects</span>
+                        <div className="w-2 h-2 bg-orange rounded-full"></div>
+                        <span className="text-body text-primary">Weather insurance targets identified - 89 prospects</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span className="text-sm">RAG system updated with new demographic data</span>
+                        <div className="w-2 h-2 bg-orange rounded-full"></div>
+                        <span className="text-body text-primary">RAG system updated with new demographic data</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <span className="text-sm">Email engagement rate improved by 12%</span>
+                        <div className="w-2 h-2 bg-orange rounded-full"></div>
+                        <span className="text-body text-primary">Email engagement rate improved by 12%</span>
                       </div>
                     </div>
                   </CardContent>
@@ -316,34 +333,34 @@ function DashboardContent() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-light-grey rounded-lg">
                         <div>
-                          <p className="font-medium">Earthquake Insurance</p>
-                          <p className="text-sm text-gray-600">Last 7 days</p>
+                          <p className="text-body-bold text-primary">Earthquake Insurance</p>
+                          <p className="text-small text-muted">Last 7 days</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-green-600">24.3%</p>
-                          <p className="text-xs text-gray-500">Open Rate</p>
+                          <p className="heading-small text-orange">24.3%</p>
+                          <p className="text-small text-muted">Open Rate</p>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-light-grey rounded-lg">
                         <div>
-                          <p className="font-medium">Weather Insurance</p>
-                          <p className="text-sm text-gray-600">Last 7 days</p>
+                          <p className="text-body-bold text-primary">Weather Insurance</p>
+                          <p className="text-small text-muted">Last 7 days</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-blue-600">18.7%</p>
-                          <p className="text-xs text-gray-500">Open Rate</p>
+                          <p className="heading-small text-orange">18.7%</p>
+                          <p className="text-small text-muted">Open Rate</p>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-light-grey rounded-lg">
                         <div>
-                          <p className="font-medium">General Marketing</p>
-                          <p className="text-sm text-gray-600">Last 7 days</p>
+                          <p className="text-body-bold text-primary">General Marketing</p>
+                          <p className="text-small text-muted">Last 7 days</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-purple-600">31.2%</p>
-                          <p className="text-xs text-gray-500">Open Rate</p>
+                          <p className="heading-small text-orange">31.2%</p>
+                          <p className="text-small text-muted">Open Rate</p>
                         </div>
                       </div>
                     </div>
