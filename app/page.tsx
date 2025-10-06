@@ -136,7 +136,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black font-[Inter] text-white antialiased overflow-x-hidden relative">
+    <div className="min-h-screen text-white antialiased overflow-x-hidden relative">
       {/* Header */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
@@ -150,7 +150,7 @@ const App = () => {
               <BuildingIcon />
             </div>
             <div className="flex flex-col">
-              <span className="font-light text-xl text-white">BankingOS</span>
+              <span className="font-light text-xl text-white font-instrument-serif">BankingOS</span>
               <span className="text-xs text-white/50 font-light">Plug & Play Backend</span>
             </div>
           </motion.div>
@@ -167,7 +167,7 @@ const App = () => {
       </motion.header>
 
       {/* Hero Section */}
-  <section className="relative min-h-screen flex items-center justify-center pt-20 bg-black">
+  <section className="relative min-h-screen flex items-center justify-center pt-20">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
@@ -194,18 +194,18 @@ const App = () => {
           variants={container}
         >
           <motion.div variants={item} className="mb-6">
-            <Badge variant="secondary" className="px-4 py-2 bg-gray-200 text-gray-800 border-0">
+            <Badge variant="secondary" className="px-4 py-2">
               <ZapIcon className="w-4 h-4 mr-2" />
               Plug & Play Banking Platform
             </Badge>
           </motion.div>
           
           <motion.h1 
-            className="text-5xl sm:text-6xl md:text-7xl font-light text-white leading-tight mb-8 tracking-tight" 
+            className="text-5xl sm:text-6xl md:text-7xl font-light text-white leading-tight mb-8 tracking-tight font-instrument-serif" 
             variants={item}
           >
             Banking Innovation{' '}
-            <span className="text-gradient-red font-light">Simplified</span>
+            <span className="text-gradient-red font-light font-instrument-serif">Simplified</span>
           </motion.h1>
           
           <motion.p 
@@ -219,7 +219,7 @@ const App = () => {
             <Button
               size="lg"
               onClick={() => router.push('/auth/signup')}
-              className="px-8 py-4 bg-black hover:bg-gray-800 text-white text-lg font-semibold shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="px-8 py-4 text-lg shadow-xl transition-all duration-300 hover:scale-105"
             >
               Get Started
               <TrendingUpIcon className="ml-2 w-5 h-5" />
@@ -227,7 +227,7 @@ const App = () => {
             <Button
               variant="outline"
               size="lg"
-              className="px-8 py-4 border-2 border-gray-300 text-gray-700 text-lg font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+              className="px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
             >
               View Documentation
             </Button>
@@ -240,9 +240,9 @@ const App = () => {
           >
             {stats.map((stat, index) => (
               <motion.div key={index} variants={item} className="text-center">
-                <div className="text-3xl font-bold text-black mb-2">{stat.value}</div>
-                <div className="text-sm font-medium text-gray-900 mb-1">{stat.label}</div>
-                <div className="text-xs text-gray-500">{stat.description}</div>
+                <div className="text-3xl font-bold text-white mb-2 font-instrument-serif">{stat.value}</div>
+                <div className="text-sm font-medium text-white/80 mb-1">{stat.label}</div>
+                <div className="text-xs text-white/50">{stat.description}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -250,7 +250,7 @@ const App = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-gray-50">
+      <section id="features" className="py-20">
         <motion.div
           className="container mx-auto px-6"
           initial="hidden"
@@ -259,21 +259,21 @@ const App = () => {
           variants={container}
         >
           <motion.div className="text-center mb-16" variants={item}>
-            <Badge variant="outline" className="mb-4 border-gray-300 text-gray-700">Core Features</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <Badge variant="outline" className="mb-4">Core Features</Badge>
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6 font-instrument-serif">
               Everything Banks Need
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
               A comprehensive suite of modern banking capabilities designed for rapid deployment and enterprise scalability.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <motion.div variants={slideInLeft}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card className="h-full hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <BrainIcon className="text-gray-800" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 border border-primary/20">
+                    <BrainIcon className="text-primary" />
                   </div>
                   <CardTitle className="text-xl">AI Analytics & Insights</CardTitle>
                   <CardDescription>
@@ -281,17 +281,17 @@ const App = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-white/60">
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Risk pattern detection
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Customer segmentation
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Predictive analytics
                     </li>
                   </ul>
@@ -300,10 +300,10 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={item}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card className="h-full hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <MessageSquareIcon className="text-gray-800" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 border border-primary/20">
+                    <MessageSquareIcon className="text-primary" />
                   </div>
                   <CardTitle className="text-xl">RAG AI Assistant</CardTitle>
                   <CardDescription>
@@ -311,17 +311,17 @@ const App = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-white/60">
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       24/7 customer support
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Staff assistance
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Policy-aware responses
                     </li>
                   </ul>
@@ -330,10 +330,10 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={slideInRight}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card className="h-full hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <ZapIcon className="text-gray-800" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 border border-primary/20">
+                    <ZapIcon className="text-primary" />
                   </div>
                   <CardTitle className="text-xl">SMS & Voice Agents</CardTitle>
                   <CardDescription>
@@ -341,17 +341,17 @@ const App = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-white/60">
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Payment reminders
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Fraud alerts
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Interactive calls
                     </li>
                   </ul>
@@ -360,10 +360,10 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={slideInLeft}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card className="h-full hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <ShieldCheckIcon className="text-gray-800" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 border border-primary/20">
+                    <ShieldCheckIcon className="text-primary" />
                   </div>
                   <CardTitle className="text-xl">Enterprise Compliance</CardTitle>
                   <CardDescription>
@@ -371,17 +371,17 @@ const App = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-white/60">
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       SOC 2 certification
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Audit dashboard
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Data encryption
                     </li>
                   </ul>
@@ -390,10 +390,10 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={item}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card className="h-full hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <BuildingIcon className="text-gray-800" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 border border-primary/20">
+                    <BuildingIcon className="text-primary" />
                   </div>
                   <CardTitle className="text-xl">Multi-Tenant Architecture</CardTitle>
                   <CardDescription>
@@ -401,17 +401,17 @@ const App = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-white/60">
                     <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Data isolation
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Quick onboarding
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Enterprise security
                     </li>
                   </ul>
@@ -420,10 +420,10 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={slideInRight}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card className="h-full hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <TrendingUpIcon className="text-gray-800" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 border border-primary/20">
+                    <TrendingUpIcon className="text-primary" />
                   </div>
                   <CardTitle className="text-xl">Unified Dashboard</CardTitle>
                   <CardDescription>
@@ -431,17 +431,17 @@ const App = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-white/60">
                     <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Real-time metrics
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Custom reports
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       ROI tracking
                     </li>
                   </ul>
@@ -453,7 +453,7 @@ const App = () => {
       </section>
 
       {/* Platform Overview */}
-      <section id="demo" className="py-20 bg-white">
+      <section id="demo" className="py-20">
         <motion.div
           className="container mx-auto px-6"
           initial="hidden"
@@ -462,11 +462,11 @@ const App = () => {
           variants={container}
         >
           <motion.div className="text-center mb-16" variants={item}>
-            <Badge variant="outline" className="mb-4 border-gray-300 text-gray-700">Platform Architecture</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <Badge variant="outline" className="mb-4">Platform Architecture</Badge>
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6 font-instrument-serif">
               From Legacy to Leading Edge
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
               Transform your bank's capabilities with our comprehensive platform that plugs seamlessly into your existing infrastructure.
             </p>
           </motion.div>
@@ -478,7 +478,7 @@ const App = () => {
       </section>
 
       {/* Roadmap Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <motion.div
           className="container mx-auto px-6"
           initial="hidden"
@@ -487,11 +487,11 @@ const App = () => {
           variants={container}
         >
           <motion.div className="text-center mb-16" variants={item}>
-            <Badge variant="outline" className="mb-4 border-gray-300 text-gray-700">Development Roadmap</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <Badge variant="outline" className="mb-4">Development Roadmap</Badge>
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6 font-instrument-serif">
               Phased Deployment Strategy
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
               From MVP to enterprise-grade platform, our roadmap ensures rapid value delivery with minimal risk.
             </p>
           </motion.div>
@@ -517,38 +517,38 @@ const App = () => {
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold mb-2">Key Features:</h4>
-                      <ul className="grid md:grid-cols-2 gap-2 text-sm text-gray-600">
+                      <h4 className="font-light mb-2 font-instrument-serif">Key Features:</h4>
+                      <ul className="grid md:grid-cols-2 gap-2 text-sm text-white/60">
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Multi-tenant infrastructure
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Basic AI analytics dashboard
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           SMS notification service
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Compliance logging
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Basic admin interface
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           User management
                         </li>
                       </ul>
                     </div>
                     <Separator />
                     <div>
-                      <h4 className="font-semibold mb-2">Goals:</h4>
-                      <p className="text-sm text-gray-600">
+                      <h4 className="font-light mb-2 font-instrument-serif">Goals:</h4>
+                      <p className="text-sm text-white/60 font-light">
                         Deploy with pilot client, validate integration capabilities, and gather feedback on core functionality.
                       </p>
                     </div>
@@ -571,38 +571,38 @@ const App = () => {
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold mb-2">Enhanced Features:</h4>
-                      <ul className="grid md:grid-cols-2 gap-2 text-sm text-gray-600">
+                      <h4 className="font-light mb-2 font-instrument-serif">Enhanced Features:</h4>
+                      <ul className="grid md:grid-cols-2 gap-2 text-sm text-white/60">
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Full RAG AI assistant
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Voice calling agents
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Third-party integrations
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Role-based access control
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           SOC 2 Type I compliance
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Enhanced UX/UI
                         </li>
                       </ul>
                     </div>
                     <Separator />
                     <div>
-                      <h4 className="font-semibold mb-2">Target:</h4>
-                      <p className="text-sm text-gray-600">
+                      <h4 className="font-light mb-2 font-instrument-serif">Target:</h4>
+                      <p className="text-sm text-white/60 font-light">
                         Onboard 3-5 beta banks, validate multi-tenant scaling, and demonstrate platform versatility across different bank types.
                       </p>
                     </div>
@@ -625,38 +625,38 @@ const App = () => {
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold mb-2">Enterprise Features:</h4>
-                      <ul className="grid md:grid-cols-2 gap-2 text-sm text-gray-600">
+                      <h4 className="font-light mb-2 font-instrument-serif">Enterprise Features:</h4>
+                      <ul className="grid md:grid-cols-2 gap-2 text-sm text-white/60">
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Enterprise scalability
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           SOC 2 Type II certified
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Advanced AI capabilities
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           API marketplace
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Disaster recovery
                         </li>
                         <li className="flex items-center">
-                          <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                          <CheckIcon className="text-primary mr-2 w-4 h-4" />
                           Multi-region support
                         </li>
                       </ul>
                     </div>
                     <Separator />
                     <div>
-                      <h4 className="font-semibold mb-2">Market Ready:</h4>
-                      <p className="text-sm text-gray-600">
+                      <h4 className="font-light mb-2 font-instrument-serif">Market Ready:</h4>
+                      <p className="text-sm text-white/60 font-light">
                         Full commercial launch with comprehensive documentation, partner ecosystem, and proven track record with reference clients.
                       </p>
                     </div>
@@ -669,7 +669,7 @@ const App = () => {
       </section>
 
       {/* Competitive Advantage Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <motion.div
           className="container mx-auto px-6"
           initial="hidden"
@@ -678,62 +678,62 @@ const App = () => {
           variants={container}
         >
           <motion.div className="text-center mb-16" variants={item}>
-            <Badge variant="outline" className="mb-4 border-gray-300 text-gray-700">Competitive Edge</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <Badge variant="outline" className="mb-4">Competitive Edge</Badge>
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6 font-instrument-serif">
               Why Banks Choose Us
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
               Our unique combination of speed, security, and comprehensive features sets us apart in the banking technology landscape.
             </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             <motion.div variants={slideInLeft}>
-              <Card className="h-full border-0 shadow-lg">
+              <Card className="h-full">
                 <CardHeader>
-                  <CardTitle className="text-xl text-black">All-in-One Solution</CardTitle>
+                  <CardTitle className="text-xl">All-in-One Solution</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    Unlike piecemal solutions that require multiple vendor integrations, our unified platform provides AI, communications, and compliance under one roof.
+                  <p className="text-white/60 mb-4 font-light">
+                    Unlike piecemeal solutions that require multiple vendor integrations, our unified platform provides AI, communications, and compliance under one roof.
                   </p>
                   <div className="space-y-2">
-                    <div className="text-sm text-gray-500">Traditional approach:</div>
-                    <div className="text-sm text-gray-500">• Multiple vendors</div>
-                    <div className="text-sm text-gray-500">• Complex integrations</div>
-                    <div className="text-sm text-gray-500">• Higher costs</div>
-                    <div className="text-sm text-gray-500 mt-3">Our approach:</div>
-                    <div className="text-sm text-gray-800">• Single integration</div>
-                    <div className="text-sm text-gray-800">• Unified data flow</div>
-                    <div className="text-sm text-gray-800">• Cost-effective</div>
+                    <div className="text-sm text-white/40 font-light">Traditional approach:</div>
+                    <div className="text-sm text-white/40">• Multiple vendors</div>
+                    <div className="text-sm text-white/40">• Complex integrations</div>
+                    <div className="text-sm text-white/40">• Higher costs</div>
+                    <div className="text-sm text-white/40 mt-3 font-light">Our approach:</div>
+                    <div className="text-sm text-white/80">• Single integration</div>
+                    <div className="text-sm text-white/80">• Unified data flow</div>
+                    <div className="text-sm text-white/80">• Cost-effective</div>
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
 
             <motion.div variants={item}>
-              <Card className="h-full border-0 shadow-lg">
+              <Card className="h-full">
                 <CardHeader>
-                  <CardTitle className="text-xl text-black">Rapid Deployment</CardTitle>
+                  <CardTitle className="text-xl">Rapid Deployment</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-white/60 mb-4 font-light">
                     Traditional core banking upgrades take months or years. Our platform deploys in weeks with minimal IT burden.
                   </p>
                   <div className="space-y-3">
                     <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span>Traditional Systems</span>
-                        <span className="text-gray-600">12-24 months</span>
+                      <div className="flex justify-between text-sm mb-1 text-white/80">
+                        <span className="font-light">Traditional Systems</span>
+                        <span className="text-white/60">12-24 months</span>
                       </div>
                       <Progress value={100} className="h-2" />
                     </div>
                     <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span>BankingOS Platform</span>
-                        <span className="text-gray-800">2-4 weeks</span>
+                      <div className="flex justify-between text-sm mb-1 text-white/80">
+                        <span className="font-light">BankingOS Platform</span>
+                        <span className="text-primary">2-4 weeks</span>
                       </div>
-                      <Progress value={15} className="h-2" />
+                      <Progress value={15} className="h-2 bg-primary" />
                     </div>
                   </div>
                 </CardContent>
@@ -741,29 +741,29 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={slideInRight}>
-              <Card className="h-full border-0 shadow-lg">
+              <Card className="h-full">
                 <CardHeader>
-                  <CardTitle className="text-xl text-black">Compliance-First</CardTitle>
+                  <CardTitle className="text-xl">Compliance-First</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-white/60 mb-4 font-light">
                     Built with banking regulations in mind from day one. SOC 2 certification and FFIEC compliance out-of-the-box.
                   </p>
-                  <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="grid grid-cols-2 gap-3 text-sm text-white/80">
                     <div className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       SOC 2 Type II
                     </div>
                     <div className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       FFIEC Guidelines
                     </div>
                     <div className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Data Encryption
                     </div>
                     <div className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-2 w-4 h-4" />
                       Audit Trails
                     </div>
                   </div>
@@ -775,7 +775,7 @@ const App = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-white">
+      <section id="pricing" className="py-20">
         <motion.div
           className="container mx-auto px-6"
           initial="hidden"
@@ -784,11 +784,11 @@ const App = () => {
           variants={container}
         >
           <motion.div className="text-center mb-16" variants={item}>
-            <Badge variant="outline" className="mb-4 border-gray-300 text-gray-700">Pricing</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <Badge variant="outline" className="mb-4">Pricing</Badge>
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6 font-instrument-serif">
               Flexible Pricing for Every Bank
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
               Scale with confidence. Our pricing grows with your success, not your infrastructure costs.
             </p>
           </motion.div>
@@ -953,7 +953,7 @@ const App = () => {
       </section>
 
       {/* CTA Section */}
-  <section className="py-20 bg-gradient-to-r from-gray-900 via-black to-black text-white">
+  <section className="py-20 text-white">
         <motion.div
           className="container mx-auto px-6 text-center"
           initial="hidden"
@@ -961,17 +961,17 @@ const App = () => {
           viewport={{ once: true, amount: 0.5 }}
           variants={container}
         >
-          <motion.h2 className="text-4xl md:text-5xl font-bold mb-6" variants={item}>
+          <motion.h2 className="text-4xl md:text-5xl font-light mb-6 font-instrument-serif" variants={item}>
             Ready to Transform Your Bank?
           </motion.h2>
-          <motion.p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-gray-300" variants={item}>
+          <motion.p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-white/70 font-light" variants={item}>
             Join the next generation of banking technology. Deploy AI-powered capabilities in weeks, not years.
           </motion.p>
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center" variants={item}>
             <Button
               size="lg"
               onClick={() => router.push('/demo')}
-              className="px-8 py-4 bg-white text-black hover:bg-gray-100 text-lg font-semibold shadow-xl transition-all duration-300 hover:scale-105"
+              className="px-8 py-4 text-lg shadow-xl transition-all duration-300 hover:scale-105"
             >
               Schedule Live Demo
               <TrendingUpIcon className="ml-2 w-5 h-5" />
@@ -979,19 +979,19 @@ const App = () => {
             <Button
               variant="outline"
               size="lg"
-              className="px-8 py-4 bg-transparent border-2 border-white/40 text-white hover:bg-white/10 text-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
             >
               Download White Paper
             </Button>
           </motion.div>
-          <motion.p className="text-sm text-gray-400 mt-8" variants={item}>
+          <motion.p className="text-sm text-white/40 mt-8 font-light" variants={item}>
             Trusted by innovative banks across the United States • SOC 2 Certified • FFIEC Compliant
           </motion.p>
         </motion.div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="text-white py-16 border-t border-white/5">
         <motion.div
           className="container mx-auto px-6"
           initial={{ opacity: 0, y: 20 }}
