@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} font-light antialiased bg-black text-white min-h-screen`} suppressHydrationWarning
+        className={`${inter.variable} ${instrumentSerif.variable}`} suppressHydrationWarning
       >
         <div className="relative z-10">
           <ConvexClientProvider>{children}</ConvexClientProvider>

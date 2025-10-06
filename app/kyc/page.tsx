@@ -15,7 +15,7 @@ export default function KycPage() {
   return (
     <>
       <AuthLoading>
-        <div className="min-h-screen flex items-center justify-center p-4 md:p-6 bg-black">
+        <div className="min-h-screen flex items-center justify-center p-4 md:p-6">
           <div className="text-center glass-effect p-8 rounded-xl">
             <Loader2 className="mx-auto h-8 w-8 animate-spin mb-4 text-primary" />
             <p className="text-white/60 font-light">Loading your verification status...</p>
@@ -24,7 +24,7 @@ export default function KycPage() {
       </AuthLoading>
       
       <Unauthenticated>
-        <div className="min-h-screen flex items-center justify-center p-4 md:p-6 bg-black">
+        <div className="min-h-screen flex items-center justify-center p-4 md:p-6">
           <div className="text-center glass-effect p-8 rounded-xl max-w-md">
             <h1 className="text-2xl font-light mb-4 text-white">Access Denied</h1>
             <p className="text-white/60 mb-6 font-light">Please sign in to access KYC verification.</p>
