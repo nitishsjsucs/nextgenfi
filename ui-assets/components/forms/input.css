@@ -1,0 +1,180 @@
+/* Form Input Component Styles */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-4);
+}
+
+.input-label {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.input-field {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-white);
+  border: var(--border-width) var(--border-style) var(--border-light);
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease-in-out;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+.input-field:disabled {
+  background-color: var(--bg-light);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: var(--opacity-70);
+}
+
+.input-field::placeholder {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+
+/* Input Sizes */
+.input-sm {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  min-height: 32px;
+}
+
+.input-md {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-base);
+  min-height: 40px;
+}
+
+.input-lg {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-size-lg);
+  min-height: 48px;
+}
+
+/* Input Variants */
+.input-error {
+  border-color: var(--error);
+}
+
+.input-error:focus {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+.input-success {
+  border-color: var(--success);
+}
+
+.input-success:focus {
+  border-color: var(--success);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+/* Input with Icon */
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .input-field {
+  padding-left: var(--space-10);
+}
+
+.input-icon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.input-icon.icon-lg {
+  left: var(--space-4);
+}
+
+/* Input with Right Icon/Button */
+.input-with-action {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-action .input-field {
+  padding-right: var(--space-10);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.input-action {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: var(--space-3);
+  background-color: var(--bg-light);
+  border: var(--border-width) var(--border-style) var(--border-light);
+  border-left: none;
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-action:hover {
+  background-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+/* Select Dropdown */
+.select-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23737B8B' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right var(--space-3) center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  padding-right: var(--space-8);
+}
+
+/* Textarea */
+.textarea-field {
+  min-height: 100px;
+  resize: vertical;
+  font-family: var(--font-family);
+}
+
+/* Error and Success Messages */
+.input-error-message {
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  color: var(--error);
+  margin-top: var(--space-1);
+}
+
+.input-success-message {
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  color: var(--success);
+  margin-top: var(--space-1);
+}
+
+.input-help-text {
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  margin-top: var(--space-1);
+}

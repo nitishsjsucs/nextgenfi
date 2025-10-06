@@ -1,0 +1,793 @@
+/* Datepicker Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   DATEPICKER BASE STYLES
+   ======================================== */
+
+.datepicker {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  transition: all 0.2s ease;
+  position: relative;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+}
+
+.datepicker__trigger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  gap: 8px;
+  width: 100%;
+  height: 44px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.datepicker__trigger:focus {
+  outline: none;
+}
+
+.datepicker__trigger--placeholder {
+  color: var(--text-tertiary);
+}
+
+.datepicker__value {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.datepicker__placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+.datepicker__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.datepicker__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.datepicker__icon svg path {
+  fill: var(--text-secondary);
+}
+
+.datepicker--open .datepicker__icon {
+  transform: rotate(180deg);
+}
+
+.datepicker__clear {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  margin-right: 8px;
+}
+
+.datepicker__clear:hover {
+  opacity: 1;
+}
+
+.datepicker__clear svg {
+  width: 14px;
+  height: 14px;
+}
+
+.datepicker__clear svg path {
+  fill: currentColor;
+}
+
+/* ========================================
+   DATEPICKER SIZES
+   ======================================== */
+
+.datepicker--small {
+  border-radius: 6px;
+}
+
+.datepicker--small .datepicker__trigger {
+  padding: 8px 12px;
+  height: 36px;
+  font-size: 13px;
+}
+
+.datepicker--small .datepicker__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.datepicker--small .datepicker__clear svg {
+  width: 12px;
+  height: 12px;
+}
+
+.datepicker--medium {
+  border-radius: 8px;
+}
+
+.datepicker--medium .datepicker__trigger {
+  padding: 12px 16px;
+  height: 44px;
+  font-size: 14px;
+}
+
+.datepicker--large {
+  border-radius: 10px;
+}
+
+.datepicker--large .datepicker__trigger {
+  padding: 16px 20px;
+  height: 52px;
+  font-size: 16px;
+}
+
+.datepicker--large .datepicker__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.datepicker--large .datepicker__clear svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+   DATEPICKER VARIANTS
+   ======================================== */
+
+.datepicker--default {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.datepicker--default:hover {
+  border-color: var(--border-gray);
+}
+
+.datepicker--focused {
+  border-color: var(--figma-primary);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+.datepicker--focused .datepicker__icon svg path {
+  fill: var(--figma-primary);
+}
+
+.datepicker--filled {
+  background: var(--bg-light);
+  border-color: var(--border-gray);
+}
+
+.datepicker--outlined {
+  background: transparent;
+  border: 2px solid var(--border-light);
+}
+
+.datepicker--outlined:hover {
+  border-color: var(--border-gray);
+}
+
+.datepicker--outlined.datepicker--focused {
+  border-color: var(--figma-primary);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+/* ========================================
+   DATEPICKER STATES
+   ======================================== */
+
+.datepicker--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--bg-light);
+  border-color: var(--border-light);
+}
+
+.datepicker--disabled:hover {
+  border-color: var(--border-light);
+}
+
+.datepicker--disabled .datepicker__trigger {
+  cursor: not-allowed;
+}
+
+.datepicker--error {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.datepicker--error:hover {
+  border-color: var(--figma-error);
+}
+
+.datepicker--error.datepicker--focused {
+  border-color: var(--figma-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.datepicker--success {
+  border-color: var(--figma-success);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.datepicker--success:hover {
+  border-color: var(--figma-success);
+}
+
+.datepicker--success.datepicker--focused {
+  border-color: var(--figma-success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.datepicker--warning {
+  border-color: var(--figma-warning);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.datepicker--warning:hover {
+  border-color: var(--figma-warning);
+}
+
+.datepicker--warning.datepicker--focused {
+  border-color: var(--figma-warning);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* ========================================
+   DATEPICKER CALENDAR
+   ======================================== */
+
+.datepicker__calendar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: var(--shadow-medium);
+  z-index: 1000;
+  margin-top: 4px;
+  display: none;
+  min-width: 280px;
+}
+
+.datepicker__calendar--visible {
+  display: block;
+}
+
+.datepicker__calendar__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.datepicker__calendar__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.datepicker__calendar__nav {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.datepicker__calendar__nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--figma-gray-100);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.datepicker__calendar__nav-button:hover {
+  background: var(--figma-gray-200);
+}
+
+.datepicker__calendar__nav-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.datepicker__calendar__nav-button svg path {
+  fill: var(--text-secondary);
+}
+
+.datepicker__calendar__body {
+  padding: 16px 20px;
+}
+
+.datepicker__calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.datepicker__calendar__weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.datepicker__calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.datepicker__calendar__day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.datepicker__calendar__day:hover {
+  background: var(--figma-gray-100);
+}
+
+.datepicker__calendar__day--selected {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.datepicker__calendar__day--selected:hover {
+  background: var(--figma-primary);
+  opacity: 0.9;
+}
+
+.datepicker__calendar__day--today {
+  background: var(--figma-gray-100);
+  color: var(--figma-primary);
+  font-weight: 600;
+}
+
+.datepicker__calendar__day--today:hover {
+  background: var(--figma-gray-200);
+}
+
+.datepicker__calendar__day--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.datepicker__calendar__day--disabled:hover {
+  background: transparent;
+}
+
+.datepicker__calendar__day--other-month {
+  color: var(--text-tertiary);
+}
+
+.datepicker__calendar__day--other-month:hover {
+  background: var(--figma-gray-100);
+}
+
+/* ========================================
+   DATEPICKER WITH LABEL
+   ======================================== */
+
+.datepicker-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.datepicker-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.datepicker-label--required::after {
+  content: ' *';
+  color: var(--figma-error);
+}
+
+.datepicker-label--optional::after {
+  content: ' (optional)';
+  color: var(--text-tertiary);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.datepicker-help {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.datepicker-error {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--figma-error);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.datepicker-error svg {
+  width: 12px;
+  height: 12px;
+}
+
+.datepicker-error svg path {
+  fill: var(--figma-error);
+}
+
+.datepicker-success {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--figma-success);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.datepicker-success svg {
+  width: 12px;
+  height: 12px;
+}
+
+.datepicker-success svg path {
+  fill: var(--figma-success);
+}
+
+/* ========================================
+   DATEPICKER WITH ICONS
+   ======================================== */
+
+.datepicker--with-icon {
+  position: relative;
+}
+
+.datepicker--with-icon .datepicker__icon--prefix {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.datepicker--with-icon .datepicker__icon--prefix svg {
+  width: 16px;
+  height: 16px;
+}
+
+.datepicker--with-icon .datepicker__icon--prefix svg path {
+  fill: var(--text-secondary);
+}
+
+.datepicker--with-icon .datepicker__trigger {
+  padding-left: 40px;
+}
+
+.datepicker--with-icon.datepicker--small .datepicker__trigger {
+  padding-left: 36px;
+}
+
+.datepicker--with-icon.datepicker--small .datepicker__icon--prefix {
+  left: 10px;
+}
+
+.datepicker--with-icon.datepicker--large .datepicker__trigger {
+  padding-left: 44px;
+}
+
+.datepicker--with-icon.datepicker--large .datepicker__icon--prefix {
+  left: 14px;
+}
+
+.datepicker--with-clear .datepicker__clear {
+  display: flex;
+  color: var(--text-tertiary);
+}
+
+/* ========================================
+   DATEPICKER VALIDATION
+   ======================================== */
+
+.datepicker--validating {
+  position: relative;
+}
+
+.datepicker--validating::after {
+  content: '';
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--figma-primary);
+  border-radius: 50%;
+  animation: datepicker-spin 1s linear infinite;
+}
+
+@keyframes datepicker-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.datepicker--valid {
+  border-color: var(--figma-success);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.datepicker--invalid {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+/* ========================================
+   DATEPICKER ANIMATIONS
+   ======================================== */
+
+.datepicker--animated {
+  animation: datepicker-slide-in 0.3s ease-out;
+}
+
+@keyframes datepicker-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.datepicker__calendar--animated {
+  animation: datepicker-calendar-slide-in 0.2s ease-out;
+}
+
+@keyframes datepicker-calendar-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.datepicker--shake {
+  animation: datepicker-shake 0.5s ease-in-out;
+}
+
+@keyframes datepicker-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* ========================================
+   DATEPICKER ACCESSIBILITY
+   ======================================== */
+
+.datepicker:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.datepicker__calendar__day:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.datepicker__calendar__nav-button:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.datepicker__clear:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.datepicker__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .datepicker--with-icon .datepicker__trigger {
+    padding-left: 36px;
+  }
+  
+  .datepicker--with-icon .datepicker__icon--prefix {
+    left: 10px;
+  }
+  
+  .datepicker__calendar {
+    min-width: 260px;
+  }
+  
+  .datepicker__calendar__header {
+    padding: 12px 16px;
+  }
+  
+  .datepicker__calendar__body {
+    padding: 12px 16px;
+  }
+  
+  .datepicker__calendar__weekdays {
+    gap: 4px;
+  }
+  
+  .datepicker__calendar__days {
+    gap: 4px;
+  }
+  
+  .datepicker__calendar__day {
+    height: 28px;
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .datepicker {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .datepicker--filled {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .datepicker--outlined {
+    background: transparent;
+    border-color: var(--figma-gray-600);
+  }
+  
+  .datepicker--disabled {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .datepicker__trigger {
+    color: var(--bg-white);
+  }
+  
+  .datepicker__placeholder {
+    color: var(--figma-gray-400);
+  }
+  
+  .datepicker__calendar {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .datepicker__calendar__header {
+    border-bottom-color: var(--figma-gray-600);
+  }
+  
+  .datepicker__calendar__nav-button {
+    background: var(--figma-gray-700);
+  }
+  
+  .datepicker__calendar__nav-button:hover {
+    background: var(--figma-gray-600);
+  }
+  
+  .datepicker__calendar__day:hover {
+    background: var(--figma-gray-700);
+  }
+  
+  .datepicker__calendar__day--today {
+    background: var(--figma-gray-700);
+    color: var(--figma-primary);
+  }
+  
+  .datepicker__calendar__day--today:hover {
+    background: var(--figma-gray-600);
+  }
+  
+  .datepicker__calendar__day--other-month {
+    color: var(--figma-gray-400);
+  }
+  
+  .datepicker__calendar__day--other-month:hover {
+    background: var(--figma-gray-700);
+  }
+}

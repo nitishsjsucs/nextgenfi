@@ -1,0 +1,293 @@
+/* Color Palette Component - Visual showcase of all design system colors */
+
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  padding: 32px;
+  background: var(--bg-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.color-palette-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.color-palette-title {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-loose);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.color-swatch {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-swatch:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.color-block {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.color-info {
+  padding: 16px;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+}
+
+.color-name {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-text);
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.color-hex {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.color-description {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: var(--line-height-comfortable);
+}
+
+/* Brand Colors */
+.color-brand-orange { background: var(--primary-orange); }
+.color-brand-brown { background: var(--primary-brown); }
+.color-brand-light-brown { background: var(--primary-light-brown); }
+
+/* Text Colors */
+.color-text-primary { background: var(--text-primary); }
+.color-text-secondary { background: var(--text-secondary); }
+.color-text-muted { background: var(--text-muted); }
+.color-text-light { background: var(--text-light); }
+
+/* Background Colors */
+.color-bg-white { background: var(--bg-white); border: 1px solid var(--border-light); }
+.color-bg-light { background: var(--bg-light); }
+.color-bg-flash-white { background: var(--bg-flash-white); }
+.color-bg-light-grey { background: var(--bg-light-grey); }
+
+/* Opacity Variants */
+.color-text-100 { background: var(--text-100); }
+.color-text-80 { background: var(--text-80); }
+.color-text-70 { background: var(--text-70); }
+.color-text-60 { background: var(--text-60); }
+.color-text-50 { background: var(--text-50); }
+
+/* Text color for light backgrounds */
+.color-block[class*="color-bg-"] .color-name,
+.color-block[class*="color-bg-"] .color-hex,
+.color-block[class*="color-bg-"] .color-description {
+  color: var(--text-primary);
+}
+
+/* Text color for dark backgrounds */
+.color-block[class*="color-brand-"],
+.color-block[class*="color-text-"] .color-name,
+.color-block[class*="color-text-"] .color-hex,
+.color-block[class*="color-text-"] .color-description {
+  color: var(--bg-white);
+}
+
+/* Typography Showcase */
+.typography-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  background: var(--bg-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.typography-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.typography-sample {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--primary-orange);
+}
+
+.typography-label {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.typography-details {
+  display: flex;
+  gap: 24px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* Design System Overview */
+.design-system-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 32px;
+  background: var(--bg-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.design-system-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.design-system-title {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.design-system-description {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-text);
+  color: var(--text-primary);
+}
+
+.design-system-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.stat-value {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--primary-orange);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .color-palette {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  
+  .design-system-overview {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  
+  .design-system-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .typography-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Interactive Elements */
+.color-swatch {
+  cursor: pointer;
+}
+
+.color-swatch:active {
+  transform: translateY(0);
+}
+
+/* Copy to Clipboard Functionality */
+.color-hex {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.color-hex:hover {
+  color: var(--primary-orange);
+}
+
+.color-hex:active {
+  color: var(--text-primary);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .color-swatch {
+    transition: none;
+  }
+  
+  .color-swatch:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .color-palette,
+  .typography-showcase,
+  .design-system-overview {
+    border: 2px solid var(--text-primary);
+  }
+  
+  .color-swatch {
+    border: 1px solid var(--text-primary);
+  }
+}

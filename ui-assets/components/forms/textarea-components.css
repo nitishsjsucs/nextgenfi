@@ -1,0 +1,626 @@
+/* Textarea Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   TEXTAREA BASE STYLES
+   ======================================== */
+
+.textarea {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  transition: all 0.2s ease;
+  position: relative;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  resize: vertical;
+  min-height: 80px;
+}
+
+.textarea__field {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--text-primary);
+  padding: 12px 16px;
+  margin: 0;
+  width: 100%;
+  resize: none;
+  overflow-y: auto;
+}
+
+.textarea__field::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+.textarea__field:disabled {
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+.textarea__counter {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 16px 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+.textarea__counter--warning {
+  color: var(--figma-warning);
+}
+
+.textarea__counter--error {
+  color: var(--figma-error);
+}
+
+/* ========================================
+   TEXTAREA SIZES
+   ======================================== */
+
+.textarea--small {
+  border-radius: 6px;
+  min-height: 60px;
+}
+
+.textarea--small .textarea__field {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.textarea--small .textarea__counter {
+  padding: 0 12px 8px;
+  font-size: 11px;
+}
+
+.textarea--medium {
+  border-radius: 8px;
+  min-height: 80px;
+}
+
+.textarea--medium .textarea__field {
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.textarea--medium .textarea__counter {
+  padding: 0 16px 12px;
+  font-size: 12px;
+}
+
+.textarea--large {
+  border-radius: 10px;
+  min-height: 120px;
+}
+
+.textarea--large .textarea__field {
+  padding: 16px 20px;
+  font-size: 16px;
+}
+
+.textarea--large .textarea__counter {
+  padding: 0 20px 16px;
+  font-size: 13px;
+}
+
+/* ========================================
+   TEXTAREA VARIANTS
+   ======================================== */
+
+.textarea--default {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.textarea--default:hover {
+  border-color: var(--border-gray);
+}
+
+.textarea--focused {
+  border-color: var(--figma-primary);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+.textarea--filled {
+  background: var(--bg-light);
+  border-color: var(--border-gray);
+}
+
+.textarea--outlined {
+  background: transparent;
+  border: 2px solid var(--border-light);
+}
+
+.textarea--outlined:hover {
+  border-color: var(--border-gray);
+}
+
+.textarea--outlined.textarea--focused {
+  border-color: var(--figma-primary);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+/* ========================================
+   TEXTAREA STATES
+   ======================================== */
+
+.textarea--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--bg-light);
+  border-color: var(--border-light);
+}
+
+.textarea--disabled:hover {
+  border-color: var(--border-light);
+}
+
+.textarea--disabled .textarea__field {
+  cursor: not-allowed;
+}
+
+.textarea--error {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.textarea--error:hover {
+  border-color: var(--figma-error);
+}
+
+.textarea--error.textarea--focused {
+  border-color: var(--figma-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.textarea--success {
+  border-color: var(--figma-success);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.textarea--success:hover {
+  border-color: var(--figma-success);
+}
+
+.textarea--success.textarea--focused {
+  border-color: var(--figma-success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.textarea--warning {
+  border-color: var(--figma-warning);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.textarea--warning:hover {
+  border-color: var(--figma-warning);
+}
+
+.textarea--warning.textarea--focused {
+  border-color: var(--figma-warning);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* ========================================
+   TEXTAREA WITH LABEL
+   ======================================== */
+
+.textarea-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.textarea-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.textarea-label--required::after {
+  content: ' *';
+  color: var(--figma-error);
+}
+
+.textarea-label--optional::after {
+  content: ' (optional)';
+  color: var(--text-tertiary);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.textarea-help {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.textarea-error {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--figma-error);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.textarea-error svg {
+  width: 12px;
+  height: 12px;
+}
+
+.textarea-error svg path {
+  fill: var(--figma-error);
+}
+
+.textarea-success {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--figma-success);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.textarea-success svg {
+  width: 12px;
+  height: 12px;
+}
+
+.textarea-success svg path {
+  fill: var(--figma-success);
+}
+
+/* ========================================
+   TEXTAREA WITH ICONS
+   ======================================== */
+
+.textarea--with-icon {
+  position: relative;
+}
+
+.textarea--with-icon .textarea__icon {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.textarea--with-icon .textarea__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.textarea--with-icon .textarea__icon svg path {
+  fill: var(--text-secondary);
+}
+
+.textarea--with-icon .textarea__field {
+  padding-left: 40px;
+}
+
+.textarea--with-icon.textarea--small .textarea__field {
+  padding-left: 36px;
+}
+
+.textarea--with-icon.textarea--small .textarea__icon {
+  left: 10px;
+}
+
+.textarea--with-icon.textarea--large .textarea__field {
+  padding-left: 44px;
+}
+
+.textarea--with-icon.textarea--large .textarea__icon {
+  left: 14px;
+}
+
+/* ========================================
+   TEXTAREA AUTO RESIZE
+   ======================================== */
+
+.textarea--auto-resize {
+  resize: none;
+}
+
+.textarea--auto-resize .textarea__field {
+  resize: none;
+  overflow: hidden;
+}
+
+.textarea--auto-resize .textarea__field:focus {
+  overflow-y: auto;
+}
+
+/* ========================================
+   TEXTAREA WITH ACTIONS
+   ======================================== */
+
+.textarea--with-actions {
+  padding-bottom: 0;
+}
+
+.textarea__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-light);
+  border-radius: 0 0 8px 8px;
+}
+
+.textarea__actions--centered {
+  justify-content: center;
+}
+
+.textarea__actions--right {
+  justify-content: flex-end;
+}
+
+.textarea__action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.6153846153846154em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.textarea__action:hover {
+  background: var(--figma-gray-100);
+  color: var(--text-primary);
+}
+
+.textarea__action--primary {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.textarea__action--primary:hover {
+  background: var(--figma-primary);
+  opacity: 0.9;
+}
+
+.textarea__action--secondary {
+  background: var(--figma-gray-200);
+  color: var(--text-primary);
+}
+
+.textarea__action--secondary:hover {
+  background: var(--figma-gray-300);
+}
+
+.textarea__action svg {
+  width: 14px;
+  height: 14px;
+}
+
+.textarea__action svg path {
+  fill: currentColor;
+}
+
+/* ========================================
+   TEXTAREA VALIDATION
+   ======================================== */
+
+.textarea--validating {
+  position: relative;
+}
+
+.textarea--validating::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--figma-primary);
+  border-radius: 50%;
+  animation: textarea-spin 1s linear infinite;
+}
+
+@keyframes textarea-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.textarea--valid {
+  border-color: var(--figma-success);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.textarea--invalid {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+/* ========================================
+   TEXTAREA ANIMATIONS
+   ======================================== */
+
+.textarea--animated {
+  animation: textarea-slide-in 0.3s ease-out;
+}
+
+@keyframes textarea-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.textarea--shake {
+  animation: textarea-shake 0.5s ease-in-out;
+}
+
+@keyframes textarea-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* ========================================
+   TEXTAREA ACCESSIBILITY
+   ======================================== */
+
+.textarea:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.textarea__action:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.textarea__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .textarea__actions {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  
+  .textarea__actions--centered,
+  .textarea__actions--right {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .textarea__action {
+    justify-content: center;
+  }
+  
+  .textarea--with-icon .textarea__field {
+    padding-left: 36px;
+  }
+  
+  .textarea--with-icon .textarea__icon {
+    left: 10px;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .textarea {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .textarea--filled {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .textarea--outlined {
+    background: transparent;
+    border-color: var(--figma-gray-600);
+  }
+  
+  .textarea--disabled {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .textarea__field {
+    color: var(--bg-white);
+  }
+  
+  .textarea__field::placeholder {
+    color: var(--figma-gray-400);
+  }
+  
+  .textarea__counter {
+    color: var(--figma-gray-400);
+  }
+  
+  .textarea__actions {
+    background: var(--figma-gray-700);
+    border-top-color: var(--figma-gray-600);
+  }
+  
+  .textarea__action {
+    color: var(--figma-gray-300);
+  }
+  
+  .textarea__action:hover {
+    background: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .textarea__action--secondary {
+    background: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .textarea__action--secondary:hover {
+    background: var(--figma-gray-500);
+  }
+}

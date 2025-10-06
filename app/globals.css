@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import UI-bank Design System */
+@import '../ui-assets/design-tokens/design-system-complete.css';
+@import '../ui-assets/components/index.css';
+
 :root {
   --radius: 0.625rem;
   --background: 0 0% 100%;

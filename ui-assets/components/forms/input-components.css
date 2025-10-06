@@ -1,0 +1,662 @@
+/* Input Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   INPUT BASE STYLES
+   ======================================== */
+
+.input {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  transition: all 0.2s ease;
+  position: relative;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+}
+
+.input__field {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--text-primary);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.input__field::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+.input__field:disabled {
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+.input__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.input__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.input__icon svg path {
+  fill: var(--text-secondary);
+}
+
+.input__clear {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.input__clear:hover {
+  opacity: 1;
+}
+
+.input__clear svg {
+  width: 14px;
+  height: 14px;
+}
+
+.input__clear svg path {
+  fill: currentColor;
+}
+
+.input__suffix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   INPUT SIZES
+   ======================================== */
+
+.input--small {
+  padding: 8px 12px;
+  height: 36px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.input--small .input__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.input--small .input__clear svg {
+  width: 12px;
+  height: 12px;
+}
+
+.input--medium {
+  padding: 12px 16px;
+  height: 44px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.input--large {
+  padding: 16px 20px;
+  height: 52px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.input--large .input__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.input--large .input__clear svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+   INPUT VARIANTS
+   ======================================== */
+
+.input--default {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.input--default:hover {
+  border-color: var(--border-gray);
+}
+
+.input--focused {
+  border-color: var(--figma-primary);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+.input--focused .input__icon svg path {
+  fill: var(--figma-primary);
+}
+
+.input--filled {
+  background: var(--bg-light);
+  border-color: var(--border-gray);
+}
+
+.input--outlined {
+  background: transparent;
+  border: 2px solid var(--border-light);
+}
+
+.input--outlined:hover {
+  border-color: var(--border-gray);
+}
+
+.input--outlined.input--focused {
+  border-color: var(--figma-primary);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+/* ========================================
+   INPUT STATES
+   ======================================== */
+
+.input--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--bg-light);
+  border-color: var(--border-light);
+}
+
+.input--disabled:hover {
+  border-color: var(--border-light);
+}
+
+.input--disabled .input__field {
+  cursor: not-allowed;
+}
+
+.input--error {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.input--error:hover {
+  border-color: var(--figma-error);
+}
+
+.input--error.input--focused {
+  border-color: var(--figma-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.input--success {
+  border-color: var(--figma-success);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.input--success:hover {
+  border-color: var(--figma-success);
+}
+
+.input--success.input--focused {
+  border-color: var(--figma-success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.input--warning {
+  border-color: var(--figma-warning);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.input--warning:hover {
+  border-color: var(--figma-warning);
+}
+
+.input--warning.input--focused {
+  border-color: var(--figma-warning);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* ========================================
+   INPUT WITH LABEL
+   ======================================== */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.input-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.input-label--required::after {
+  content: ' *';
+  color: var(--figma-error);
+}
+
+.input-label--optional::after {
+  content: ' (optional)';
+  color: var(--text-tertiary);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.input-help {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.input-error {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--figma-error);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.input-error svg {
+  width: 12px;
+  height: 12px;
+}
+
+.input-error svg path {
+  fill: var(--figma-error);
+}
+
+.input-success {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--figma-success);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.input-success svg {
+  width: 12px;
+  height: 12px;
+}
+
+.input-success svg path {
+  fill: var(--figma-success);
+}
+
+/* ========================================
+   INPUT WITH ICONS
+   ======================================== */
+
+.input--with-icon {
+  padding-left: 40px;
+}
+
+.input--with-icon .input__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input--with-clear .input__clear {
+  display: flex;
+  color: var(--text-tertiary);
+}
+
+.input--with-suffix {
+  padding-right: 40px;
+}
+
+.input--with-suffix .input__suffix {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ========================================
+   INPUT TYPES
+   ======================================== */
+
+.input--password {
+  position: relative;
+}
+
+.input--password .input__toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.input--password .input__toggle:hover {
+  opacity: 1;
+}
+
+.input--password .input__toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.input--password .input__toggle svg path {
+  fill: var(--text-secondary);
+}
+
+.input--number {
+  /* Number input specific styles */
+}
+
+.input--number .input__field {
+  text-align: right;
+}
+
+.input--number .input__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-left: 8px;
+}
+
+.input--number .input__control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 16px;
+  border: none;
+  background: var(--figma-gray-100);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.input--number .input__control:hover {
+  background: var(--figma-gray-200);
+}
+
+.input--number .input__control svg {
+  width: 12px;
+  height: 12px;
+}
+
+.input--number .input__control svg path {
+  fill: var(--text-secondary);
+}
+
+/* ========================================
+   INPUT GROUPS
+   ======================================== */
+
+.input-group--horizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.input-group--horizontal .input-label {
+  min-width: 120px;
+  margin: 0;
+}
+
+.input-group--horizontal .input {
+  flex: 1;
+}
+
+.input-group--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.input-group--inline .input-label {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.input-group--inline .input {
+  min-width: 200px;
+}
+
+/* ========================================
+   INPUT VALIDATION
+   ======================================== */
+
+.input--validating {
+  position: relative;
+}
+
+.input--validating::after {
+  content: '';
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--figma-primary);
+  border-radius: 50%;
+  animation: input-spin 1s linear infinite;
+}
+
+@keyframes input-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.input--valid {
+  border-color: var(--figma-success);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.input--invalid {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+/* ========================================
+   INPUT ANIMATIONS
+   ======================================== */
+
+.input--animated {
+  animation: input-slide-in 0.3s ease-out;
+}
+
+@keyframes input-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input--shake {
+  animation: input-shake 0.5s ease-in-out;
+}
+
+@keyframes input-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* ========================================
+   INPUT ACCESSIBILITY
+   ======================================== */
+
+.input:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.input__toggle:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.input__control:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.input__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .input-group--horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .input-group--horizontal .input-label {
+    min-width: auto;
+  }
+  
+  .input-group--inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .input-group--inline .input {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .input--with-icon {
+    padding-left: 36px;
+  }
+  
+  .input--with-icon .input__icon {
+    left: 10px;
+  }
+  
+  .input--with-suffix {
+    padding-right: 36px;
+  }
+  
+  .input--with-suffix .input__suffix {
+    right: 10px;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .input {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .input--filled {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .input--outlined {
+    background: transparent;
+    border-color: var(--figma-gray-600);
+  }
+  
+  .input--disabled {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .input__field {
+    color: var(--bg-white);
+  }
+  
+  .input__field::placeholder {
+    color: var(--figma-gray-400);
+  }
+  
+  .input__suffix {
+    color: var(--figma-gray-300);
+  }
+  
+  .input__toggle svg path {
+    fill: var(--figma-gray-300);
+  }
+  
+  .input__control {
+    background: var(--figma-gray-700);
+  }
+  
+  .input__control:hover {
+    background: var(--figma-gray-600);
+  }
+}

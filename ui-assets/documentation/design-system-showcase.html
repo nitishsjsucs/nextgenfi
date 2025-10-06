@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard Design System - Colors & Typography</title>
+    <link rel="stylesheet" href="../design-tokens/design-system-complete.css">
+    <link rel="stylesheet" href="../components/design-system/color-palette.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-light);
+            font-family: var(--font-family-primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .section {
+            margin-bottom: 48px;
+        }
+        
+        .section-title {
+            font-family: var(--font-family-primary);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-xl);
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--primary-orange);
+            padding-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="heading-large text-primary">Finance Dashboard Design System</h1>
+            <p class="text-body text-muted">Complete color palette and typography system extracted from Figma</p>
+        </div>
+
+        <!-- Color Palette -->
+        <div class="section">
+            <h2 class="section-title">Color Palette</h2>
+            <div class="color-palette">
+                <!-- Brand Colors -->
+                <div class="color-palette-section">
+                    <h3 class="color-palette-title">Brand Colors</h3>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-brand-orange">
+                            <div class="color-info">
+                                <div class="color-name">Primary Orange</div>
+                                <div class="color-hex">#FD6F41</div>
+                                <div class="color-description">Main brand color for CTAs and highlights</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-brand-brown">
+                            <div class="color-info">
+                                <div class="color-name">Primary Brown</div>
+                                <div class="color-hex">#2F292B</div>
+                                <div class="color-description">Dark brown for headers and important text</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-brand-light-brown">
+                            <div class="color-info">
+                                <div class="color-name">Light Brown</div>
+                                <div class="color-hex">#ADA1A1</div>
+                                <div class="color-description">Lighter brown variant for secondary elements</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Colors -->
+                <div class="color-palette-section">
+                    <h3 class="color-palette-title">Text Colors</h3>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-text-primary">
+                            <div class="color-info">
+                                <div class="color-name">Text Primary</div>
+                                <div class="color-hex">#121212</div>
+                                <div class="color-description">Main text color for body content</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-text-secondary">
+                            <div class="color-info">
+                                <div class="color-name">Text Secondary</div>
+                                <div class="color-hex">#2F292B</div>
+                                <div class="color-description">Secondary text color for headers</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-text-muted">
+                            <div class="color-info">
+                                <div class="color-name">Text Muted</div>
+                                <div class="color-hex">#4F5B67</div>
+                                <div class="color-description">Muted text for labels and metadata</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-text-light">
+                            <div class="color-info">
+                                <div class="color-name">Text Light</div>
+                                <div class="color-hex">#737B8B</div>
+                                <div class="color-description">Light text for placeholders</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Background Colors -->
+                <div class="color-palette-section">
+                    <h3 class="color-palette-title">Background Colors</h3>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-bg-white">
+                            <div class="color-info">
+                                <div class="color-name">White</div>
+                                <div class="color-hex">#FFFFFF</div>
+                                <div class="color-description">Primary background color</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-bg-light">
+                            <div class="color-info">
+                                <div class="color-name">Light</div>
+                                <div class="color-hex">#F9FAFB</div>
+                                <div class="color-description">Light gray background for sections</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-bg-flash-white">
+                            <div class="color-info">
+                                <div class="color-name">Flash White</div>
+                                <div class="color-hex">#ECF1F4</div>
+                                <div class="color-description">Very light gray for subtle backgrounds</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-bg-light-grey">
+                            <div class="color-info">
+                                <div class="color-name">Light Grey</div>
+                                <div class="color-hex">#E0E9EF</div>
+                                <div class="color-description">Light gray for borders and dividers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opacity Variants -->
+                <div class="color-palette-section">
+                    <h3 class="color-palette-title">Text Opacity Variants</h3>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-text-100">
+                            <div class="color-info">
+                                <div class="color-name">100%</div>
+                                <div class="color-hex">#121212</div>
+                                <div class="color-description">Full opacity text</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-text-80">
+                            <div class="color-info">
+                                <div class="color-name">80%</div>
+                                <div class="color-hex">#232323</div>
+                                <div class="color-description">80% opacity text</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-text-70">
+                            <div class="color-info">
+                                <div class="color-name">70%</div>
+                                <div class="color-hex">rgba(18,18,18,0.7)</div>
+                                <div class="color-description">70% opacity text</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-swatch">
+                        <div class="color-block color-text-50">
+                            <div class="color-info">
+                                <div class="color-name">50%</div>
+                                <div class="color-hex">#737B8B</div>
+                                <div class="color-description">50% opacity text</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography Showcase -->
+        <div class="section">
+            <h2 class="section-title">Typography System</h2>
+            <div class="typography-showcase">
+                <!-- Heading Large -->
+                <div class="typography-section">
+                    <div class="typography-sample">
+                        <div class="typography-label">Heading Large</div>
+                        <div class="heading-large">Financial Dashboard</div>
+                        <div class="typography-details">
+                            <span>Inter • 400 • 50px • 60px line-height • -4% letter-spacing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heading Medium -->
+                <div class="typography-section">
+                    <div class="typography-sample">
+                        <div class="typography-label">Heading Medium</div>
+                        <div class="heading-medium">Monthly Revenue</div>
+                        <div class="typography-details">
+                            <span>Inter • 400 • 32px • 42px line-height</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heading Small -->
+                <div class="typography-section">
+                    <div class="typography-sample">
+                        <div class="typography-label">Heading Small</div>
+                        <div class="heading-small">Q1 Performance</div>
+                        <div class="typography-details">
+                            <span>Inter • 500 • 24px • 32px line-height • -2.08% letter-spacing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Body Regular -->
+                <div class="typography-section">
+                    <div class="typography-sample">
+                        <div class="typography-label">Text Body - Regular</div>
+                        <div class="text-body">Revenue increased by 15% compared to last quarter, showing strong growth in our core business segments.</div>
+                        <div class="typography-details">
+                            <span>Inter • 400 • 14px • 22px line-height</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Body Bold -->
+                <div class="typography-section">
+                    <div class="typography-sample">
+                        <div class="typography-label">Text Body - Bold</div>
+                        <div class="text-body-bold">Important: Please review your financial data before submission.</div>
+                        <div class="typography-details">
+                            <span>Inter • 600 • 14px • 22px line-height</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Body Muted -->
+                <div class="typography-section">
+                    <div class="typography-sample">
+                        <div class="typography-label">Text Body - Muted</div>
+                        <div class="text-body-muted">Last updated 2 hours ago • Auto-refresh enabled</div>
+                        <div class="typography-details">
+                            <span>Inter • 400 • 14px • 22px line-height • 70% opacity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Text -->
+                <div class="typography-section">
+                    <div class="typography-sample">
+                        <div class="typography-label">Small Text</div>
+                        <div class="text-small">Helper text and additional information</div>
+                        <div class="typography-details">
+                            <span>Inter • 400 • 16px • 21px line-height</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design System Overview -->
+        <div class="section">
+            <h2 class="section-title">Design System Overview</h2>
+            <div class="design-system-overview">
+                <div class="design-system-section">
+                    <h3 class="design-system-title">Colors</h3>
+                    <p class="design-system-description">
+                        A comprehensive color palette extracted from the Finance Dashboard UI Kit, 
+                        featuring brand colors, text colors, background colors, and opacity variants.
+                    </p>
+                    <div class="design-system-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">13</div>
+                            <div class="stat-label">Color Tokens</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Opacity Variants</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="design-system-section">
+                    <h3 class="design-system-title">Typography</h3>
+                    <p class="design-system-description">
+                        Complete typography system with Inter font family, multiple weights, 
+                        sizes, and line heights optimized for financial dashboards.
+                    </p>
+                    <div class="design-system-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">7</div>
+                            <div class="stat-label">Text Styles</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Font Sizes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usage Examples -->
+        <div class="section">
+            <h2 class="section-title">Usage Examples</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <!-- Card Example -->
+                <div style="background: var(--bg-white); padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                    <h3 class="heading-small text-primary" style="margin-bottom: 12px;">Revenue Card</h3>
+                    <div class="text-body text-primary" style="margin-bottom: 16px;">Total monthly revenue</div>
+                    <div class="heading-large text-primary" style="color: var(--primary-orange); margin-bottom: 8px;">$45,678</div>
+                    <div class="text-body-muted">+12.5% from last month</div>
+                </div>
+
+                <!-- Button Example -->
+                <div style="background: var(--bg-white); padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                    <h3 class="heading-small text-primary" style="margin-bottom: 16px;">Action Buttons</h3>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button style="background: var(--primary-orange); color: var(--bg-white); border: none; padding: 12px 24px; border-radius: var(--radius-base); font-family: var(--font-family-primary); font-weight: var(--font-weight-medium); cursor: pointer;">Primary Action</button>
+                        <button style="background: var(--bg-white); color: var(--text-primary); border: 1px solid var(--border-light); padding: 12px 24px; border-radius: var(--radius-base); font-family: var(--font-family-primary); font-weight: var(--font-weight-medium); cursor: pointer;">Secondary Action</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-light);">
+            <p class="text-body-muted">Finance Dashboard Design System • Extracted from Figma Design Style</p>
+        </div>
+    </div>
+
+    <script>
+        // Copy to clipboard functionality
+        document.querySelectorAll('.color-hex').forEach(hex => {
+            hex.addEventListener('click', () => {
+                navigator.clipboard.writeText(hex.textContent).then(() => {
+                    const originalText = hex.textContent;
+                    hex.textContent = 'Copied!';
+                    hex.style.color = 'var(--primary-orange)';
+                    setTimeout(() => {
+                        hex.textContent = originalText;
+                        hex.style.color = '';
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

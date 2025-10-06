@@ -1,0 +1,290 @@
+/* Status Badge Component - Finance Dashboard UI Kit */
+
+/* ========================================
+   STATUS BADGE BASE STYLES
+   ======================================== */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 16px;
+  gap: 8px;
+  border-radius: 200px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3333333333333333em;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  min-height: 24px;
+}
+
+/* ========================================
+   STATUS VARIANT STYLES
+   ======================================== */
+
+/* Variant 1 - Gray/Inactive */
+.status-badge--variant-1 {
+  background: #ADA1A1;
+  color: var(--bg-white);
+}
+
+/* Variant 2 - Orange/Active */
+.status-badge--variant-2 {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+/* Variant 3 - Dark/Completed */
+.status-badge--variant-3 {
+  background: var(--figma-gray-800);
+  color: var(--bg-white);
+}
+
+/* ========================================
+   SEMANTIC STATUS STYLES
+   ======================================== */
+
+/* Success Status */
+.status-badge--success {
+  background: var(--figma-success);
+  color: var(--bg-white);
+}
+
+/* Warning Status */
+.status-badge--warning {
+  background: var(--figma-warning);
+  color: var(--bg-white);
+}
+
+/* Error Status */
+.status-badge--error {
+  background: var(--figma-error);
+  color: var(--bg-white);
+}
+
+/* Info Status */
+.status-badge--info {
+  background: var(--figma-info);
+  color: var(--bg-white);
+}
+
+/* ========================================
+   STATUS WITH ICONS
+   ======================================== */
+
+.status-badge__icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.status-badge--with-icon {
+  padding: 4px 12px 4px 8px;
+}
+
+/* ========================================
+   STATUS SIZES
+   ======================================== */
+
+.status-badge--small {
+  padding: 2px 8px;
+  font-size: 10px;
+  line-height: 1.2em;
+  min-height: 20px;
+}
+
+.status-badge--medium {
+  padding: 4px 16px;
+  font-size: 12px;
+  line-height: 1.3333333333333333em;
+  min-height: 24px;
+}
+
+.status-badge--large {
+  padding: 6px 20px;
+  font-size: 14px;
+  line-height: 1.4285714285714286em;
+  min-height: 28px;
+}
+
+/* ========================================
+   STATUS ANIMATIONS
+   ======================================== */
+
+.status-badge--pulse {
+  animation: status-pulse 2s infinite;
+}
+
+.status-badge--fade-in {
+  animation: status-fade-in 0.3s ease-out;
+}
+
+@keyframes status-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes status-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   STATUS IN CONTAINERS
+   ======================================== */
+
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-container--inline {
+  display: inline-flex;
+}
+
+.status-container--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ========================================
+   STATUS LIST
+   ======================================== */
+
+.status-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.status-list__item {
+  display: flex;
+  align-items: center;
+}
+
+/* ========================================
+   STATUS FILTER
+   ======================================== */
+
+.status-filter {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg-light);
+  border-radius: 200px;
+  border: 1px dashed var(--figma-purple);
+}
+
+.status-filter__badge {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-filter__badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-filter__badge--active {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+/* ========================================
+   STATUS IN CARDS
+   ======================================== */
+
+.card__status {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.card__status--inline {
+  justify-content: space-between;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .status-badge {
+    font-size: 11px;
+    padding: 3px 12px;
+  }
+  
+  .status-badge--small {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  
+  .status-badge--large {
+    font-size: 13px;
+    padding: 5px 16px;
+  }
+  
+  .status-list {
+    gap: 6px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.status-badge[aria-label] {
+  cursor: help;
+}
+
+.status-badge:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.status-badge__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .status-badge--variant-1 {
+    background: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .status-filter {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-purple);
+  }
+}

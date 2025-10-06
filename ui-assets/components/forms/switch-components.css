@@ -1,0 +1,619 @@
+/* Switch Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   SWITCH BASE STYLES
+   ======================================== */
+
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.switch__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.switch__track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border-radius: 200px;
+}
+
+.switch__thumb {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-white);
+  transition: all 0.2s ease;
+  box-shadow: 0px 2px 1px rgba(64, 72, 82, 0.05);
+}
+
+.switch__thumb__icon {
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.switch__thumb__icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.switch__thumb__icon svg path {
+  fill: var(--text-secondary);
+}
+
+/* ========================================
+   SWITCH SIZES
+   ======================================== */
+
+.switch--size-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.switch--size-16 .switch__track {
+  width: 16px;
+  height: 16px;
+}
+
+.switch--size-16 .switch__thumb {
+  width: 12px;
+  height: 12px;
+}
+
+.switch--size-16 .switch__thumb__icon {
+  width: 8px;
+  height: 8px;
+}
+
+.switch--size-16 .switch__thumb__icon svg {
+  width: 8px;
+  height: 8px;
+}
+
+.switch--size-20 {
+  width: 20px;
+  height: 20px;
+}
+
+.switch--size-20 .switch__track {
+  width: 20px;
+  height: 20px;
+}
+
+.switch--size-20 .switch__thumb {
+  width: 16px;
+  height: 16px;
+}
+
+.switch--size-20 .switch__thumb__icon {
+  width: 10px;
+  height: 10px;
+}
+
+.switch--size-20 .switch__thumb__icon svg {
+  width: 10px;
+  height: 10px;
+}
+
+.switch--size-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.switch--size-24 .switch__track {
+  width: 24px;
+  height: 24px;
+}
+
+.switch--size-24 .switch__thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.switch--size-24 .switch__thumb__icon {
+  width: 12px;
+  height: 12px;
+}
+
+.switch--size-24 .switch__thumb__icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ========================================
+   SWITCH VARIANTS
+   ======================================== */
+
+.switch--inactive {
+  background: #E8EBED;
+  border: 2px solid rgba(18, 18, 18, 0.1);
+}
+
+.switch--inactive:hover {
+  background: #D1D5DB;
+  border-color: rgba(18, 18, 18, 0.2);
+}
+
+.switch--inactive .switch__thumb {
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch--active {
+  background: #2F292B;
+  border: 2px solid #2F292B;
+}
+
+.switch--active:hover {
+  background: #1F2937;
+  border-color: #1F2937;
+}
+
+.switch--active .switch__thumb {
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch--active .switch__thumb__icon {
+  opacity: 1;
+}
+
+/* ========================================
+   SWITCH WITH LABEL
+   ======================================== */
+
+.switch-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch-label__text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.switch-label:hover .switch-label__text {
+  color: var(--text-secondary);
+}
+
+.switch-label--disabled .switch-label__text {
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+.switch-label--disabled .switch {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ========================================
+   SWITCH STATES
+   ======================================== */
+
+.switch--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.switch--disabled:hover {
+  background: #E8EBED;
+  border-color: rgba(18, 18, 18, 0.1);
+}
+
+.switch--disabled.switch--active:hover {
+  background: #2F292B;
+  border-color: #2F292B;
+}
+
+.switch--error {
+  border-color: var(--figma-error) !important;
+  background: rgba(239, 68, 68, 0.05) !important;
+}
+
+.switch--error:hover {
+  border-color: var(--figma-error) !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+}
+
+.switch--success {
+  border-color: var(--figma-success) !important;
+  background: rgba(16, 185, 129, 0.05) !important;
+}
+
+.switch--success:hover {
+  border-color: var(--figma-success) !important;
+  background: rgba(16, 185, 129, 0.1) !important;
+}
+
+/* ========================================
+   SWITCH GROUP
+   ======================================== */
+
+.switch-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.switch-group--horizontal {
+  flex-direction: row;
+  gap: 24px;
+}
+
+.switch-group__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.switch-group__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  margin: 0 0 16px 0;
+}
+
+/* ========================================
+   SWITCH LIST
+   ======================================== */
+
+.switch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+}
+
+.switch-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.switch-list-item:hover {
+  background: var(--bg-light);
+}
+
+.switch-list-item--selected {
+  background: rgba(253, 111, 65, 0.1);
+}
+
+.switch-list-item--selected:hover {
+  background: rgba(253, 111, 65, 0.15);
+}
+
+.switch-list-item__content {
+  flex: 1;
+}
+
+.switch-list-item__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0 0 2px 0;
+}
+
+.switch-list-item__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ========================================
+   SWITCH CARD
+   ======================================== */
+
+.switch-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-white);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.switch-card:hover {
+  border-color: var(--figma-primary);
+  box-shadow: var(--shadow-small);
+}
+
+.switch-card--selected {
+  border-color: var(--figma-primary);
+  background: rgba(253, 111, 65, 0.05);
+}
+
+.switch-card--selected:hover {
+  background: rgba(253, 111, 65, 0.1);
+}
+
+.switch-card__content {
+  flex: 1;
+}
+
+.switch-card__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.switch-card__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6153846153846154em;
+  color: var(--text-secondary);
+  margin: 0 0 8px 0;
+}
+
+.switch-card__meta {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+/* ========================================
+   SWITCH BUTTON
+   ======================================== */
+
+.switch-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+}
+
+.switch-button:hover {
+  border-color: var(--figma-primary);
+  background: rgba(253, 111, 65, 0.05);
+}
+
+.switch-button--selected {
+  border-color: var(--figma-primary);
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.switch-button--selected:hover {
+  background: var(--figma-primary);
+  opacity: 0.9;
+}
+
+.switch-button__icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.switch-button__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.switch-button__icon svg path {
+  fill: currentColor;
+}
+
+.switch-button__text {
+  flex: 1;
+  text-align: center;
+}
+
+/* ========================================
+   SWITCH ANIMATIONS
+   ======================================== */
+
+.switch--animated .switch__thumb {
+  animation: switch-thumb-slide 0.3s ease-out;
+}
+
+@keyframes switch-thumb-slide {
+  0% {
+    transform: translateY(-50%) scale(0.8);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.1);
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.switch--pulse {
+  animation: switch-pulse 0.6s ease-in-out;
+}
+
+@keyframes switch-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(253, 111, 65, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(253, 111, 65, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 111, 65, 0);
+  }
+}
+
+/* ========================================
+   SWITCH ACCESSIBILITY
+   ======================================== */
+
+.switch:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.switch-label:focus-within .switch {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.switch__input:focus + .switch__track {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.switch__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .switch-group--horizontal {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .switch-card {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .switch-list-item {
+    padding: 6px 8px;
+    gap: 8px;
+  }
+  
+  .switch-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .switch--inactive {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .switch--inactive:hover {
+    background: var(--figma-gray-600);
+    border-color: var(--figma-gray-400);
+  }
+  
+  .switch--active {
+    background: var(--figma-gray-200);
+    border-color: var(--figma-gray-200);
+  }
+  
+  .switch--active:hover {
+    background: var(--figma-gray-300);
+    border-color: var(--figma-gray-300);
+  }
+  
+  .switch-list {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .switch-card {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .switch-card:hover {
+    border-color: var(--figma-primary);
+  }
+  
+  .switch-button {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .switch-button:hover {
+    border-color: var(--figma-primary);
+    background: rgba(253, 111, 65, 0.1);
+  }
+  
+  .switch-button--selected {
+    background: var(--figma-primary);
+    color: var(--bg-white);
+  }
+}

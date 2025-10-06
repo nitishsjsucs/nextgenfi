@@ -1,0 +1,69 @@
+/* Finance Dashboard Shadow System */
+:root {
+  /* Shadow Definitions */
+  --shadow-sm: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0px 20px 50px 1px rgba(64, 72, 82, 0.1);
+  --shadow-2xl: 0px 25px 50px rgba(0, 0, 0, 0.15);
+  
+  /* Card Shadow (from design) */
+  --shadow-card: 0px 20px 50px 1px rgba(64, 72, 82, 0.1);
+  
+  /* Border Styles */
+  --border-width: 1px;
+  --border-width-thick: 1.5px;
+  --border-style: solid;
+  
+  /* Opacity Values */
+  --opacity-5: 0.05;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-50: 0.5;
+  --opacity-70: 0.7;
+  --opacity-100: 1;
+}
+
+/* Shadow Utility Classes */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-2xl { box-shadow: var(--shadow-2xl); }
+.shadow-card { box-shadow: var(--shadow-card); }
+
+.shadow-none { box-shadow: none; }
+
+/* Border Utility Classes */
+.border { border: var(--border-width) var(--border-style) var(--border-light); }
+.border-thick { border: var(--border-width-thick) var(--border-style) var(--border-orange); }
+
+.border-t { border-top: var(--border-width) var(--border-style) var(--border-light); }
+.border-r { border-right: var(--border-width) var(--border-style) var(--border-light); }
+.border-b { border-bottom: var(--border-width) var(--border-style) var(--border-light); }
+.border-l { border-left: var(--border-width) var(--border-style) var(--border-light); }
+
+/* Opacity Utility Classes */
+.opacity-5 { opacity: var(--opacity-5); }
+.opacity-10 { opacity: var(--opacity-10); }
+.opacity-20 { opacity: var(--opacity-20); }
+.opacity-50 { opacity: var(--opacity-50); }
+.opacity-70 { opacity: var(--opacity-70); }
+.opacity-100 { opacity: var(--opacity-100); }
+
+/* Component-Specific Styles */
+.card-shadow {
+  box-shadow: var(--shadow-card);
+  border-radius: var(--border-radius);
+  border: var(--border-width) var(--border-style) var(--border-light);
+}
+
+.elevated {
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--border-radius);
+}
+
+.floating {
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--border-radius-lg);
+}

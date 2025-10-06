@@ -1,0 +1,301 @@
+/* Progress Bar Component System from Figma and componentscss.txt */
+
+.progress {
+  width: 100%;
+  height: 8px;
+  background: #E5E7EB;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #FD6F41;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+/* Progress variants */
+.progress-success .progress-bar {
+  background: #10B981;
+}
+
+.progress-warning .progress-bar {
+  background: #F59E0B;
+}
+
+.progress-error .progress-bar {
+  background: #EF4444;
+}
+
+.progress-info .progress-bar {
+  background: #3B82F6;
+}
+
+/* Progress sizes */
+.progress-sm {
+  height: 4px;
+}
+
+.progress-lg {
+  height: 12px;
+}
+
+.progress-xl {
+  height: 16px;
+}
+
+/* Progress with label */
+.progress-with-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter';
+  font-size: 14px;
+  color: #374151;
+}
+
+.progress-label-text {
+  font-weight: 500;
+}
+
+.progress-label-percentage {
+  font-weight: 600;
+  color: #FD6F41;
+}
+
+.progress-success .progress-label-percentage {
+  color: #10B981;
+}
+
+.progress-warning .progress-label-percentage {
+  color: #F59E0B;
+}
+
+.progress-error .progress-label-percentage {
+  color: #EF4444;
+}
+
+.progress-info .progress-label-percentage {
+  color: #3B82F6;
+}
+
+/* Progress with steps */
+.progress-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-step {
+  flex: 1;
+  height: 8px;
+  background: #E5E7EB;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-step.active {
+  background: #FD6F41;
+}
+
+.progress-step.completed {
+  background: #10B981;
+}
+
+.progress-step.error {
+  background: #EF4444;
+}
+
+/* Circular progress */
+.progress-circular {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+.progress-circular svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circular-circle {
+  fill: none;
+  stroke: #E5E7EB;
+  stroke-width: 4;
+}
+
+.progress-circular-bar {
+  fill: none;
+  stroke: #FD6F41;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.progress-circular-success .progress-circular-bar {
+  stroke: #10B981;
+}
+
+.progress-circular-warning .progress-circular-bar {
+  stroke: #F59E0B;
+}
+
+.progress-circular-error .progress-circular-bar {
+  stroke: #EF4444;
+}
+
+.progress-circular-info .progress-circular-bar {
+  stroke: #3B82F6;
+}
+
+.progress-circular-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Progress sizes for circular */
+.progress-circular-sm {
+  width: 40px;
+  height: 40px;
+}
+
+.progress-circular-sm .progress-circular-text {
+  font-size: 12px;
+}
+
+.progress-circular-lg {
+  width: 80px;
+  height: 80px;
+}
+
+.progress-circular-lg .progress-circular-text {
+  font-size: 16px;
+}
+
+.progress-circular-xl {
+  width: 100px;
+  height: 100px;
+}
+
+.progress-circular-xl .progress-circular-text {
+  font-size: 18px;
+}
+
+/* Progress with animation */
+.progress-animated .progress-bar {
+  background: linear-gradient(90deg, #FD6F41 0%, #FF8A65 50%, #FD6F41 100%);
+  background-size: 200% 100%;
+  animation: progressShimmer 2s linear infinite;
+}
+
+@keyframes progressShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Progress with stripes */
+.progress-striped .progress-bar {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  animation: progressStripes 1s linear infinite;
+}
+
+@keyframes progressStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}
+
+/* Progress with glow effect */
+.progress-glow .progress-bar {
+  box-shadow: 0 0 10px rgba(253, 111, 65, 0.5);
+}
+
+.progress-success.progress-glow .progress-bar {
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.progress-warning.progress-glow .progress-bar {
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.progress-error.progress-glow .progress-bar {
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+.progress-info.progress-glow .progress-bar {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Progress with text inside */
+.progress-with-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: 'Inter';
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress group */
+.progress-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.progress-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progress-item-label {
+  font-family: 'Inter';
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.progress-item-description {
+  font-family: 'Inter';
+  font-size: 12px;
+  color: #6B7280;
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard UI Kit - Usage Examples</title>
+    
+    <!-- Import Design Tokens -->
+    <link rel="stylesheet" href="design-tokens/colors.css">
+    <link rel="stylesheet" href="design-tokens/typography.css">
+    <link rel="stylesheet" href="design-tokens/spacing.css">
+    <link rel="stylesheet" href="design-tokens/shadows.css">
+    
+    <!-- Import Components -->
+    <link rel="stylesheet" href="components/buttons/button.css">
+    <link rel="stylesheet" href="components/cards/card.css">
+    <link rel="stylesheet" href="components/forms/input.css">
+    <link rel="stylesheet" href="components/navigation/sidebar.css">
+    <link rel="stylesheet" href="components/charts/chart.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            background-color: var(--bg-light);
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-6);
+        }
+        
+        .demo-section {
+            margin-bottom: var(--space-12);
+        }
+        
+        .demo-section h2 {
+            font-family: var(--font-family);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-2xl);
+            color: var(--text-primary);
+            margin-bottom: var(--space-6);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+        
+        .demo-item {
+            background-color: var(--bg-white);
+            padding: var(--space-6);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .demo-item h3 {
+            font-family: var(--font-family);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-lg);
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="heading-1">Finance Dashboard UI Kit - Usage Examples</h1>
+        
+        <!-- Buttons Section -->
+        <section class="demo-section">
+            <h2>Buttons</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Button Variants</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <button class="btn btn-primary btn-md">Primary Button</button>
+                        <button class="btn btn-secondary btn-md">Secondary Button</button>
+                        <button class="btn btn-outline btn-md">Outline Button</button>
+                        <button class="btn btn-ghost btn-md">Ghost Button</button>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Button Sizes</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <button class="btn btn-primary btn-sm">Small Button</button>
+                        <button class="btn btn-primary btn-md">Medium Button</button>
+                        <button class="btn btn-primary btn-lg">Large Button</button>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Icon Buttons</h3>
+                    <div style="display: flex; gap: var(--space-3);">
+                        <button class="btn btn-primary btn-icon">
+                            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"/>
+                                <path d="M18.5 2.50023C18.8978 2.10243 19.4374 1.87894 20 1.87894C20.5626 1.87894 21.1022 2.10243 21.5 2.50023C21.8978 2.89804 22.1213 3.43762 22.1213 4.00023C22.1213 4.56284 21.8978 5.10243 21.5 5.50023L12 15.0002L8 16.0002L9 12.0002L18.5 2.50023Z"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-secondary btn-icon">
+                            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 3V21H21"/>
+                                <path d="M9 9L12 6L16 10L20 6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Cards Section -->
+        <section class="demo-section">
+            <h2>Cards</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Basic Card</h3>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Card Title</h4>
+                            <p class="card-subtitle">Card subtitle</p>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">This is a basic card with header, body, and footer sections.</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn-sm">Action</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Metric Card</h3>
+                    <div class="card dashboard-card metric-card">
+                        <div class="metric-value">$12,345</div>
+                        <div class="metric-label">Total Revenue</div>
+                        <div class="metric-change">+2.1% vs last week</div>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Interactive Card</h3>
+                    <div class="card card-interactive">
+                        <div class="card-header">
+                            <h4 class="card-title">Interactive Card</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Hover over this card to see the interaction effect.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Forms Section -->
+        <section class="demo-section">
+            <h2>Form Inputs</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Basic Input</h3>
+                    <div class="input-group">
+                        <label class="input-label">Email Address</label>
+                        <input type="email" class="input-field input-md" placeholder="Enter your email">
+                        <div class="input-help-text">We'll never share your email.</div>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Input with Icon</h3>
+                    <div class="input-group">
+                        <label class="input-label">Search</label>
+                        <div class="input-with-icon">
+                            <svg class="input-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21L16.65 16.65"/>
+                            </svg>
+                            <input type="text" class="input-field input-md" placeholder="Search...">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Input States</h3>
+                    <div class="input-group">
+                        <label class="input-label">Password</label>
+                        <input type="password" class="input-field input-md input-error" placeholder="Enter password">
+                        <div class="input-error-message">Password must be at least 8 characters.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Typography Section -->
+        <section class="demo-section">
+            <h2>Typography</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Headings</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                        <h1 class="heading-1">Heading 1</h1>
+                        <h2 class="heading-2">Heading 2</h2>
+                        <h3 class="heading-3">Heading 3</h3>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Body Text</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <p class="body-large">Large body text for important content.</p>
+                        <p class="body-normal">Normal body text for regular content.</p>
+                        <p class="body-small">Small body text for secondary information.</p>
+                        <p class="caption">Caption text for labels and metadata.</p>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Text Colors</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <p class="text-primary">Primary text color</p>
+                        <p class="text-secondary">Secondary text color</p>
+                        <p class="text-muted">Muted text color</p>
+                        <p class="text-orange">Orange text color</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Color Palette Section -->
+        <section class="demo-section">
+            <h2>Color Palette</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Primary Colors</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <div style="display: flex; align-items: center; gap: var(--space-3);">
+                            <div style="width: 40px; height: 40px; background-color: var(--primary-orange); border-radius: var(--border-radius);"></div>
+                            <span>Primary Orange (#FD6F41)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--space-3);">
+                            <div style="width: 40px; height: 40px; background-color: var(--bg-white); border: 1px solid var(--border-light); border-radius: var(--border-radius);"></div>
+                            <span>White (#FFFFFF)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Text Colors</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <div style="display: flex; align-items: center; gap: var(--space-3);">
+                            <div style="width: 40px; height: 40px; background-color: var(--text-primary); border-radius: var(--border-radius);"></div>
+                            <span>Primary Text (#121212)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--space-3);">
+                            <div style="width: 40px; height: 40px; background-color: var(--text-secondary); border-radius: var(--border-radius);"></div>
+                            <span>Secondary Text (#737B8B)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Background Colors</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <div style="display: flex; align-items: center; gap: var(--space-3);">
+                            <div style="width: 40px; height: 40px; background-color: var(--bg-light); border-radius: var(--border-radius);"></div>
+                            <span>Light Background (#ECF1F4)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--space-3);">
+                            <div style="width: 40px; height: 40px; background-color: var(--bg-dark); border-radius: var(--border-radius);"></div>
+                            <span>Dark Background (#2E3A59)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

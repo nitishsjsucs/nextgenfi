@@ -1,0 +1,688 @@
+/* Form Wizard Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   FORM WIZARD BASE STYLES
+   ======================================== */
+
+.form-wizard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  transition: all 0.2s ease;
+}
+
+.form-wizard__header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.form-wizard__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3333333333333333em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.form-wizard__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-wizard__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-wizard__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-wizard__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+}
+
+.form-wizard__footer--centered {
+  justify-content: center;
+}
+
+.form-wizard__footer--right {
+  justify-content: flex-end;
+}
+
+/* ========================================
+   FORM WIZARD STEPS
+   ======================================== */
+
+.form-wizard__steps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.form-wizard__step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  position: relative;
+}
+
+.form-wizard__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 2px;
+  background: var(--border-light);
+  z-index: 1;
+}
+
+.form-wizard__step--completed:not(:last-child)::after {
+  background: var(--figma-success);
+}
+
+.form-wizard__step--active:not(:last-child)::after {
+  background: var(--figma-primary);
+}
+
+.form-wizard__step__indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--figma-gray-200);
+  border: 2px solid var(--figma-gray-200);
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.form-wizard__step--completed .form-wizard__step__indicator {
+  background: var(--figma-success);
+  border-color: var(--figma-success);
+  color: var(--bg-white);
+}
+
+.form-wizard__step--active .form-wizard__step__indicator {
+  background: var(--figma-primary);
+  border-color: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.form-wizard__step--error .form-wizard__step__indicator {
+  background: var(--figma-error);
+  border-color: var(--figma-error);
+  color: var(--bg-white);
+}
+
+.form-wizard__step__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.form-wizard__step__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-wizard__step__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-wizard__step--completed .form-wizard__step__title {
+  color: var(--figma-success);
+}
+
+.form-wizard__step--active .form-wizard__step__title {
+  color: var(--figma-primary);
+}
+
+.form-wizard__step--error .form-wizard__step__title {
+  color: var(--figma-error);
+}
+
+/* ========================================
+   FORM WIZARD STEP CONTENT
+   ======================================== */
+
+.form-wizard__step-content {
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 400px;
+}
+
+.form-wizard__step-content--active {
+  display: flex;
+}
+
+.form-wizard__step-content__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.form-wizard__step-content__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.form-wizard__step-content__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-wizard__step-content__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+/* ========================================
+   FORM WIZARD ACTIONS
+   ======================================== */
+
+.form-wizard__actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.form-wizard__actions--vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-wizard__actions--centered {
+  justify-content: center;
+}
+
+.form-wizard__actions--right {
+  justify-content: flex-end;
+}
+
+.form-wizard__actions--space-between {
+  justify-content: space-between;
+}
+
+.form-wizard__actions--wrap {
+  flex-wrap: wrap;
+}
+
+.form-wizard__actions--no-gap {
+  gap: 0;
+}
+
+.form-wizard__actions--small-gap {
+  gap: 8px;
+}
+
+.form-wizard__actions--large-gap {
+  gap: 16px;
+}
+
+.form-wizard__action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.form-wizard__action--primary {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.form-wizard__action--primary:hover {
+  background: var(--figma-primary);
+  opacity: 0.9;
+}
+
+.form-wizard__action--secondary {
+  background: var(--figma-gray-200);
+  color: var(--text-primary);
+}
+
+.form-wizard__action--secondary:hover {
+  background: var(--figma-gray-300);
+}
+
+.form-wizard__action--outline {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.form-wizard__action--outline:hover {
+  background: var(--bg-light);
+  border-color: var(--border-gray);
+}
+
+.form-wizard__action--ghost {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.form-wizard__action--ghost:hover {
+  background: var(--bg-light);
+}
+
+.form-wizard__action--danger {
+  background: var(--figma-error);
+  color: var(--bg-white);
+}
+
+.form-wizard__action--danger:hover {
+  background: var(--figma-error);
+  opacity: 0.9;
+}
+
+.form-wizard__action--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-wizard__action--disabled:hover {
+  background: inherit;
+  opacity: 0.6;
+}
+
+.form-wizard__action--loading {
+  position: relative;
+}
+
+.form-wizard__action--loading::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: form-wizard-action-spin 1s linear infinite;
+}
+
+@keyframes form-wizard-action-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.form-wizard__action__icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wizard__action__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.form-wizard__action__icon svg path {
+  fill: currentColor;
+}
+
+.form-wizard__action__text {
+  flex: 1;
+  text-align: center;
+}
+
+/* ========================================
+   FORM WIZARD PROGRESS
+   ======================================== */
+
+.form-wizard__progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.form-wizard__progress__bar {
+  width: 100%;
+  height: 8px;
+  background: var(--figma-gray-200);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.form-wizard__progress__fill {
+  height: 100%;
+  background: var(--figma-primary);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.form-wizard__progress__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+}
+
+.form-wizard__progress__percentage {
+  font-weight: 500;
+  color: var(--figma-primary);
+}
+
+/* ========================================
+   FORM WIZARD VALIDATION
+   ======================================== */
+
+.form-wizard--validating {
+  position: relative;
+}
+
+.form-wizard--validating::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--figma-primary), transparent);
+  animation: form-wizard-validating 2s ease-in-out infinite;
+}
+
+@keyframes form-wizard-validating {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.form-wizard--valid {
+  border-color: var(--figma-success);
+}
+
+.form-wizard--invalid {
+  border-color: var(--figma-error);
+}
+
+/* ========================================
+   FORM WIZARD ANIMATIONS
+   ======================================== */
+
+.form-wizard--animated {
+  animation: form-wizard-slide-in 0.3s ease-out;
+}
+
+@keyframes form-wizard-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-wizard__step-content--animated {
+  animation: form-wizard-step-content-slide-in 0.3s ease-out;
+}
+
+@keyframes form-wizard-step-content-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   FORM WIZARD ACCESSIBILITY
+   ======================================== */
+
+.form-wizard:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.form-wizard__action:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.form-wizard__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .form-wizard__steps {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-wizard__step {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .form-wizard__step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-wizard {
+    gap: 16px;
+  }
+  
+  .form-wizard__steps {
+    gap: 8px;
+  }
+  
+  .form-wizard__step {
+    gap: 8px;
+  }
+  
+  .form-wizard__step__indicator {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .form-wizard__step__title {
+    font-size: 13px;
+  }
+  
+  .form-wizard__step__description {
+    font-size: 11px;
+  }
+  
+  .form-wizard__step-content {
+    min-height: 300px;
+  }
+  
+  .form-wizard__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-wizard__action {
+    justify-content: center;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .form-wizard__step__indicator {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-700);
+    color: var(--figma-gray-300);
+  }
+  
+  .form-wizard__step--completed .form-wizard__step__indicator {
+    background: var(--figma-success);
+    border-color: var(--figma-success);
+    color: var(--bg-white);
+  }
+  
+  .form-wizard__step--active .form-wizard__step__indicator {
+    background: var(--figma-primary);
+    border-color: var(--figma-primary);
+    color: var(--bg-white);
+  }
+  
+  .form-wizard__step--error .form-wizard__step__indicator {
+    background: var(--figma-error);
+    border-color: var(--figma-error);
+    color: var(--bg-white);
+  }
+  
+  .form-wizard__step:not(:last-child)::after {
+    background: var(--figma-gray-600);
+  }
+  
+  .form-wizard__step--completed:not(:last-child)::after {
+    background: var(--figma-success);
+  }
+  
+  .form-wizard__step--active:not(:last-child)::after {
+    background: var(--figma-primary);
+  }
+  
+  .form-wizard__footer {
+    border-top-color: var(--figma-gray-600);
+  }
+  
+  .form-wizard__progress__bar {
+    background: var(--figma-gray-700);
+  }
+  
+  .form-wizard__action--secondary {
+    background: var(--figma-gray-700);
+    color: var(--bg-white);
+  }
+  
+  .form-wizard__action--secondary:hover {
+    background: var(--figma-gray-600);
+  }
+  
+  .form-wizard__action--outline {
+    border-color: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .form-wizard__action--outline:hover {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .form-wizard__action--ghost {
+    color: var(--bg-white);
+  }
+  
+  .form-wizard__action--ghost:hover {
+    background: var(--figma-gray-700);
+  }
+}

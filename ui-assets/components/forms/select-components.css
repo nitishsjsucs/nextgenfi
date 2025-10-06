@@ -1,0 +1,801 @@
+/* Select Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   SELECT BASE STYLES
+   ======================================== */
+
+.select {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  transition: all 0.2s ease;
+  position: relative;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+}
+
+.select__trigger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  gap: 8px;
+  width: 100%;
+  height: 44px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.select__trigger:focus {
+  outline: none;
+}
+
+.select__trigger--placeholder {
+  color: var(--text-tertiary);
+}
+
+.select__value {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.select__placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+.select__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.select__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.select__icon svg path {
+  fill: var(--text-secondary);
+}
+
+.select--open .select__icon {
+  transform: rotate(180deg);
+}
+
+.select__clear {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  margin-right: 8px;
+}
+
+.select__clear:hover {
+  opacity: 1;
+}
+
+.select__clear svg {
+  width: 14px;
+  height: 14px;
+}
+
+.select__clear svg path {
+  fill: currentColor;
+}
+
+.select__suffix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-left: 8px;
+}
+
+/* ========================================
+   SELECT SIZES
+   ======================================== */
+
+.select--small {
+  border-radius: 6px;
+}
+
+.select--small .select__trigger {
+  padding: 8px 12px;
+  height: 36px;
+  font-size: 13px;
+}
+
+.select--small .select__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.select--small .select__clear svg {
+  width: 12px;
+  height: 12px;
+}
+
+.select--medium {
+  border-radius: 8px;
+}
+
+.select--medium .select__trigger {
+  padding: 12px 16px;
+  height: 44px;
+  font-size: 14px;
+}
+
+.select--large {
+  border-radius: 10px;
+}
+
+.select--large .select__trigger {
+  padding: 16px 20px;
+  height: 52px;
+  font-size: 16px;
+}
+
+.select--large .select__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.select--large .select__clear svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+   SELECT VARIANTS
+   ======================================== */
+
+.select--default {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.select--default:hover {
+  border-color: var(--border-gray);
+}
+
+.select--focused {
+  border-color: var(--figma-primary);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+.select--focused .select__icon svg path {
+  fill: var(--figma-primary);
+}
+
+.select--filled {
+  background: var(--bg-light);
+  border-color: var(--border-gray);
+}
+
+.select--outlined {
+  background: transparent;
+  border: 2px solid var(--border-light);
+}
+
+.select--outlined:hover {
+  border-color: var(--border-gray);
+}
+
+.select--outlined.select--focused {
+  border-color: var(--figma-primary);
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.1);
+}
+
+/* ========================================
+   SELECT STATES
+   ======================================== */
+
+.select--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--bg-light);
+  border-color: var(--border-light);
+}
+
+.select--disabled:hover {
+  border-color: var(--border-light);
+}
+
+.select--disabled .select__trigger {
+  cursor: not-allowed;
+}
+
+.select--error {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.select--error:hover {
+  border-color: var(--figma-error);
+}
+
+.select--error.select--focused {
+  border-color: var(--figma-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.select--success {
+  border-color: var(--figma-success);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.select--success:hover {
+  border-color: var(--figma-success);
+}
+
+.select--success.select--focused {
+  border-color: var(--figma-success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.select--warning {
+  border-color: var(--figma-warning);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.select--warning:hover {
+  border-color: var(--figma-warning);
+}
+
+.select--warning.select--focused {
+  border-color: var(--figma-warning);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* ========================================
+   SELECT OPTIONS
+   ======================================== */
+
+.select__options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: var(--shadow-medium);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 4px;
+  display: none;
+}
+
+.select__options--visible {
+  display: block;
+}
+
+.select__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.select__option:last-child {
+  border-bottom: none;
+}
+
+.select__option:hover {
+  background: var(--bg-light);
+}
+
+.select__option--selected {
+  background: rgba(253, 111, 65, 0.1);
+  color: var(--figma-primary);
+  font-weight: 500;
+}
+
+.select__option--selected:hover {
+  background: rgba(253, 111, 65, 0.15);
+}
+
+.select__option--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.select__option--disabled:hover {
+  background: transparent;
+}
+
+.select__option__icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.select__option__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.select__option__icon svg path {
+  fill: var(--text-secondary);
+}
+
+.select__option__content {
+  flex: 1;
+}
+
+.select__option__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0 0 2px 0;
+}
+
+.select__option__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.select__option__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: var(--figma-primary);
+  color: var(--bg-white);
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   SELECT WITH LABEL
+   ======================================== */
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.select-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.select-label--required::after {
+  content: ' *';
+  color: var(--figma-error);
+}
+
+.select-label--optional::after {
+  content: ' (optional)';
+  color: var(--text-tertiary);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.select-help {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.select-error {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--figma-error);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.select-error svg {
+  width: 12px;
+  height: 12px;
+}
+
+.select-error svg path {
+  fill: var(--figma-error);
+}
+
+.select-success {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--figma-success);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.select-success svg {
+  width: 12px;
+  height: 12px;
+}
+
+.select-success svg path {
+  fill: var(--figma-success);
+}
+
+/* ========================================
+   SELECT WITH ICONS
+   ======================================== */
+
+.select--with-icon {
+  position: relative;
+}
+
+.select--with-icon .select__icon--prefix {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.select--with-icon .select__icon--prefix svg {
+  width: 16px;
+  height: 16px;
+}
+
+.select--with-icon .select__icon--prefix svg path {
+  fill: var(--text-secondary);
+}
+
+.select--with-icon .select__trigger {
+  padding-left: 40px;
+}
+
+.select--with-icon.select--small .select__trigger {
+  padding-left: 36px;
+}
+
+.select--with-icon.select--small .select__icon--prefix {
+  left: 10px;
+}
+
+.select--with-icon.select--large .select__trigger {
+  padding-left: 44px;
+}
+
+.select--with-icon.select--large .select__icon--prefix {
+  left: 14px;
+}
+
+.select--with-clear .select__clear {
+  display: flex;
+  color: var(--text-tertiary);
+}
+
+.select--with-suffix .select__suffix {
+  display: flex;
+}
+
+/* ========================================
+   SELECT MULTIPLE
+   ======================================== */
+
+.select--multiple .select__trigger {
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 12px;
+  min-height: 44px;
+  height: auto;
+}
+
+.select--multiple .select__value {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.select--multiple .select__tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: var(--figma-primary);
+  color: var(--bg-white);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.select--multiple .select__tag__remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: transparent;
+  color: var(--bg-white);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.select--multiple .select__tag__remove:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.select--multiple .select__tag__remove svg {
+  width: 12px;
+  height: 12px;
+}
+
+.select--multiple .select__tag__remove svg path {
+  fill: currentColor;
+}
+
+.select--multiple .select__placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+/* ========================================
+   SELECT VALIDATION
+   ======================================== */
+
+.select--validating {
+  position: relative;
+}
+
+.select--validating::after {
+  content: '';
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--figma-primary);
+  border-radius: 50%;
+  animation: select-spin 1s linear infinite;
+}
+
+@keyframes select-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.select--valid {
+  border-color: var(--figma-success);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.select--invalid {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+/* ========================================
+   SELECT ANIMATIONS
+   ======================================== */
+
+.select--animated {
+  animation: select-slide-in 0.3s ease-out;
+}
+
+@keyframes select-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.select__options--animated {
+  animation: select-options-slide-in 0.2s ease-out;
+}
+
+@keyframes select-options-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.select--shake {
+  animation: select-shake 0.5s ease-in-out;
+}
+
+@keyframes select-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* ========================================
+   SELECT ACCESSIBILITY
+   ======================================== */
+
+.select:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.select__option:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: -2px;
+}
+
+.select__clear:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.select__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .select--with-icon .select__trigger {
+    padding-left: 36px;
+  }
+  
+  .select--with-icon .select__icon--prefix {
+    left: 10px;
+  }
+  
+  .select--with-suffix .select__trigger {
+    padding-right: 36px;
+  }
+  
+  .select--with-suffix .select__suffix {
+    right: 10px;
+  }
+  
+  .select--multiple .select__trigger {
+    padding: 6px 10px;
+    min-height: 36px;
+  }
+  
+  .select--multiple .select__tag {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .select {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .select--filled {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .select--outlined {
+    background: transparent;
+    border-color: var(--figma-gray-600);
+  }
+  
+  .select--disabled {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .select__trigger {
+    color: var(--bg-white);
+  }
+  
+  .select__placeholder {
+    color: var(--figma-gray-400);
+  }
+  
+  .select__suffix {
+    color: var(--figma-gray-300);
+  }
+  
+  .select__options {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .select__option:hover {
+    background: var(--figma-gray-700);
+  }
+  
+  .select__option--selected {
+    background: rgba(253, 111, 65, 0.1);
+    color: var(--figma-primary);
+  }
+  
+  .select__option--selected:hover {
+    background: rgba(253, 111, 65, 0.15);
+  }
+}

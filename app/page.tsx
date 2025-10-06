@@ -136,30 +136,30 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white font-[Inter] text-gray-900 antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-primary antialiased overflow-x-hidden" style={{ fontFamily: 'var(--font-family-primary)' }}>
       {/* Header */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-        className="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-xl border-b border-gray-100"
+        className="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-xl border-b border-light"
       >
         <nav className="container mx-auto flex items-center justify-between px-6 py-4">
           <motion.div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-black to-gray-700 rounded-xl flex items-center justify-center text-white">
+            <div className="w-10 h-10 bg-orange rounded-xl flex items-center justify-center text-white">
               <BuildingIcon />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-xl text-gray-900">BankingOS</span>
-              <span className="text-xs text-gray-500">Plug & Play Backend</span>
+              <span className="heading-small text-primary">BankingOS</span>
+              <span className="text-xs text-muted">Plug & Play Backend</span>
             </div>
           </motion.div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-            <a href="#demo" className="text-gray-600 hover:text-gray-900 transition-colors">Demo</a>
-            <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+            <a href="#features" className="text-body text-muted hover:text-primary transition-colors">Features</a>
+            <a href="#demo" className="text-body text-muted hover:text-primary transition-colors">Demo</a>
+            <a href="#pricing" className="text-body text-muted hover:text-primary transition-colors">Pricing</a>
             <Button onClick={() => router.push('/auth/login')} variant="outline" className="mr-2">Login</Button>
-            <Button onClick={() => router.push('/demo')} className="bg-black hover:bg-gray-800">
+            <Button onClick={() => router.push('/demo')} className="app-button app-button-primary app-button-medium">
               Request Demo
             </Button>
           </div>
@@ -167,23 +167,23 @@ const App = () => {
       </motion.header>
 
       {/* Hero Section */}
-  <section className="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      <section className="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-br from-flash-white via-white to-light-grey">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 left-10 w-20 h-20 bg-gray-200 rounded-full opacity-30"
+            className="absolute top-20 left-10 w-20 h-20 bg-light-grey rounded-full opacity-30"
           />
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-            className="absolute top-40 right-20 w-32 h-32 bg-gray-200 rounded-full opacity-30"
+            className="absolute top-40 right-20 w-32 h-32 bg-light-grey rounded-full opacity-30"
           />
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 6 }}
-            className="absolute bottom-40 left-20 w-24 h-24 bg-green-100 rounded-full opacity-30"
+            className="absolute bottom-40 left-20 w-24 h-24 bg-orange rounded-full opacity-20"
           />
         </div>
 
@@ -194,32 +194,32 @@ const App = () => {
           variants={container}
         >
           <motion.div variants={item} className="mb-6">
-            <Badge variant="secondary" className="px-4 py-2 bg-gray-200 text-gray-800 border-0">
+            <Badge variant="secondary" className="px-4 py-2 bg-light-grey text-primary border-0">
               <ZapIcon className="w-4 h-4 mr-2" />
               Plug & Play Banking Platform
             </Badge>
           </motion.div>
           
           <motion.h1 
-            className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 leading-tight mb-8" 
+            className="heading-large text-primary leading-tight mb-8" 
             variants={item}
           >
             Banking Innovation{' '}
-            <span className="text-black">Simplified</span>
+            <span className="text-orange">Simplified</span>
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed" 
+            className="text-body text-muted max-w-4xl mx-auto mb-12 leading-relaxed" 
             variants={item}
           >
-            Deploy AI analytics, intelligent communications, and enterprise-grade compliance in <span className="font-semibold text-gray-900">weeks, not years</span>. The complete backend platform for modern banking.
+            Deploy AI analytics, intelligent communications, and enterprise-grade compliance in <span className="text-body-bold text-primary">weeks, not years</span>. The complete backend platform for modern banking.
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16" variants={item}>
             <Button
               size="lg"
               onClick={() => router.push('/auth/signup')}
-              className="px-8 py-4 bg-black hover:bg-gray-800 text-white text-lg font-semibold shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="app-button app-button-primary app-button-large px-8 py-4 text-lg font-semibold shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
               Get Started
               <TrendingUpIcon className="ml-2 w-5 h-5" />
@@ -227,7 +227,7 @@ const App = () => {
             <Button
               variant="outline"
               size="lg"
-              className="px-8 py-4 border-2 border-gray-300 text-gray-700 text-lg font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+              className="app-button app-button-outline app-button-large px-8 py-4 border-2 border-light text-primary text-lg font-semibold hover:bg-light transition-all duration-300 hover:scale-105"
             >
               View Documentation
             </Button>
@@ -240,9 +240,9 @@ const App = () => {
           >
             {stats.map((stat, index) => (
               <motion.div key={index} variants={item} className="text-center">
-                <div className="text-3xl font-bold text-black mb-2">{stat.value}</div>
-                <div className="text-sm font-medium text-gray-900 mb-1">{stat.label}</div>
-                <div className="text-xs text-gray-500">{stat.description}</div>
+                <div className="heading-medium text-orange mb-2">{stat.value}</div>
+                <div className="text-body-bold text-primary mb-1">{stat.label}</div>
+                <div className="text-small text-muted">{stat.description}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -250,7 +250,7 @@ const App = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-gray-50">
+      <section id="features" className="py-20 bg-flash-white">
         <motion.div
           className="container mx-auto px-6"
           initial="hidden"
@@ -259,39 +259,39 @@ const App = () => {
           variants={container}
         >
           <motion.div className="text-center mb-16" variants={item}>
-            <Badge variant="outline" className="mb-4 border-gray-300 text-gray-700">Core Features</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <Badge variant="outline" className="mb-4 border-light text-muted">Core Features</Badge>
+            <h2 className="heading-large text-primary mb-6">
               Everything Banks Need
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-body text-muted max-w-3xl mx-auto">
               A comprehensive suite of modern banking capabilities designed for rapid deployment and enterprise scalability.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <motion.div variants={slideInLeft}>
-              <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card className="h-full border border-light shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <BrainIcon className="text-gray-800" />
+                  <div className="w-12 h-12 bg-light-grey rounded-lg flex items-center justify-center mb-4">
+                    <BrainIcon className="text-primary" />
                   </div>
-                  <CardTitle className="text-xl">AI Analytics & Insights</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="heading-small">AI Analytics & Insights</CardTitle>
+                  <CardDescription className="text-body text-muted">
                     Advanced analytics dashboards powered by AI to unlock data-driven strategy and improve portfolio performance.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-small text-muted">
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
                       Risk pattern detection
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
                       Customer segmentation
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-2 w-4 h-4" />
+                      <CheckIcon className="text-orange mr-2 w-4 h-4" />
                       Predictive analytics
                     </li>
                   </ul>

@@ -1,0 +1,304 @@
+/* Breadcrumb Navigation Component System from Figma and componentscss.txt */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter';
+  font-size: 14px;
+  line-height: 20px;
+  color: #6B7280;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: '/';
+  color: #D1D5DB;
+  font-weight: 400;
+}
+
+.breadcrumb-link {
+  color: #6B7280;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #FD6F41;
+  text-decoration: underline;
+}
+
+.breadcrumb-current {
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Breadcrumb with icons */
+.breadcrumb-with-icons .breadcrumb-item {
+  gap: 6px;
+}
+
+.breadcrumb-icon {
+  width: 16px;
+  height: 16px;
+  color: #9CA3AF;
+}
+
+.breadcrumb-link:hover .breadcrumb-icon {
+  color: #FD6F41;
+}
+
+.breadcrumb-current .breadcrumb-icon {
+  color: #374151;
+}
+
+/* Breadcrumb separator variants */
+.breadcrumb-separator-arrow .breadcrumb-item:not(:last-child)::after {
+  content: '→';
+  color: #D1D5DB;
+}
+
+.breadcrumb-separator-chevron .breadcrumb-item:not(:last-child)::after {
+  content: '›';
+  color: #D1D5DB;
+  font-size: 16px;
+}
+
+.breadcrumb-separator-dot .breadcrumb-item:not(:last-child)::after {
+  content: '•';
+  color: #D1D5DB;
+  font-size: 16px;
+}
+
+/* Breadcrumb sizes */
+.breadcrumb-sm {
+  font-size: 12px;
+  gap: 6px;
+}
+
+.breadcrumb-sm .breadcrumb-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.breadcrumb-lg {
+  font-size: 16px;
+  gap: 12px;
+}
+
+.breadcrumb-lg .breadcrumb-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Breadcrumb with background */
+.breadcrumb-with-bg {
+  background: #F9FAFB;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+
+.breadcrumb-with-bg .breadcrumb-item:not(:last-child)::after {
+  color: #9CA3AF;
+}
+
+/* Breadcrumb in card */
+.breadcrumb-card {
+  background: #FFFFFF;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 20px 50px 1px rgba(64, 72, 82, 0.1);
+  border: 1px solid #E5E7EB;
+}
+
+.breadcrumb-card .breadcrumb-item:not(:last-child)::after {
+  color: #D1D5DB;
+}
+
+/* Breadcrumb with page title */
+.breadcrumb-with-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.breadcrumb-title {
+  font-family: 'Inter';
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 32px;
+}
+
+.breadcrumb-subtitle {
+  font-family: 'Inter';
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 20px;
+}
+
+/* Responsive breadcrumb */
+.breadcrumb-responsive {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.breadcrumb-responsive::-webkit-scrollbar {
+  display: none;
+}
+
+.breadcrumb-responsive .breadcrumb-item {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Breadcrumb with dropdown */
+.breadcrumb-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.breadcrumb-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #6B7280;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-dropdown-toggle:hover {
+  color: #FD6F41;
+}
+
+.breadcrumb-dropdown-icon {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+}
+
+.breadcrumb-dropdown.active .breadcrumb-dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.breadcrumb-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0px 20px 50px 1px rgba(64, 72, 82, 0.1);
+  padding: 8px 0;
+  min-width: 200px;
+  z-index: 1000;
+  display: none;
+}
+
+.breadcrumb-dropdown.active .breadcrumb-dropdown-menu {
+  display: block;
+}
+
+.breadcrumb-dropdown-item {
+  display: block;
+  padding: 8px 16px;
+  color: #374151;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.breadcrumb-dropdown-item:hover {
+  background: #F9FAFB;
+  color: #FD6F41;
+}
+
+/* Breadcrumb with actions */
+.breadcrumb-with-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.breadcrumb-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.breadcrumb-action-button {
+  padding: 8px 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #374151;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.breadcrumb-action-button:hover {
+  background: #F3F4F6;
+  border-color: #9CA3AF;
+}
+
+.breadcrumb-action-button-primary {
+  background: #FD6F41;
+  border-color: #FD6F41;
+  color: #FFFFFF;
+}
+
+.breadcrumb-action-button-primary:hover {
+  background: #E55A2B;
+  border-color: #E55A2B;
+}
+
+/* Breadcrumb with search */
+.breadcrumb-with-search {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.breadcrumb-search {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+}
+
+.breadcrumb-search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #FFFFFF;
+}
+
+.breadcrumb-search-input:focus {
+  outline: none;
+  border-color: #FD6F41;
+  box-shadow: 0 0 0 3px rgba(253, 111, 65, 0.2);
+}
+
+.breadcrumb-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #9CA3AF;
+}

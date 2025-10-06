@@ -1,0 +1,612 @@
+/* Form Fieldset Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   FORM FIELDSET BASE STYLES
+   ======================================== */
+
+.form-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  transition: all 0.2s ease;
+}
+
+.form-fieldset__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.form-fieldset__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3333333333333333em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.form-fieldset__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-fieldset__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-fieldset__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-fieldset__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+}
+
+.form-fieldset__footer--centered {
+  justify-content: center;
+}
+
+.form-fieldset__footer--right {
+  justify-content: flex-end;
+}
+
+/* ========================================
+   FORM FIELDSET SECTIONS
+   ======================================== */
+
+.form-fieldset__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-small);
+}
+
+.form-fieldset__section--no-padding {
+  padding: 0;
+}
+
+.form-fieldset__section--no-background {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.form-fieldset__section--no-border {
+  border: none;
+}
+
+.form-fieldset__section--no-shadow {
+  box-shadow: none;
+}
+
+.form-fieldset__section--collapsed {
+  gap: 0;
+}
+
+.form-fieldset__section--expanded {
+  gap: 16px;
+}
+
+.form-fieldset__section--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-fieldset__section--error {
+  border-color: var(--figma-error);
+}
+
+.form-fieldset__section--success {
+  border-color: var(--figma-success);
+}
+
+.form-fieldset__section--warning {
+  border-color: var(--figma-warning);
+}
+
+/* ========================================
+   FORM FIELDSET SECTION HEADER
+   ======================================== */
+
+.form-fieldset__section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.form-fieldset__section__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5555555555555556em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.form-fieldset__section__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-fieldset__section__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ========================================
+   FORM FIELDSET SECTION ACTIONS
+   ======================================== */
+
+.form-fieldset__section__actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.form-fieldset__section__actions--vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-fieldset__section__actions--centered {
+  justify-content: center;
+}
+
+.form-fieldset__section__actions--right {
+  justify-content: flex-end;
+}
+
+.form-fieldset__section__actions--space-between {
+  justify-content: space-between;
+}
+
+.form-fieldset__section__actions--wrap {
+  flex-wrap: wrap;
+}
+
+.form-fieldset__section__actions--no-gap {
+  gap: 0;
+}
+
+.form-fieldset__section__actions--small-gap {
+  gap: 8px;
+}
+
+.form-fieldset__section__actions--large-gap {
+  gap: 16px;
+}
+
+.form-fieldset__section__action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.form-fieldset__section__action--primary {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.form-fieldset__section__action--primary:hover {
+  background: var(--figma-primary);
+  opacity: 0.9;
+}
+
+.form-fieldset__section__action--secondary {
+  background: var(--figma-gray-200);
+  color: var(--text-primary);
+}
+
+.form-fieldset__section__action--secondary:hover {
+  background: var(--figma-gray-300);
+}
+
+.form-fieldset__section__action--outline {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.form-fieldset__section__action--outline:hover {
+  background: var(--bg-light);
+  border-color: var(--border-gray);
+}
+
+.form-fieldset__section__action--ghost {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.form-fieldset__section__action--ghost:hover {
+  background: var(--bg-light);
+}
+
+.form-fieldset__section__action--danger {
+  background: var(--figma-error);
+  color: var(--bg-white);
+}
+
+.form-fieldset__section__action--danger:hover {
+  background: var(--figma-error);
+  opacity: 0.9;
+}
+
+.form-fieldset__section__action--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-fieldset__section__action--disabled:hover {
+  background: inherit;
+  opacity: 0.6;
+}
+
+.form-fieldset__section__action--loading {
+  position: relative;
+}
+
+.form-fieldset__section__action--loading::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: form-fieldset-action-spin 1s linear infinite;
+}
+
+@keyframes form-fieldset-action-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.form-fieldset__section__action__icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-fieldset__section__action__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.form-fieldset__section__action__icon svg path {
+  fill: currentColor;
+}
+
+.form-fieldset__section__action__text {
+  flex: 1;
+  text-align: center;
+}
+
+/* ========================================
+   FORM FIELDSET SECTION TOGGLE
+   ======================================== */
+
+.form-fieldset__section__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--figma-gray-100);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-fieldset__section__toggle:hover {
+  background: var(--figma-gray-200);
+}
+
+.form-fieldset__section--disabled .form-fieldset__section__toggle {
+  cursor: not-allowed;
+}
+
+.form-fieldset__section--disabled .form-fieldset__section__toggle:hover {
+  background: var(--figma-gray-100);
+}
+
+.form-fieldset__section__toggle svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.form-fieldset__section--expanded .form-fieldset__section__toggle svg {
+  transform: rotate(180deg);
+}
+
+.form-fieldset__section__toggle svg path {
+  fill: var(--text-secondary);
+}
+
+/* ========================================
+   FORM FIELDSET SECTION COLLAPSE
+   ======================================== */
+
+.form-fieldset__section__collapse {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.form-fieldset__section--expanded .form-fieldset__section__collapse {
+  display: flex;
+}
+
+.form-fieldset__section--no-border .form-fieldset__section__collapse {
+  border-top: none;
+}
+
+/* ========================================
+   FORM FIELDSET VALIDATION
+   ======================================== */
+
+.form-fieldset--validating {
+  position: relative;
+}
+
+.form-fieldset--validating::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--figma-primary), transparent);
+  animation: form-fieldset-validating 2s ease-in-out infinite;
+}
+
+@keyframes form-fieldset-validating {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.form-fieldset--valid {
+  border-color: var(--figma-success);
+}
+
+.form-fieldset--invalid {
+  border-color: var(--figma-error);
+}
+
+/* ========================================
+   FORM FIELDSET ANIMATIONS
+   ======================================== */
+
+.form-fieldset--animated {
+  animation: form-fieldset-slide-in 0.3s ease-out;
+}
+
+@keyframes form-fieldset-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-fieldset__section--animated {
+  animation: form-fieldset-section-slide-in 0.3s ease-out;
+}
+
+@keyframes form-fieldset-section-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-fieldset__section__collapse--animated {
+  animation: form-fieldset-collapse-slide-in 0.3s ease-out;
+}
+
+@keyframes form-fieldset-collapse-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   FORM FIELDSET ACCESSIBILITY
+   ======================================== */
+
+.form-fieldset:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.form-fieldset__section__action:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.form-fieldset__section__toggle:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.form-fieldset__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .form-fieldset {
+    gap: 16px;
+  }
+  
+  .form-fieldset__section {
+    padding: 16px;
+  }
+  
+  .form-fieldset__section__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-fieldset__section__action {
+    justify-content: center;
+  }
+  
+  .form-fieldset__section__toggle {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .form-fieldset__section__toggle svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .form-fieldset__section {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .form-fieldset__section--no-background {
+    background: transparent;
+  }
+  
+  .form-fieldset__section__actions {
+    border-top-color: var(--figma-gray-600);
+  }
+  
+  .form-fieldset__section__collapse {
+    border-top-color: var(--figma-gray-600);
+  }
+  
+  .form-fieldset__section__toggle {
+    background: var(--figma-gray-700);
+  }
+  
+  .form-fieldset__section__toggle:hover {
+    background: var(--figma-gray-600);
+  }
+  
+  .form-fieldset__section__toggle svg path {
+    fill: var(--figma-gray-300);
+  }
+  
+  .form-fieldset__section__action--secondary {
+    background: var(--figma-gray-700);
+    color: var(--bg-white);
+  }
+  
+  .form-fieldset__section__action--secondary:hover {
+    background: var(--figma-gray-600);
+  }
+  
+  .form-fieldset__section__action--outline {
+    border-color: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .form-fieldset__section__action--outline:hover {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .form-fieldset__section__action--ghost {
+    color: var(--bg-white);
+  }
+  
+  .form-fieldset__section__action--ghost:hover {
+    background: var(--figma-gray-700);
+  }
+}

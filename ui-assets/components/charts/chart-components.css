@@ -1,0 +1,681 @@
+/* Chart Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   CHART CARD BASE STYLES
+   ======================================== */
+
+.chart-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  gap: 48px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.chart-card--with-background {
+  background: var(--bg-white);
+  box-shadow: var(--shadow-medium);
+}
+
+.chart-card--no-background {
+  padding: 0 0 32px;
+  gap: 72px;
+}
+
+.chart-card__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 246px;
+}
+
+.chart-card__title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.chart-card__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5555555555555556em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.chart-card__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.chart-card__percentage-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.chart-card__percentage-value-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.chart-card__percentage-value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3333333333333333em;
+  color: var(--figma-primary);
+  margin: 0;
+}
+
+.chart-card__percentage-change {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--figma-success);
+  margin: 0;
+}
+
+.chart-card__percentage-change--negative {
+  color: var(--figma-error);
+}
+
+.chart-card__percentage-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6153846153846154em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ========================================
+   CHART AREA
+   ======================================== */
+
+.chart-card__chart-area {
+  width: 100%;
+  height: 171px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chart-card--no-background .chart-card__chart-area {
+  height: 154px;
+}
+
+.chart-card__chart-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.chart-card__chart-line {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  opacity: 0.2;
+  border: 1px dashed #121212;
+}
+
+.chart-card__chart-line--solid {
+  opacity: 0.1;
+  border: 1px solid #121212;
+}
+
+.chart-card__chart-line--horizontal {
+  top: 25%;
+}
+
+.chart-card__chart-line--horizontal-2 {
+  top: 50%;
+}
+
+.chart-card__chart-line--horizontal-3 {
+  top: 75%;
+}
+
+.chart-card__chart-line--vertical {
+  left: 25%;
+  height: 100%;
+  width: 0;
+}
+
+.chart-card__chart-line--vertical-2 {
+  left: 50%;
+  height: 100%;
+  width: 0;
+}
+
+.chart-card__chart-line--vertical-3 {
+  left: 75%;
+  height: 100%;
+  width: 0;
+}
+
+/* ========================================
+   CHART BARS
+   ======================================== */
+
+.chart-card__bars {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.chart-card__bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 22px;
+}
+
+.chart-card__bar {
+  width: 100%;
+  border-radius: 200px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.chart-card__bar--primary {
+  background: var(--figma-primary);
+}
+
+.chart-card__bar--secondary {
+  background: #D0D6DD;
+}
+
+.chart-card--no-background .chart-card__bar--secondary {
+  background: #2F292B;
+}
+
+.chart-card__bar--success {
+  background: var(--figma-success);
+}
+
+.chart-card__bar--warning {
+  background: var(--figma-warning);
+}
+
+.chart-card__bar--error {
+  background: var(--figma-error);
+}
+
+.chart-card__bar--info {
+  background: var(--figma-info);
+}
+
+.chart-card__bar-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1em;
+  text-align: center;
+  color: var(--text-tertiary);
+  opacity: 0.5;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.chart-card__bar-value {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1em;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  padding: 2px 4px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-small);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.chart-card__bar:hover .chart-card__bar-value {
+  opacity: 1;
+}
+
+.chart-card__bar:hover {
+  transform: scaleY(1.05);
+}
+
+/* ========================================
+   CHART LEGEND
+   ======================================== */
+
+.chart-card__legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 237px;
+}
+
+.chart-card__legend-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 34px;
+}
+
+.chart-card__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.chart-card__legend-item:hover {
+  opacity: 0.8;
+}
+
+.chart-card__legend-item--disabled {
+  opacity: 0.4;
+}
+
+.chart-card__legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chart-card__legend-dot--primary {
+  background: var(--figma-primary);
+}
+
+.chart-card__legend-dot--secondary {
+  background: #D0D6DD;
+}
+
+.chart-card--no-background .chart-card__legend-dot--secondary {
+  background: #2F292B;
+}
+
+.chart-card__legend-dot--success {
+  background: var(--figma-success);
+}
+
+.chart-card__legend-dot--warning {
+  background: var(--figma-warning);
+}
+
+.chart-card__legend-dot--error {
+  background: var(--figma-error);
+}
+
+.chart-card__legend-dot--info {
+  background: var(--figma-info);
+}
+
+.chart-card__legend-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1em;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.chart-card__legend-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.chart-card__legend-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--figma-gray-100);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-card__legend-action:hover {
+  background: var(--figma-gray-200);
+}
+
+.chart-card__legend-action svg {
+  width: 16px;
+  height: 16px;
+}
+
+.chart-card__legend-action svg path {
+  fill: var(--text-secondary);
+}
+
+/* ========================================
+   CHART TYPES
+   ======================================== */
+
+.chart-card--line {
+  /* Line chart specific styles */
+}
+
+.chart-card--bar {
+  /* Bar chart specific styles */
+}
+
+.chart-card--area {
+  /* Area chart specific styles */
+}
+
+.chart-card--pie {
+  /* Pie chart specific styles */
+}
+
+.chart-card--doughnut {
+  /* Doughnut chart specific styles */
+}
+
+/* ========================================
+   CHART SIZES
+   ======================================== */
+
+.chart-card--small {
+  padding: 20px;
+  gap: 24px;
+}
+
+.chart-card--small .chart-card__chart-area {
+  height: 120px;
+}
+
+.chart-card--small .chart-card__title {
+  font-size: 16px;
+}
+
+.chart-card--small .chart-card__percentage-value {
+  font-size: 20px;
+}
+
+.chart-card--large {
+  padding: 40px;
+  gap: 60px;
+}
+
+.chart-card--large .chart-card__chart-area {
+  height: 220px;
+}
+
+.chart-card--large .chart-card__title {
+  font-size: 20px;
+}
+
+.chart-card--large .chart-card__percentage-value {
+  font-size: 28px;
+}
+
+/* ========================================
+   CHART THEMES
+   ======================================== */
+
+.chart-card--primary {
+  border-left: 4px solid var(--figma-primary);
+}
+
+.chart-card--success {
+  border-left: 4px solid var(--figma-success);
+}
+
+.chart-card--warning {
+  border-left: 4px solid var(--figma-warning);
+}
+
+.chart-card--error {
+  border-left: 4px solid var(--figma-error);
+}
+
+.chart-card--info {
+  border-left: 4px solid var(--figma-info);
+}
+
+/* ========================================
+   CHART STATES
+   ======================================== */
+
+.chart-card--loading {
+  position: relative;
+}
+
+.chart-card--loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--figma-primary), transparent);
+  animation: chart-loading 2s ease-in-out infinite;
+}
+
+@keyframes chart-loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.chart-card--error {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.chart-card--no-data {
+  opacity: 0.6;
+}
+
+.chart-card--no-data .chart-card__chart-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-card--no-data .chart-card__no-data-message {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+/* ========================================
+   CHART ANIMATIONS
+   ======================================== */
+
+.chart-card--animated {
+  animation: chart-slide-in 0.3s ease-out;
+}
+
+@keyframes chart-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chart-card__bar--animated {
+  animation: chart-bar-grow 0.6s ease-out;
+}
+
+@keyframes chart-bar-grow {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+
+/* ========================================
+   CHART ACCESSIBILITY
+   ======================================== */
+
+.chart-card:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.chart-card__legend-action:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.chart-card__bar:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.chart-card__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .chart-card {
+    padding: 24px;
+    gap: 32px;
+  }
+  
+  .chart-card__header {
+    gap: 16px;
+  }
+  
+  .chart-card__legend {
+    gap: 16px;
+  }
+  
+  .chart-card__legend-items {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-card {
+    padding: 16px;
+    gap: 24px;
+  }
+  
+  .chart-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .chart-card__percentage-group {
+    align-self: flex-end;
+  }
+  
+  .chart-card__chart-area {
+    height: 140px;
+  }
+  
+  .chart-card--no-background .chart-card__chart-area {
+    height: 120px;
+  }
+  
+  .chart-card__legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .chart-card__legend-items {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .chart-card__bars {
+    gap: 4px;
+  }
+  
+  .chart-card__bar-group {
+    max-width: 18px;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .chart-card--with-background {
+    background: var(--figma-gray-800);
+    box-shadow: 0px 20px 50px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  .chart-card__chart-line {
+    border-color: var(--figma-gray-400);
+  }
+  
+  .chart-card__bar-value {
+    background: var(--figma-gray-700);
+    color: var(--bg-white);
+  }
+  
+  .chart-card__legend-action {
+    background: var(--figma-gray-700);
+  }
+  
+  .chart-card__legend-action:hover {
+    background: var(--figma-gray-600);
+  }
+}

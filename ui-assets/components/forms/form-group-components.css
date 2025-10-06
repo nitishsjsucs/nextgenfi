@@ -1,0 +1,555 @@
+/* Form Group Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   FORM GROUP BASE STYLES
+   ======================================== */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  transition: all 0.2s ease;
+}
+
+.form-group__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.form-group__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5555555555555556em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.form-group__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-group__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6153846153846154em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-group__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.form-group__footer--centered {
+  justify-content: center;
+}
+
+.form-group__footer--right {
+  justify-content: flex-end;
+}
+
+/* ========================================
+   FORM GROUP VARIANTS
+   ======================================== */
+
+.form-group--default {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.form-group--card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-small);
+  padding: 24px;
+}
+
+.form-group--outlined {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.form-group--filled {
+  background: var(--bg-light);
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.form-group--elevated {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
+  padding: 24px;
+}
+
+.form-group--flat {
+  background: var(--bg-white);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* ========================================
+   FORM GROUP SIZES
+   ======================================== */
+
+.form-group--small {
+  gap: 12px;
+}
+
+.form-group--small.form-group--card,
+.form-group--small.form-group--outlined,
+.form-group--small.form-group--filled,
+.form-group--small.form-group--elevated {
+  padding: 16px;
+}
+
+.form-group--medium {
+  gap: 16px;
+}
+
+.form-group--medium.form-group--card,
+.form-group--medium.form-group--outlined,
+.form-group--medium.form-group--filled,
+.form-group--medium.form-group--elevated {
+  padding: 24px;
+}
+
+.form-group--large {
+  gap: 20px;
+}
+
+.form-group--large.form-group--card,
+.form-group--large.form-group--outlined,
+.form-group--large.form-group--filled,
+.form-group--large.form-group--elevated {
+  padding: 32px;
+}
+
+/* ========================================
+   FORM GROUP STATES
+   ======================================== */
+
+.form-group--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-group--disabled .form-group__body {
+  pointer-events: none;
+}
+
+.form-group--error {
+  border-color: var(--figma-error);
+  background: rgba(239, 68, 68, 0.02);
+}
+
+.form-group--success {
+  border-color: var(--figma-success);
+  background: rgba(16, 185, 129, 0.02);
+}
+
+.form-group--warning {
+  border-color: var(--figma-warning);
+  background: rgba(245, 158, 11, 0.02);
+}
+
+.form-group--info {
+  border-color: var(--figma-info);
+  background: rgba(59, 130, 246, 0.02);
+}
+
+/* ========================================
+   FORM GROUP ACTIONS
+   ======================================== */
+
+.form-group__actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.form-group__actions--vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-group__actions--centered {
+  justify-content: center;
+}
+
+.form-group__actions--right {
+  justify-content: flex-end;
+}
+
+.form-group__actions--space-between {
+  justify-content: space-between;
+}
+
+.form-group__actions--wrap {
+  flex-wrap: wrap;
+}
+
+.form-group__actions--no-gap {
+  gap: 0;
+}
+
+.form-group__actions--small-gap {
+  gap: 8px;
+}
+
+.form-group__actions--large-gap {
+  gap: 16px;
+}
+
+.form-group__action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.form-group__action--primary {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.form-group__action--primary:hover {
+  background: var(--figma-primary);
+  opacity: 0.9;
+}
+
+.form-group__action--secondary {
+  background: var(--figma-gray-200);
+  color: var(--text-primary);
+}
+
+.form-group__action--secondary:hover {
+  background: var(--figma-gray-300);
+}
+
+.form-group__action--outline {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.form-group__action--outline:hover {
+  background: var(--bg-light);
+  border-color: var(--border-gray);
+}
+
+.form-group__action--ghost {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.form-group__action--ghost:hover {
+  background: var(--bg-light);
+}
+
+.form-group__action--danger {
+  background: var(--figma-error);
+  color: var(--bg-white);
+}
+
+.form-group__action--danger:hover {
+  background: var(--figma-error);
+  opacity: 0.9;
+}
+
+.form-group__action--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-group__action--disabled:hover {
+  background: inherit;
+  opacity: 0.6;
+}
+
+.form-group__action--loading {
+  position: relative;
+}
+
+.form-group__action--loading::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: form-group-action-spin 1s linear infinite;
+}
+
+@keyframes form-group-action-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.form-group__action__icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group__action__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.form-group__action__icon svg path {
+  fill: currentColor;
+}
+
+.form-group__action__text {
+  flex: 1;
+  text-align: center;
+}
+
+/* ========================================
+   FORM GROUP VALIDATION
+   ======================================== */
+
+.form-group--validating {
+  position: relative;
+}
+
+.form-group--validating::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--figma-primary), transparent);
+  animation: form-group-validating 2s ease-in-out infinite;
+}
+
+@keyframes form-group-validating {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.form-group--valid {
+  border-color: var(--figma-success);
+}
+
+.form-group--invalid {
+  border-color: var(--figma-error);
+}
+
+/* ========================================
+   FORM GROUP ANIMATIONS
+   ======================================== */
+
+.form-group--animated {
+  animation: form-group-slide-in 0.3s ease-out;
+}
+
+@keyframes form-group-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group--fade-in {
+  animation: form-group-fade-in 0.3s ease-out;
+}
+
+@keyframes form-group-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.form-group--slide-up {
+  animation: form-group-slide-up 0.3s ease-out;
+}
+
+@keyframes form-group-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   FORM GROUP ACCESSIBILITY
+   ======================================== */
+
+.form-group:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.form-group__action:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.form-group__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .form-group {
+    gap: 12px;
+  }
+  
+  .form-group--card,
+  .form-group--outlined,
+  .form-group--filled,
+  .form-group--elevated {
+    padding: 16px;
+  }
+  
+  .form-group__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-group__action {
+    justify-content: center;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .form-group--card {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .form-group--outlined {
+    border-color: var(--figma-gray-600);
+  }
+  
+  .form-group--filled {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .form-group--elevated {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .form-group--flat {
+    background: transparent;
+  }
+  
+  .form-group__footer {
+    border-top-color: var(--figma-gray-600);
+  }
+  
+  .form-group__action--secondary {
+    background: var(--figma-gray-700);
+    color: var(--bg-white);
+  }
+  
+  .form-group__action--secondary:hover {
+    background: var(--figma-gray-600);
+  }
+  
+  .form-group__action--outline {
+    border-color: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .form-group__action--outline:hover {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .form-group__action--ghost {
+    color: var(--bg-white);
+  }
+  
+  .form-group__action--ghost:hover {
+    background: var(--figma-gray-700);
+  }
+}

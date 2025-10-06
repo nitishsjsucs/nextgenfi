@@ -1,0 +1,466 @@
+/* Complete Design System - Colors and Typography */
+/* Extracted from colorandtypography.txt and Figma Design Style (node 23-2946) */
+
+:root {
+  /* ========================================
+     PRIMARY COLOR PALETTE
+     ======================================== */
+  
+  /* Brand Colors */
+  --primary-orange: #FD6F41;
+  --primary-brown: #2F292B;
+  --primary-light-brown: #ADA1A1;
+  
+  /* Text Colors */
+  --text-primary: #121212;
+  --text-secondary: #2F292B;
+  --text-muted: #4F5B67;
+  --text-light: #737B8B;
+  
+  /* Background Colors */
+  --bg-white: #FFFFFF;
+  --bg-light: #F9FAFB;
+  --bg-flash-white: #ECF1F4;
+  --bg-light-grey: #E0E9EF;
+  
+  /* Border Colors */
+  --border-light: #EBEFF6;
+  --border-divider: #D2DAE2;
+  
+  /* Text Color Opacity Variants */
+  --text-100: #121212;        /* 100% opacity */
+  --text-80: #232323;         /* 80% opacity */
+  --text-70: rgba(18, 18, 18, 0.7);  /* 70% opacity */
+  --text-60: #4F5B67;         /* 60% opacity */
+  --text-50: #737B8B;         /* 50% opacity */
+
+  /* ========================================
+     TYPOGRAPHY SYSTEM
+     ======================================== */
+  
+  /* Font Family */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Font Sizes - Complete Scale */
+  --font-size-xs: 9px;        /* Small labels */
+  --font-size-sm: 12px;       /* Small text */
+  --font-size-base: 14px;     /* Body text */
+  --font-size-md: 16px;       /* Medium text */
+  --font-size-lg: 24px;       /* Small headings */
+  --font-size-xl: 32px;       /* Medium headings */
+  --font-size-2xl: 50px;      /* Large headings */
+  --font-size-3xl: 60px;      /* Extra large headings */
+  
+  /* Line Heights */
+  --line-height-tight: 1.1em;     /* 110% - Small labels */
+  --line-height-normal: 1.2em;    /* 120% - Large headings */
+  --line-height-relaxed: 1.31em;  /* 131% - Medium headings */
+  --line-height-loose: 1.33em;    /* 133% - Small headings */
+  --line-height-comfortable: 1.5em; /* 150% - Body text */
+  --line-height-text: 1.57em;     /* 157% - Text body */
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.04em;   /* -4% - Large headings */
+  --letter-spacing-normal: -0.02em;  /* -2% - Headers */
+  --letter-spacing-wide: 0.1em;      /* 10% - Hex codes */
+  --letter-spacing-wider: -0.02em;   /* -2.08% - Small headings */
+
+  /* ========================================
+     TYPOGRAPHY STYLES
+     ======================================== */
+  
+  /* Heading Large */
+  --heading-large-font-family: var(--font-family-primary);
+  --heading-large-font-weight: var(--font-weight-normal);
+  --heading-large-font-size: var(--font-size-2xl);
+  --heading-large-line-height: 60px;
+  --heading-large-letter-spacing: var(--letter-spacing-tight);
+  --heading-large-color: var(--text-primary);
+  
+  /* Heading Medium */
+  --heading-medium-font-family: var(--font-family-primary);
+  --heading-medium-font-weight: var(--font-weight-normal);
+  --heading-medium-font-size: var(--font-size-xl);
+  --heading-medium-line-height: 42px;
+  --heading-medium-color: var(--text-primary);
+  
+  /* Heading Small */
+  --heading-small-font-family: var(--font-family-primary);
+  --heading-small-font-weight: var(--font-weight-medium);
+  --heading-small-font-size: var(--font-size-lg);
+  --heading-small-line-height: 32px;
+  --heading-small-letter-spacing: var(--letter-spacing-wider);
+  --heading-small-color: var(--text-primary);
+  
+  /* Text Body - Regular */
+  --text-body-font-family: var(--font-family-primary);
+  --text-body-font-weight: var(--font-weight-normal);
+  --text-body-font-size: var(--font-size-base);
+  --text-body-line-height: 22px;
+  --text-body-color: var(--text-primary);
+  
+  /* Text Body - Bold */
+  --text-body-bold-font-family: var(--font-family-primary);
+  --text-body-bold-font-weight: var(--font-weight-semibold);
+  --text-body-bold-font-size: var(--font-size-base);
+  --text-body-bold-line-height: 22px;
+  --text-body-bold-color: var(--text-primary);
+  
+  /* Text Body - Regular with Opacity */
+  --text-body-muted-font-family: var(--font-family-primary);
+  --text-body-muted-font-weight: var(--font-weight-normal);
+  --text-body-muted-font-size: var(--font-size-base);
+  --text-body-muted-line-height: 22px;
+  --text-body-muted-color: var(--text-primary);
+  --text-body-muted-opacity: 0.7;
+  
+  /* Small Text */
+  --text-small-font-family: var(--font-family-primary);
+  --text-small-font-weight: var(--font-weight-normal);
+  --text-small-font-size: var(--font-size-md);
+  --text-small-line-height: 21px;
+  --text-small-color: var(--text-primary);
+  
+  /* Header Text */
+  --header-font-family: var(--font-family-primary);
+  --header-font-weight: var(--font-weight-semibold);
+  --header-font-size: var(--font-size-3xl);
+  --header-line-height: 72px;
+  --header-letter-spacing: var(--letter-spacing-normal);
+  --header-color: var(--text-secondary);
+
+  /* ========================================
+     SPACING SYSTEM
+     ======================================== */
+  
+  /* Spacing Scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+  
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-base: 8px;
+  --radius-md: 10.84px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 32px;
+  --radius-full: 50%;
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+  
+  --shadow-sm: 0px 4.51px 13.54px rgba(35, 55, 128, 0.08);
+  --shadow-base: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0px 20px 50px 1px rgba(64, 72, 82, 0.1);
+
+  /* ========================================
+     LAYOUT DIMENSIONS
+     ======================================== */
+  
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+  
+  /* Design System Specific */
+  --design-width: 1301px;
+  --design-height: 951px;
+  --design-section-width: 1173px;
+  --design-content-width: 1085px;
+}
+
+/* ========================================
+   TYPOGRAPHY UTILITY CLASSES
+   ======================================== */
+
+/* Heading Classes */
+.heading-large {
+  font-family: var(--heading-large-font-family);
+  font-weight: var(--heading-large-font-weight);
+  font-size: var(--heading-large-font-size);
+  line-height: var(--heading-large-line-height);
+  letter-spacing: var(--heading-large-letter-spacing);
+  color: var(--heading-large-color);
+}
+
+.heading-medium {
+  font-family: var(--heading-medium-font-family);
+  font-weight: var(--heading-medium-font-weight);
+  font-size: var(--heading-medium-font-size);
+  line-height: var(--heading-medium-line-height);
+  color: var(--heading-medium-color);
+}
+
+.heading-small {
+  font-family: var(--heading-small-font-family);
+  font-weight: var(--heading-small-font-weight);
+  font-size: var(--heading-small-font-size);
+  line-height: var(--heading-small-line-height);
+  letter-spacing: var(--heading-small-letter-spacing);
+  color: var(--heading-small-color);
+}
+
+/* Text Body Classes */
+.text-body {
+  font-family: var(--text-body-font-family);
+  font-weight: var(--text-body-font-weight);
+  font-size: var(--text-body-font-size);
+  line-height: var(--text-body-line-height);
+  color: var(--text-body-color);
+}
+
+.text-body-bold {
+  font-family: var(--text-body-bold-font-family);
+  font-weight: var(--text-body-bold-font-weight);
+  font-size: var(--text-body-bold-font-size);
+  line-height: var(--text-body-bold-line-height);
+  color: var(--text-body-bold-color);
+}
+
+.text-body-muted {
+  font-family: var(--text-body-muted-font-family);
+  font-weight: var(--text-body-muted-font-weight);
+  font-size: var(--text-body-muted-font-size);
+  line-height: var(--text-body-muted-line-height);
+  color: var(--text-body-muted-color);
+  opacity: var(--text-body-muted-opacity);
+}
+
+.text-small {
+  font-family: var(--text-small-font-family);
+  font-weight: var(--text-small-font-weight);
+  font-size: var(--text-small-font-size);
+  line-height: var(--text-small-line-height);
+  color: var(--text-small-color);
+}
+
+.header-text {
+  font-family: var(--header-font-family);
+  font-weight: var(--header-font-weight);
+  font-size: var(--header-font-size);
+  line-height: var(--header-line-height);
+  letter-spacing: var(--header-letter-spacing);
+  color: var(--header-color);
+}
+
+/* ========================================
+   COLOR UTILITY CLASSES
+   ======================================== */
+
+/* Text Colors */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-light { color: var(--text-light); }
+.text-orange { color: var(--primary-orange); }
+.text-brown { color: var(--primary-brown); }
+
+/* Background Colors */
+.bg-white { background-color: var(--bg-white); }
+.bg-light { background-color: var(--bg-light); }
+.bg-flash-white { background-color: var(--bg-flash-white); }
+.bg-light-grey { background-color: var(--bg-light-grey); }
+.bg-orange { background-color: var(--primary-orange); }
+.bg-brown { background-color: var(--primary-brown); }
+
+/* Border Colors */
+.border-light { border-color: var(--border-light); }
+.border-divider { border-color: var(--border-divider); }
+
+/* ========================================
+   DESIGN SYSTEM COMPONENTS
+   ======================================== */
+
+/* Design Style Container */
+.design-style-container {
+  position: relative;
+  width: var(--design-width);
+  height: var(--design-height);
+  background: var(--bg-white);
+  border-radius: var(--radius-3xl);
+}
+
+/* Design Header */
+.design-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--space-12) var(--space-16);
+  gap: var(--space-2);
+  position: absolute;
+  width: var(--design-width);
+  height: 200px;
+  left: 0px;
+  top: 0px;
+  background: var(--bg-light);
+}
+
+/* Design Content */
+.design-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: var(--space-6);
+  position: absolute;
+  width: var(--design-section-width);
+  height: 679px;
+  left: var(--space-16);
+  top: 232px;
+}
+
+/* Color Cards */
+.color-card {
+  box-sizing: border-box;
+  position: relative;
+  width: 128.22px;
+  height: 148.09px;
+  background: var(--bg-white);
+  border: 0.45px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+}
+
+.color-block {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 32.93%;
+  border-radius: var(--radius-md) var(--radius-md) 0px 0px;
+}
+
+.color-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 3.61px;
+  position: absolute;
+  left: 14px;
+  top: 74.95%;
+  bottom: 9.1%;
+}
+
+.color-name {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+}
+
+.color-hex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+}
+
+.color-hash {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: 8.13px;
+  line-height: 9px;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.color-hex-value {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: 8.13px;
+  line-height: 9px;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+/* Specific Color Classes */
+.color-orange { background: var(--primary-orange); }
+.color-brown { background: var(--primary-brown); }
+.color-light-brown { background: var(--primary-light-brown); }
+.color-light-grey { background: var(--bg-light-grey); }
+.color-flash-white { background: var(--bg-flash-white); }
+.color-text-100 { background: var(--text-100); }
+.color-text-80 { background: var(--text-80); }
+.color-text-70 { background: var(--text-70); }
+.color-text-50 { background: var(--text-50); }
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .design-style-container {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    min-height: 500px;
+  }
+  
+  .design-header {
+    width: 100%;
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .design-content {
+    width: 100%;
+    left: var(--space-4);
+    right: var(--space-4);
+  }
+  
+  .color-card {
+    width: 100px;
+    height: 120px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --text-secondary: #000000;
+    --border-light: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

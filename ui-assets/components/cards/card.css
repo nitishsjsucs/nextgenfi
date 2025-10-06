@@ -1,0 +1,170 @@
+/* Card Component Styles */
+.card {
+  background-color: var(--bg-white);
+  border: var(--border-width) var(--border-style) var(--border-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-header {
+  padding: var(--space-6) var(--space-6) var(--space-4) var(--space-6);
+  border-bottom: var(--border-width) var(--border-style) var(--border-light);
+}
+
+.card-body {
+  padding: var(--space-6);
+}
+
+.card-footer {
+  padding: var(--space-4) var(--space-6) var(--space-6) var(--space-6);
+  border-top: var(--border-width) var(--border-style) var(--border-light);
+  background-color: var(--bg-light);
+}
+
+.card-title {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.card-subtitle {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.card-description {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-light);
+  margin: var(--space-3) 0 0 0;
+}
+
+/* Card Variants */
+.card-elevated {
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.card-floating {
+  box-shadow: var(--shadow-xl);
+  border-color: transparent;
+}
+
+.card-interactive {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.card-interactive:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+.card-bordered {
+  border-width: var(--border-width-thick);
+  border-color: var(--border-orange);
+}
+
+/* Dashboard Card Specific Styles */
+.dashboard-card {
+  width: var(--width-card);
+  min-height: 200px;
+}
+
+.metric-card {
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+}
+
+.metric-value {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-loose);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.metric-label {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-tight);
+  color: var(--text-light);
+  margin: var(--space-2) 0 0 0;
+}
+
+.metric-change {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-tight);
+  color: var(--primary-orange);
+  margin: var(--space-2) 0 0 0;
+}
+
+/* Chart Card */
+.chart-card {
+  padding: var(--space-6);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.chart-title {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.chart-subtitle {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-xs);
+  color: var(--text-light);
+  margin: var(--space-1) 0 0 0;
+}
+
+/* Status Card */
+.status-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.status-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--primary-orange);
+}
+
+.status-card.success .status-indicator {
+  background-color: var(--success);
+}
+
+.status-card.warning .status-indicator {
+  background-color: var(--warning);
+}
+
+.status-card.error .status-indicator {
+  background-color: var(--error);
+}

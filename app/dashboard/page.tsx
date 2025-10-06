@@ -88,19 +88,19 @@ function DashboardContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-flash-white" style={{ fontFamily: 'var(--font-family-primary)' }}>
       {/* Header */}
       <div className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-orange rounded-lg flex items-center justify-center">
                   <BarChart3 className="h-5 w-5 text-white" />
                 </div>
-                <h1 className="text-2xl font-bold text-gray-900">NextGenFI Dashboard</h1>
+                <h1 className="heading-small text-primary">NextGenFI Dashboard</h1>
               </div>
-              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+              <Badge variant="outline" className="bg-light-grey text-orange border-light">
                 <Activity className="h-3 w-3 mr-1" />
                 Live
               </Badge>
@@ -115,10 +115,10 @@ function DashboardContent() {
         <div className="px-4 py-6 sm:px-0">
           {/* Welcome Section */}
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="heading-medium text-primary mb-2">
               Welcome back, {user?.name || "User"}! 👋
             </h2>
-            <p className="text-gray-600">
+            <p className="text-body text-muted">
               Your comprehensive banking platform dashboard with AI-powered insights and campaign management.
             </p>
           </div>

@@ -1,0 +1,75 @@
+/* Finance Dashboard Color Palette */
+:root {
+  /* Primary Colors */
+  --primary-orange: #FD6F41;
+  --primary-orange-light: rgba(253, 111, 65, 0.05);
+  
+  /* Text Colors */
+  --text-primary: #121212;
+  --text-secondary: #737B8B;
+  --text-muted: rgba(18, 18, 18, 0.5);
+  --text-light: rgba(18, 18, 18, 0.7);
+  
+  /* Background Colors */
+  --bg-white: #FFFFFF;
+  --bg-light: #ECF1F4;
+  --bg-light-alt: #E0E9EF;
+  --bg-dark: #2E3A59;
+  
+  /* Border Colors */
+  --border-light: #E8EBED;
+  --border-primary: #121212;
+  --border-orange: #FD6F41;
+  --border-gray: #D0D6DD;
+  
+  /* State Colors */
+  --success: #FD6F41;
+  --warning: #FD6F41;
+  --error: #FD6F41;
+  --info: #2E3A59;
+  
+  /* Opacity Variants */
+  --opacity-50: 0.5;
+  --opacity-70: 0.7;
+  --opacity-05: 0.05;
+  
+  /* Figma-specific colors from design system */
+  --figma-primary: #FD6F41;
+  --figma-secondary: #6366F1;
+  --figma-accent: #10B981;
+  --figma-warning: #F59E0B;
+  --figma-error: #EF4444;
+  --figma-success: #10B981;
+  --figma-info: #3B82F6;
+  
+  /* Figma neutral palette */
+  --figma-gray-50: #F9FAFB;
+  --figma-gray-100: #F3F4F6;
+  --figma-gray-200: #E5E7EB;
+  --figma-gray-300: #D1D5DB;
+  --figma-gray-400: #9CA3AF;
+  --figma-gray-500: #6B7280;
+  --figma-gray-600: #4B5563;
+  --figma-gray-700: #374151;
+  --figma-gray-800: #1F2937;
+  --figma-gray-900: #111827;
+}
+
+/* Color Utility Classes */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-light { color: var(--text-light); }
+.text-orange { color: var(--primary-orange); }
+
+.bg-white { background-color: var(--bg-white); }
+.bg-light { background-color: var(--bg-light); }
+.bg-light-alt { background-color: var(--bg-light-alt); }
+.bg-dark { background-color: var(--bg-dark); }
+.bg-orange { background-color: var(--primary-orange); }
+.bg-orange-light { background-color: var(--primary-orange-light); }
+
+.border-light { border-color: var(--border-light); }
+.border-primary { border-color: var(--border-primary); }
+.border-orange { border-color: var(--border-orange); }
+.border-gray { border-color: var(--border-gray); }

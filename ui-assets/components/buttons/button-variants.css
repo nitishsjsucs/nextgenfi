@@ -1,0 +1,301 @@
+/* Button Component Variants - Finance Dashboard UI Kit */
+
+/* ========================================
+   BUTTON BASE STYLES
+   ======================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.btn:focus {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   BUTTON SIZES
+   ======================================== */
+
+.btn--large {
+  padding: 10px 20px;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  min-height: 42px;
+}
+
+.btn--medium {
+  padding: 8px 16px;
+  font-size: 13px;
+  line-height: 1.5384615384615385em;
+  min-height: 38px;
+  border-radius: 5px;
+}
+
+.btn--small {
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.3333333333333333em;
+  min-height: 32px;
+  border-radius: 5px;
+}
+
+/* ========================================
+   BUTTON VARIANTS
+   ======================================== */
+
+/* Primary Button */
+.btn--primary {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+  box-shadow: 0px 2px 1px 0px rgba(64, 72, 82, 0.05);
+}
+
+.btn--primary:hover {
+  background: #e55a35;
+  transform: translateY(-1px);
+  box-shadow: 0px 4px 2px 0px rgba(64, 72, 82, 0.1);
+}
+
+.btn--primary:active {
+  background: #d14e2b;
+  transform: translateY(0);
+}
+
+/* Secondary Button */
+.btn--secondary {
+  background: var(--figma-gray-800);
+  color: var(--bg-white);
+  box-shadow: 0px 2px 1px 0px rgba(64, 72, 82, 0.05);
+}
+
+.btn--secondary:hover {
+  background: var(--figma-gray-700);
+  transform: translateY(-1px);
+}
+
+.btn--secondary:active {
+  background: var(--figma-gray-900);
+}
+
+/* White Button */
+.btn--white {
+  background: var(--bg-white);
+  color: var(--figma-gray-800);
+  border: 1px solid var(--border-light);
+}
+
+.btn--white:hover {
+  background: var(--bg-light);
+  transform: translateY(-1px);
+}
+
+.btn--white:active {
+  background: var(--bg-light-alt);
+}
+
+/* Outline Button */
+.btn--outline {
+  background: transparent;
+  color: var(--figma-gray-800);
+  border: 1px solid rgba(18, 18, 18, 0.2);
+  box-shadow: 0px 2px 1px 0px rgba(64, 72, 82, 0.05);
+}
+
+.btn--outline:hover {
+  background: var(--bg-light);
+  border-color: var(--figma-primary);
+  color: var(--figma-primary);
+}
+
+.btn--outline:active {
+  background: var(--primary-orange-light);
+}
+
+/* ========================================
+   BUTTON WITH ICONS
+   ======================================== */
+
+.btn__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btn__icon--left {
+  margin-right: 8px;
+}
+
+.btn__icon--right {
+  margin-left: 8px;
+}
+
+.btn--icon-only {
+  padding: 10px;
+  min-width: 42px;
+}
+
+.btn--icon-only.btn--medium {
+  padding: 8px;
+  min-width: 38px;
+}
+
+.btn--icon-only.btn--small {
+  padding: 6px;
+  min-width: 32px;
+}
+
+/* ========================================
+   BUTTON GROUPS
+   ======================================== */
+
+.btn-group {
+  display: inline-flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 2px 1px 0px rgba(64, 72, 82, 0.05);
+}
+
+.btn-group .btn {
+  border-radius: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-group .btn:first-child {
+  border-radius: 20px 0 0 20px;
+}
+
+.btn-group .btn:last-child {
+  border-radius: 0 20px 20px 0;
+  border-right: none;
+}
+
+.btn-group .btn:only-child {
+  border-radius: 20px;
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.btn--loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn--loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: btn-spin 1s linear infinite;
+}
+
+.btn--loading.btn--primary::after {
+  border-top-color: var(--bg-white);
+}
+
+.btn--loading.btn--secondary::after {
+  border-top-color: var(--bg-white);
+}
+
+.btn--loading.btn--white::after {
+  border-top-color: var(--figma-gray-800);
+}
+
+.btn--loading.btn--outline::after {
+  border-top-color: var(--figma-gray-800);
+}
+
+@keyframes btn-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.btn:focus-visible {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.btn[aria-pressed="true"] {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .btn--large {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  
+  .btn--medium {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .btn--small {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .btn--white {
+    background: var(--figma-gray-800);
+    color: var(--bg-white);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .btn--white:hover {
+    background: var(--figma-gray-700);
+  }
+  
+  .btn--outline {
+    color: var(--bg-white);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .btn--outline:hover {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-primary);
+  }
+}

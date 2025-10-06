@@ -1,0 +1,516 @@
+/* Search Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   SEARCH INPUT BASE STYLES
+   ======================================== */
+
+.search-input {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border-radius: 2000px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.3846153846153846em;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.search-input__field {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.search-input__field::placeholder {
+  color: inherit;
+  opacity: 0.7;
+}
+
+.search-input__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.search-input__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.search-input__icon svg path {
+  fill: #2E3A59;
+  opacity: 0.5;
+}
+
+.search-input__clear {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.search-input__clear:hover {
+  opacity: 1;
+}
+
+.search-input__clear svg {
+  width: 14px;
+  height: 14px;
+}
+
+.search-input__clear svg path {
+  fill: currentColor;
+}
+
+/* ========================================
+   SEARCH INPUT VARIANTS
+   ======================================== */
+
+.search-input--default {
+  background: #E0E9EF;
+  color: #737B8B;
+  padding: 12px 20px;
+  width: 422px;
+  height: 44px;
+}
+
+.search-input--hover {
+  background: #E0E9EF;
+  border: 1px solid #BBC4C9;
+  color: #737B8B;
+  padding: 12px 20px;
+  width: 422px;
+  height: 44px;
+}
+
+.search-input--focused,
+.search-input--typing {
+  background: var(--bg-white);
+  border: 1px solid rgba(46, 58, 89, 0.6);
+  color: #000000;
+  padding: 12px 20px;
+  width: 422px;
+  height: 44px;
+}
+
+.search-input--focused .search-input__icon svg path,
+.search-input--typing .search-input__icon svg path {
+  fill: #000000;
+  opacity: 0.8;
+}
+
+.search-input--typing .search-input__clear {
+  display: flex;
+  color: #737B8B;
+}
+
+/* ========================================
+   SEARCH INPUT SIZES
+   ======================================== */
+
+.search-input--small {
+  padding: 8px 16px;
+  height: 36px;
+  font-size: 12px;
+  width: 300px;
+}
+
+.search-input--small .search-input__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.search-input--large {
+  padding: 16px 24px;
+  height: 52px;
+  font-size: 14px;
+  width: 500px;
+}
+
+.search-input--large .search-input__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================
+   SEARCH INPUT WITH SUGGESTIONS
+   ======================================== */
+
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 4px;
+  display: none;
+}
+
+.search-suggestions--visible {
+  display: block;
+}
+
+.search-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.search-suggestion:last-child {
+  border-bottom: none;
+}
+
+.search-suggestion:hover {
+  background: var(--bg-light);
+}
+
+.search-suggestion__icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.search-suggestion__content {
+  flex: 1;
+}
+
+.search-suggestion__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0 0 2px 0;
+}
+
+.search-suggestion__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.search-suggestion__highlight {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+  padding: 1px 2px;
+  border-radius: 2px;
+}
+
+/* ========================================
+   SEARCH INPUT WITH FILTERS
+   ======================================== */
+
+.search-with-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: var(--shadow-small);
+}
+
+.search-with-filters .search-input {
+  background: transparent;
+  border: none;
+  padding: 8px 0;
+  width: auto;
+  min-width: 200px;
+  flex: 1;
+}
+
+.search-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--figma-gray-100);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-filter:hover {
+  background: var(--figma-gray-200);
+}
+
+.search-filter--active {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.search-filter__remove {
+  margin-left: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.search-filter__remove:hover {
+  opacity: 1;
+}
+
+/* ========================================
+   SEARCH RESULTS
+   ======================================== */
+
+.search-results {
+  margin-top: 16px;
+}
+
+.search-results__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.search-results__count {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.search-results__clear {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--figma-primary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.search-results__clear:hover {
+  color: var(--figma-primary);
+  opacity: 0.8;
+}
+
+.search-results__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.search-result-item:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.search-result-item__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--figma-gray-100);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.search-result-item__content {
+  flex: 1;
+}
+
+.search-result-item__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.search-result-item__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6153846153846154em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.search-result-item__meta {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+/* ========================================
+   SEARCH INPUT STATES
+   ======================================== */
+
+.search-input--loading {
+  position: relative;
+}
+
+.search-input--loading::after {
+  content: '';
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--figma-primary);
+  border-radius: 50%;
+  animation: search-spin 1s linear infinite;
+}
+
+@keyframes search-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.search-input--error {
+  border-color: var(--figma-error) !important;
+  background: rgba(239, 68, 68, 0.05) !important;
+}
+
+.search-input--success {
+  border-color: var(--figma-success) !important;
+  background: rgba(16, 185, 129, 0.05) !important;
+}
+
+/* ========================================
+   SEARCH INPUT ACCESSIBILITY
+   ======================================== */
+
+.search-input:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.search-suggestion:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: -2px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .search-input--default,
+  .search-input--hover,
+  .search-input--focused,
+  .search-input--typing {
+    width: 100%;
+    min-width: 280px;
+  }
+  
+  .search-with-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .search-with-filters .search-input {
+    min-width: auto;
+  }
+  
+  .search-result-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .search-result-item__icon {
+    align-self: flex-start;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .search-input--default {
+    background: var(--figma-gray-700);
+    color: var(--figma-gray-300);
+  }
+  
+  .search-input--hover {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .search-input--focused,
+  .search-input--typing {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-400);
+    color: var(--bg-white);
+  }
+  
+  .search-suggestions {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .search-suggestion:hover {
+    background: var(--figma-gray-700);
+  }
+  
+  .search-result-item {
+    background: var(--figma-gray-800);
+    border-color: var(--figma-gray-600);
+  }
+  
+  .search-result-item:hover {
+    background: var(--figma-gray-700);
+  }
+}

@@ -1,0 +1,236 @@
+/* Form Validation Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   VALIDATION BASE STYLES
+   ======================================== */
+
+.validation {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  transition: all 0.2s ease;
+}
+
+.validation__message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.validation__message svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.validation__message svg path {
+  fill: currentColor;
+}
+
+.validation__message__text {
+  flex: 1;
+  margin: 0;
+}
+
+/* ========================================
+   VALIDATION TYPES
+   ======================================== */
+
+.validation--success {
+  color: var(--figma-success);
+}
+
+.validation--success .validation__message svg path {
+  fill: var(--figma-success);
+}
+
+.validation--warning {
+  color: var(--figma-warning);
+}
+
+.validation--warning .validation__message svg path {
+  fill: var(--figma-warning);
+}
+
+.validation--error {
+  color: var(--figma-error);
+}
+
+.validation--error .validation__message svg path {
+  fill: var(--figma-error);
+}
+
+.validation--info {
+  color: var(--figma-info);
+}
+
+.validation--info .validation__message svg path {
+  fill: var(--figma-info);
+}
+
+/* ========================================
+   VALIDATION SIZES
+   ======================================== */
+
+.validation--small {
+  font-size: 11px;
+  gap: 3px;
+}
+
+.validation--small .validation__message svg {
+  width: 10px;
+  height: 10px;
+}
+
+.validation--medium {
+  font-size: 12px;
+  gap: 4px;
+}
+
+.validation--medium .validation__message svg {
+  width: 12px;
+  height: 12px;
+}
+
+.validation--large {
+  font-size: 14px;
+  gap: 6px;
+}
+
+.validation--large .validation__message svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ========================================
+   VALIDATION STATES
+   ======================================== */
+
+.validation--hidden {
+  display: none;
+}
+
+.validation--visible {
+  display: flex;
+}
+
+.validation--loading {
+  position: relative;
+}
+
+.validation--loading::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: validation-spin 1s linear infinite;
+}
+
+@keyframes validation-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* ========================================
+   VALIDATION ANIMATIONS
+   ======================================== */
+
+.validation--animated {
+  animation: validation-slide-in 0.3s ease-out;
+}
+
+@keyframes validation-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.validation--shake {
+  animation: validation-shake 0.5s ease-in-out;
+}
+
+@keyframes validation-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+/* ========================================
+   VALIDATION ACCESSIBILITY
+   ======================================== */
+
+.validation:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.validation__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .validation--small {
+    font-size: 10px;
+  }
+  
+  .validation--medium {
+    font-size: 11px;
+  }
+  
+  .validation--large {
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .validation--success {
+    color: var(--figma-success);
+  }
+  
+  .validation--warning {
+    color: var(--figma-warning);
+  }
+  
+  .validation--error {
+    color: var(--figma-error);
+  }
+  
+  .validation--info {
+    color: var(--figma-info);
+  }
+}

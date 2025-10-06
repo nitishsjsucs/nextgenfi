@@ -1,17 +1,12 @@
 import type { Metadata } from "next"
-import { Inter, Instrument_Serif } from "next/font/google"
+import { Inter } from "next/font/google"
 import "./globals.css"
 import { ConvexClientProvider } from "@/lib/convex"
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-})
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
@@ -27,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} antialiased`} suppressHydrationWarning
+        className={`${inter.variable} antialiased`} suppressHydrationWarning
       >
         <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>

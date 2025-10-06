@@ -1,0 +1,723 @@
+/* Form Tabs Components - Finance Dashboard UI Kit */
+
+/* ========================================
+   FORM TABS BASE STYLES
+   ======================================== */
+
+.form-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  transition: all 0.2s ease;
+}
+
+.form-tabs__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.form-tabs__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3333333333333333em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.form-tabs__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-tabs__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-tabs__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-tabs__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+}
+
+.form-tabs__footer--centered {
+  justify-content: center;
+}
+
+.form-tabs__footer--right {
+  justify-content: flex-end;
+}
+
+/* ========================================
+   FORM TABS NAVIGATION
+   ======================================== */
+
+.form-tabs__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+  overflow-x: auto;
+}
+
+.form-tabs__nav--vertical {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+  border-right: 1px solid var(--border-light);
+  overflow-x: visible;
+  overflow-y: auto;
+}
+
+.form-tabs__nav--centered {
+  justify-content: center;
+}
+
+.form-tabs__nav--right {
+  justify-content: flex-end;
+}
+
+.form-tabs__nav--space-between {
+  justify-content: space-between;
+}
+
+.form-tabs__nav--wrap {
+  flex-wrap: wrap;
+}
+
+.form-tabs__nav--no-gap {
+  gap: 0;
+}
+
+.form-tabs__nav--small-gap {
+  gap: 8px;
+}
+
+.form-tabs__nav--large-gap {
+  gap: 16px;
+}
+
+/* ========================================
+   FORM TABS TAB
+   ======================================== */
+
+.form-tabs__tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  border-radius: 8px 8px 0 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+}
+
+.form-tabs__nav--vertical .form-tabs__tab {
+  border-radius: 0 8px 8px 0;
+  justify-content: flex-start;
+}
+
+.form-tabs__tab:hover {
+  background: var(--bg-light);
+  color: var(--text-primary);
+}
+
+.form-tabs__tab--active {
+  background: var(--bg-white);
+  color: var(--figma-primary);
+  font-weight: 500;
+  border-bottom: 2px solid var(--figma-primary);
+}
+
+.form-tabs__nav--vertical .form-tabs__tab--active {
+  border-bottom: none;
+  border-right: 2px solid var(--figma-primary);
+}
+
+.form-tabs__tab--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-tabs__tab--disabled:hover {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.form-tabs__tab--error {
+  color: var(--figma-error);
+}
+
+.form-tabs__tab--error:hover {
+  color: var(--figma-error);
+}
+
+.form-tabs__tab--success {
+  color: var(--figma-success);
+}
+
+.form-tabs__tab--success:hover {
+  color: var(--figma-success);
+}
+
+.form-tabs__tab--warning {
+  color: var(--figma-warning);
+}
+
+.form-tabs__tab--warning:hover {
+  color: var(--figma-warning);
+}
+
+.form-tabs__tab__icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-tabs__tab__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.form-tabs__tab__icon svg path {
+  fill: currentColor;
+}
+
+.form-tabs__tab__text {
+  flex: 1;
+  text-align: center;
+}
+
+.form-tabs__tab__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: var(--figma-primary);
+  color: var(--bg-white);
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.form-tabs__tab--active .form-tabs__tab__badge {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.form-tabs__tab__badge--success {
+  background: var(--figma-success);
+}
+
+.form-tabs__tab__badge--warning {
+  background: var(--figma-warning);
+}
+
+.form-tabs__tab__badge--error {
+  background: var(--figma-error);
+}
+
+/* ========================================
+   FORM TABS CONTENT
+   ======================================== */
+
+.form-tabs__content {
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 400px;
+}
+
+.form-tabs__content--active {
+  display: flex;
+}
+
+.form-tabs__content__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.form-tabs__content__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.form-tabs__content__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.form-tabs__content__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+/* ========================================
+   FORM TABS ACTIONS
+   ======================================== */
+
+.form-tabs__actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.form-tabs__actions--vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-tabs__actions--centered {
+  justify-content: center;
+}
+
+.form-tabs__actions--right {
+  justify-content: flex-end;
+}
+
+.form-tabs__actions--space-between {
+  justify-content: space-between;
+}
+
+.form-tabs__actions--wrap {
+  flex-wrap: wrap;
+}
+
+.form-tabs__actions--no-gap {
+  gap: 0;
+}
+
+.form-tabs__actions--small-gap {
+  gap: 8px;
+}
+
+.form-tabs__actions--large-gap {
+  gap: 16px;
+}
+
+.form-tabs__action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5714285714285714em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.form-tabs__action--primary {
+  background: var(--figma-primary);
+  color: var(--bg-white);
+}
+
+.form-tabs__action--primary:hover {
+  background: var(--figma-primary);
+  opacity: 0.9;
+}
+
+.form-tabs__action--secondary {
+  background: var(--figma-gray-200);
+  color: var(--text-primary);
+}
+
+.form-tabs__action--secondary:hover {
+  background: var(--figma-gray-300);
+}
+
+.form-tabs__action--outline {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.form-tabs__action--outline:hover {
+  background: var(--bg-light);
+  border-color: var(--border-gray);
+}
+
+.form-tabs__action--ghost {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.form-tabs__action--ghost:hover {
+  background: var(--bg-light);
+}
+
+.form-tabs__action--danger {
+  background: var(--figma-error);
+  color: var(--bg-white);
+}
+
+.form-tabs__action--danger:hover {
+  background: var(--figma-error);
+  opacity: 0.9;
+}
+
+.form-tabs__action--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-tabs__action--disabled:hover {
+  background: inherit;
+  opacity: 0.6;
+}
+
+.form-tabs__action--loading {
+  position: relative;
+}
+
+.form-tabs__action--loading::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: form-tabs-action-spin 1s linear infinite;
+}
+
+@keyframes form-tabs-action-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.form-tabs__action__icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-tabs__action__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.form-tabs__action__icon svg path {
+  fill: currentColor;
+}
+
+.form-tabs__action__text {
+  flex: 1;
+  text-align: center;
+}
+
+/* ========================================
+   FORM TABS VALIDATION
+   ======================================== */
+
+.form-tabs--validating {
+  position: relative;
+}
+
+.form-tabs--validating::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--figma-primary), transparent);
+  animation: form-tabs-validating 2s ease-in-out infinite;
+}
+
+@keyframes form-tabs-validating {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.form-tabs--valid {
+  border-color: var(--figma-success);
+}
+
+.form-tabs--invalid {
+  border-color: var(--figma-error);
+}
+
+/* ========================================
+   FORM TABS ANIMATIONS
+   ======================================== */
+
+.form-tabs--animated {
+  animation: form-tabs-slide-in 0.3s ease-out;
+}
+
+@keyframes form-tabs-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-tabs__content--animated {
+  animation: form-tabs-content-slide-in 0.3s ease-out;
+}
+
+@keyframes form-tabs-content-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   FORM TABS ACCESSIBILITY
+   ======================================== */
+
+.form-tabs:focus-within {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.form-tabs__tab:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+.form-tabs__action:focus {
+  outline: 2px solid var(--figma-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.form-tabs__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .form-tabs__nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: none;
+    border-right: 1px solid var(--border-light);
+  }
+  
+  .form-tabs__tab {
+    border-radius: 0 8px 8px 0;
+    justify-content: flex-start;
+  }
+  
+  .form-tabs__tab--active {
+    border-bottom: none;
+    border-right: 2px solid var(--figma-primary);
+  }
+}
+
+@media (max-width: 768px) {
+  .form-tabs {
+    gap: 16px;
+  }
+  
+  .form-tabs__nav {
+    gap: 0;
+  }
+  
+  .form-tabs__tab {
+    padding: 10px 16px;
+    gap: 6px;
+  }
+  
+  .form-tabs__tab__icon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .form-tabs__tab__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .form-tabs__tab__text {
+    font-size: 13px;
+  }
+  
+  .form-tabs__tab__badge {
+    min-width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+  
+  .form-tabs__content {
+    min-height: 300px;
+  }
+  
+  .form-tabs__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-tabs__action {
+    justify-content: center;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .form-tabs__nav {
+    border-bottom-color: var(--figma-gray-700);
+  }
+  
+  .form-tabs__nav--vertical {
+    border-right-color: var(--figma-gray-700);
+  }
+  
+  .form-tabs__tab {
+    color: var(--figma-gray-300);
+  }
+  
+  .form-tabs__tab:hover {
+    background: var(--figma-gray-700);
+    color: var(--bg-white);
+  }
+  
+  .form-tabs__tab--active {
+    background: var(--figma-gray-800);
+    color: var(--figma-primary);
+    border-bottom-color: var(--figma-primary);
+  }
+  
+  .form-tabs__nav--vertical .form-tabs__tab--active {
+    border-right-color: var(--figma-primary);
+  }
+  
+  .form-tabs__tab--disabled {
+    opacity: 0.6;
+  }
+  
+  .form-tabs__tab--disabled:hover {
+    background: transparent;
+    color: var(--figma-gray-300);
+  }
+  
+  .form-tabs__footer {
+    border-top-color: var(--figma-gray-700);
+  }
+  
+  .form-tabs__action--secondary {
+    background: var(--figma-gray-700);
+    color: var(--bg-white);
+  }
+  
+  .form-tabs__action--secondary:hover {
+    background: var(--figma-gray-600);
+  }
+  
+  .form-tabs__action--outline {
+    border-color: var(--figma-gray-600);
+    color: var(--bg-white);
+  }
+  
+  .form-tabs__action--outline:hover {
+    background: var(--figma-gray-700);
+    border-color: var(--figma-gray-500);
+  }
+  
+  .form-tabs__action--ghost {
+    color: var(--bg-white);
+  }
+  
+  .form-tabs__action--ghost:hover {
+    background: var(--figma-gray-700);
+  }
+}
