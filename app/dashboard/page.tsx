@@ -130,9 +130,9 @@ function DashboardContent() {
           {/* Quick Stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2 min-h-[3.5rem]">
                 <CardTitle className="text-sm">Active Campaigns</CardTitle>
-                <Target className="h-4 w-4 text-primary" />
+                <Target className="h-4 w-4 text-primary shrink-0" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold font-instrument-serif">
@@ -144,9 +144,9 @@ function DashboardContent() {
               </CardContent>
             </Card>
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2 min-h-[3.5rem]">
                 <CardTitle className="text-sm">Emails Sent</CardTitle>
-                <Send className="h-4 w-4 text-primary" />
+                <Send className="h-4 w-4 text-primary shrink-0" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold font-instrument-serif">
@@ -158,11 +158,11 @@ function DashboardContent() {
               </CardContent>
             </Card>
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2 min-h-[3.5rem]">
                 <CardTitle className="text-sm">
                   Open<br/>Rate
                 </CardTitle>
-                <Mail className="h-4 w-4 text-primary" />
+                <Mail className="h-4 w-4 text-primary shrink-0" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold font-instrument-serif">
