@@ -795,40 +795,40 @@ const App = () => {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <motion.div variants={slideInLeft}>
-              <Card className="h-full border-2 border-gray-200 hover:border-black transition-colors">
+              <Card className="h-full border-2 border-white/10 hover:border-white/20 transition-colors">
                 <CardHeader className="text-center pb-8">
-                  <Badge variant="secondary" className="w-fit mx-auto mb-4 bg-gray-200 text-gray-800">Pilot</Badge>
+                  <Badge variant="secondary" className="w-fit mx-auto mb-4 bg-white/10 text-black">Pilot</Badge>
                   <CardTitle className="text-2xl">MVP Package</CardTitle>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold text-gray-900">$15k</span>
-                    <span className="text-gray-500">/month</span>
+                    <span className="text-4xl font-bold text-white font-instrument-serif">$15k</span>
+                    <span className="text-white/60">/month</span>
                   </div>
                   <CardDescription className="mt-2">Perfect for pilot deployments</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Basic AI analytics dashboard
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       SMS notifications
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Compliance logging
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Basic admin interface
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Up to 10,000 transactions/month
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Email support
                     </li>
                   </ul>
@@ -848,43 +848,43 @@ const App = () => {
                   <Badge variant="default" className="w-fit mx-auto mb-4 bg-black">Professional</Badge>
                   <CardTitle className="text-2xl">Full Platform</CardTitle>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold text-gray-900">$45k</span>
-                    <span className="text-gray-500">/month</span>
+                    <span className="text-4xl font-bold text-white font-instrument-serif">$45k</span>
+                    <span className="text-white/60">/month</span>
                   </div>
                   <CardDescription className="mt-2">Complete banking modernization</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Full AI analytics & insights
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       RAG AI assistant
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       SMS & voice agents
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Enterprise compliance
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Third-party integrations
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-gray-700 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Up to 100,000 transactions/month
                     </li>
                     <li className="flex items-center">
-                      <CheckIcon className="text-green-500 mr-3 w-4 h-4" />
+                      <CheckIcon className="text-primary mr-3 w-4 h-4" />
                       Priority support & training
                     </li>
                   </ul>
-                  <Button className="w-full mt-8 bg-black hover:bg-gray-800">
+                  <Button className="w-full mt-8">
                     Get Started
                   </Button>
                 </CardContent>
@@ -892,12 +892,12 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={slideInRight}>
-              <Card className="h-full border-2 border-gray-200 hover:border-black transition-colors">
+              <Card className="h-full border-2 border-white/10 hover:border-white/20 transition-colors">
                 <CardHeader className="text-center pb-8">
-                  <Badge variant="secondary" className="w-fit mx-auto mb-4 bg-gray-200 text-gray-800">Enterprise</Badge>
+                  <Badge variant="secondary" className="w-fit mx-auto mb-4 bg-white/10 text-black">Enterprise</Badge>
                   <CardTitle className="text-2xl">Custom Solution</CardTitle>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold text-gray-900">Custom</span>
+                    <span className="text-4xl font-bold text-white font-instrument-serif">Custom</span>
                   </div>
                   <CardDescription className="mt-2">Tailored for large institutions</CardDescription>
                 </CardHeader>
@@ -941,11 +941,11 @@ const App = () => {
           </div>
 
           <motion.div className="text-center mt-12" variants={item}>
-            <p className="text-gray-600 mb-4">
+            <p className="text-white/60 mb-4 font-light">
               All plans include SOC 2 compliance, data encryption, and API access
             </p>
-            <Badge variant="outline" className="text-gray-800 border-gray-300">
-              <CheckIcon className="w-3 h-3 mr-1 text-gray-700" />
+            <Badge variant="outline">
+              <CheckIcon className="w-3 h-3 mr-1 text-primary" />
               30-day money-back guarantee
             </Badge>
           </motion.div>

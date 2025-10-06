@@ -556,8 +556,8 @@ export function RAGSection() {
     <div className="space-y-6">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900 flex items-center justify-center gap-2">
-          <Globe className="h-8 w-8 text-blue-600" />
+        <h1 className="text-3xl font-light text-white flex items-center justify-center gap-2 font-instrument-serif">
+          <Globe className="h-8 w-8 text-primary" />
           Earthquake Insurance Marketing AI
         </h1>
       </div>

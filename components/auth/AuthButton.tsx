@@ -19,7 +19,7 @@ export function AuthButton() {
             {(user?.name || user?.email || "U").charAt(0).toUpperCase()}
           </AvatarFallback>
         </Avatar>
-        <span className="text-sm text-gray-700">
+        <span className="text-sm text-white font-light">
           {user?.name || user?.email}
         </span>
       </div>
